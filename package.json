@@ -1,0 +1,13 @@
+{
+  "name": "csdn-design",
+  "description": "CSDN Design Vue 2.0 Monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "zouxin1"
+}
