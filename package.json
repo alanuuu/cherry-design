@@ -3,6 +3,10 @@
   "description": "CSDN Design Vue 2.0 Monorepo",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   },

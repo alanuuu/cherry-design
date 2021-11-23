@@ -1,9 +1,9 @@
-import MyButton from './Button.vue';
+import { Button } from '@csdn-design/vue-ui';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: MyButton,
+  title: '组件/Button',
+  component: Button,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -17,8 +17,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { MyButton },
-  template: '<my-button @onClick="onClick" v-bind="$props" />',
+  components: { Button },
+  template: '<c-button @onClick="onClick" v-bind="$props" />',
 });
 
 export const Primary = Template.bind({});

@@ -2,11 +2,18 @@
   "name": "@csdn-design/vue-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "components/index.js",
+  "module": "components/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^8.1.1"
+  }
 }
