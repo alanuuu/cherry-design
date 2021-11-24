@@ -1,10 +1,9 @@
 <template>
-  <div class="c-btn">
-    <button>{{slot}}123</button>
-  </div>
+  <button :class="cls" @click="onClick">{{slot}}123</button>
 </template>
 
 <script>
+import { prefix } from '../../constants'
 /**
  * 按钮类型
  */
@@ -39,14 +38,28 @@ export default {
         return btnStatus.includes(val);
       },
     },
+    loading: Boolean,
   },
   computed: {
     cls() {
-      return 'c';
+      const name = prefix + '-btn';
+      return {
+        [name]: true,
+        [name + '-' + this.type]: true,
+        [name + '-' + this.status]: true,
+        [name + '-loading']: this.loading,
+      };
+    },
+  },
+  methods: {
+    onClick() {
+      if (this.loading) return;
+
+      this.$emit('click');
     },
   },
 };
 </script>
 
-<style>
+<style lang="less">
 </style>

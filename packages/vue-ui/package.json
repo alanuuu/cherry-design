@@ -5,12 +5,15 @@
   "main": "components/index.js",
   "module": "components/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vue-scripts dev:component",
+    "build:component": "vue-scripts build:component -u",
+    "build": "vue-scripts build:component -u"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@csdn-design/vue-scripts": "^1.0.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",

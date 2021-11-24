@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     node: true,
+    module: true,
   },
   extends: [
     'airbnb-base',

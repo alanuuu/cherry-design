@@ -1,9 +1,9 @@
-import { Button } from '@csdn-design/vue-ui';
+import { Button as CButton } from '@csdn-design/vue-ui';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: '组件/Button',
-  component: Button,
+  title: '组件/Button 按钮',
+  component: CButton,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -17,8 +17,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Button },
-  template: '<c-button @onClick="onClick" v-bind="$props" />',
+  components: { CButton },
+  template: '<c-button v-bind="$props" >按钮</c-button>',
 });
 
 export const Primary = Template.bind({});

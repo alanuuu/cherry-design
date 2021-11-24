@@ -10,6 +10,9 @@ const buildComponent = require('./scripts/build-component');
 const program = new Command();
 const version = pkg.version || '1.0.0';
 
+program
+  .option('-d, --debug', 'output extra debugging')
+
 program.version(version).name('@csdn-design/vue-scripts').usage('command [options]');
 
 program
@@ -25,4 +28,8 @@ program
   .option('-u, --umd', 'build with UMD file')
   .action(async ({ umd }) => {
     await buildComponent({ umd });
-  });  
+  }); 
+  
+program.parse(process.argv);
+const options = program.opts();
+if (options.debug) console.log(options);  
