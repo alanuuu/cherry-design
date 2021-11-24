@@ -1,3 +1,3 @@
-export const prefix = 'C';
+export const prefix = 'c';
 
 export const a = 1;

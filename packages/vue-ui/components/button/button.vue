@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { prefix } from '../../constants'
+import { prefix } from '../../constants';
 /**
  * 按钮类型
  */
@@ -62,4 +62,5 @@ export default {
 </script>
 
 <style lang="less">
+@import './button.less';
 </style>
