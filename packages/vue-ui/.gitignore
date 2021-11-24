@@ -1,0 +1,8 @@
+dist/
+lib/
+es/
+
+components/icon
+icon/icons.json
+
+.eslintcache

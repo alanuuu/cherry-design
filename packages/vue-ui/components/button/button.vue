@@ -1,5 +1,7 @@
 <template>
-  <button :class="cls" @click="onClick">{{slot}}123</button>
+  <button :class="cls" @click="onClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>

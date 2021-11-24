@@ -14,7 +14,11 @@ module.exports = defineConfig({
         entryFileNames: '[name].js',
         preserveModules: true,
         preserveModulesRoot: 'components',
+        globals: {
+          vue: 'Vue'
+        }
       },
+      external: ['vue'],
     },
     lib: {
       entry: 'components/index.js',
