@@ -19,5 +19,6 @@ module.exports = {
     'arrow-body-style': 0,
     'eol-last': 0,
     'prefer-template': 0,
+    'no-unused-vars': 0,
   },
 };

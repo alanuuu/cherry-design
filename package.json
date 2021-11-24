@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "start": "yarn workspace @csdn-design/vue-ui run start",
     "build": "yarn workspace @csdn-design/vue-ui run build",
     "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook"
   },
