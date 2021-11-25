@@ -2,8 +2,8 @@
   "name": "@csdn-design/vue-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "components/index.js",
-  "module": "components/index.js",
+  "main": "es/index.js",
+  "module": "es/index.js",
   "scripts": {
     "start": "vue-scripts dev:component",
     "build:component": "vue-scripts build:component -u",
