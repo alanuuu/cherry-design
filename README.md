@@ -19,7 +19,7 @@ csdn-design
 - [ ] List 列表
 - [ ] BackTop 回到顶部 
 - [ ] Image 图片
-- [ ] Avater 头像
+- [x] Avater 头像
 
 - [ ] Riado 单选框
 - [ ] Checkbox 复选框
