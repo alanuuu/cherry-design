@@ -1,0 +1,44 @@
+@statusMap: {
+  default: @text-primary-color;
+  primary: @primary-color;
+}
+
+.c-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: @font-size;
+  color: @text-primary-color;
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  each(@statusMap, {
+    &-@{key} {
+      color: @value;
+      &:hover {
+        color: mix(@value, @white, 80%)
+      }
+
+      &.disabled {
+        color: mix(@value, @white, 50%)
+      }
+    }
+  })
+
+  
+
+  
+}
