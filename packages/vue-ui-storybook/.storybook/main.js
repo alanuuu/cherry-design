@@ -29,6 +29,11 @@ module.exports = {
         },
         {
           loader: require.resolve("less-loader"),
+          options: {
+            lessOptions: {
+              javascriptEnabled: true,
+            }
+          },
         },
       ],
     });

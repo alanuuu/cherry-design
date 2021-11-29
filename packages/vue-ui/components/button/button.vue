@@ -62,7 +62,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less">
-@import './button.less';
-</style>
