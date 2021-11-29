@@ -6,8 +6,8 @@
   "module": "es/index.js",
   "scripts": {
     "start": "vue-scripts dev:component",
-    "build:component": "vue-scripts build:component -u",
-    "build": "vue-scripts build:component -u"
+    "build:component": "vue-scripts build:component",
+    "build": "vue-scripts build:component -r"
   },
   "files": [
     "lib",

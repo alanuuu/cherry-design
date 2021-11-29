@@ -10,10 +10,12 @@ const buildComponent = require('./scripts/build-component');
 const program = new Command();
 const version = pkg.version || '1.0.0';
 
-program
-  .option('-d, --debug', 'output extra debugging')
+program.option('-d, --debug', 'output extra debugging');
 
-program.version(version).name('@csdn-design/vue-scripts').usage('command [options]');
+program
+  .version(version)
+  .name('@csdn-design/vue-scripts')
+  .usage('command [options]');
 
 program
   .command('dev:component')
@@ -25,11 +27,11 @@ program
 program
   .command('build:component')
   .description('build production files.')
-  .option('-u, --umd', 'build with UMD file')
-  .action(async ({ umd }) => {
-    await buildComponent({ umd });
-  }); 
-  
+  .option('-r, --release', 'build with release file')
+  .action(async ({ release }) => {
+    await buildComponent({ release });
+  });
+
 program.parse(process.argv);
 const options = program.opts();
-if (options.debug) console.log(options);  
+if (options.debug) console.log(options);
