@@ -6,6 +6,7 @@ const pkg = require('../package.json');
 
 const devComponent = require('./scripts/dev-component');
 const buildComponent = require('./scripts/build-component');
+const buildStyle = require('./scripts/build-style');
 
 const program = new Command();
 const version = pkg.version || '1.0.0';
@@ -31,6 +32,13 @@ program
   .action(async ({ release }) => {
     await buildComponent({ release });
   });
+
+program
+  .command('build:style')
+  .description('build style files')  
+  .action(async () => {
+    await buildStyle()
+  })
 
 program.parse(process.argv);
 const options = program.opts();

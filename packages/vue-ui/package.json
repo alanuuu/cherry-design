@@ -7,6 +7,7 @@
   "scripts": {
     "start": "vue-scripts dev:component",
     "build:component": "vue-scripts build:component",
+    "build:style": "vue-scripts build:style",
     "build": "vue-scripts build:component -r"
   },
   "files": [
