@@ -1,8 +1,22 @@
 # csdn-design
 
-csdn-design
+## 一、 开发
+```bash
+# 安装依赖
+yarn
 
-## 组件
+# 软链package
+yarn boostrap
+
+# 热更新vue-ui
+yarn start
+
+# 文档预览
+yarn storybook
+```
+## 二、部署
+
+## 三、组件
 
 - [ ] Button 按钮
 - [ ] Icon 图标
