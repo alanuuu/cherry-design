@@ -1,0 +1,23 @@
+@prefix: c-badge;
+
+.@{prefix} {
+  position: relative;
+  display: inline-block;
+  &-tip {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    padding: 2px 6px;
+    font-size: @font-sm-size;
+    border-radius: 999px;
+    color: #fff;
+    transform: translateY(-50%) translateX(100%);
+  }
+  &-primary {
+    background: @tip-primary-color;
+  }
+  &-light {
+    background: @tip-light-color;
+    color: black;
+  }
+}

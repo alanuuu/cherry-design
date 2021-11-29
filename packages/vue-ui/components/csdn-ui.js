@@ -1,9 +1,11 @@
 import Button from './button';
 import Layout from './layout';
+import Badge from './badge';
 
 const components = {
   Button,
   Layout,
+  Badge
 };
 
 const install = (app, options) => {
