@@ -15,7 +15,7 @@ csdn-design
 - [ ] Carousel 走马灯
 - [ ] Affix 固钉
 - [ ] Breadcrumb 面包屑
-- [ ] Badge 徽章数
+- [x] Badge 徽章数
 - [ ] List 列表
 - [ ] BackTop 回到顶部 
 - [ ] Image 图片
