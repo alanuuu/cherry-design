@@ -1,4 +1,7 @@
+export { default } from './csdn-ui';
+
 export { default as Button } from './button';
+export { default as Avatar } from './avatar';
 export { default as Layout } from './layout';
 export { default as Badge } from './badge';
 export { default as Link } from './link';

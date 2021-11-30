@@ -35,10 +35,10 @@ program
 
 program
   .command('build:style')
-  .description('build style files')  
+  .description('build style files')
   .action(async () => {
-    await buildStyle()
-  })
+    await buildStyle();
+  });
 
 program.parse(process.argv);
 const options = program.opts();
