@@ -1,14 +1,15 @@
 {
   "name": "@csdn-design/vue-ui",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "",
   "main": "es/index.js",
   "module": "es/index.js",
   "scripts": {
     "start": "vue-scripts dev:component",
     "build:component": "vue-scripts build:component",
+    "build:release": "vue-scripts build:component -r",
     "build:style": "vue-scripts build:style",
-    "build": "vue-scripts build:component -r"
+    "build": "yarn build:release && yarn build:style"
   },
   "files": [
     "lib",
@@ -23,7 +24,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@csdn-design/vue-scripts": "^1.0.0",
+    "@csdn-design/vue-scripts": "^0.1.1",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",

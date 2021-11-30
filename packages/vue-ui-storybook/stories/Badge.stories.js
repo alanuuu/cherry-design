@@ -28,7 +28,8 @@ export default {
         type: { summary: 'number' },
         defaultValue: { summary: '-1' },
       },
-      description: 'The maximum value, if it exceeds the maximum value,{max}+ will be displayed, and the value is required to be of type Number',
+      description:
+        'The maximum value, if it exceeds the maximum value,{max}+ will be displayed, and the value is required to be of type Number',
     },
     hidden: {
       control: { type: 'boolean' },
