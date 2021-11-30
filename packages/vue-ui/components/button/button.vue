@@ -1,6 +1,7 @@
 <template>
   <button :class="cls" @click="onClick">
-    <slot></slot>
+    <img v-if="loading" width="12"  src="../../icon/sync.svg" />
+    <span><slot></slot></span>
   </button>
 </template>
 
@@ -22,6 +23,14 @@ export const btnStatus = [
   'warning',
   'danger',
 ];
+/**
+ * 按钮大小
+ */
+export const btnSize = [
+  'large',
+  'medium',
+  'small',
+];
 
 export default {
   name: 'Button',
@@ -40,16 +49,24 @@ export default {
         return btnStatus.includes(val);
       },
     },
+    size: {
+      type: String,
+      default: 'medium',
+      validator: (val) => {
+        return btnSize.includes(val);
+      },
+    },
     loading: Boolean,
   },
   computed: {
     cls() {
-      const name = prefix + '-btn';
+      const name = `${prefix}-btn`;
       return {
         [name]: true,
-        [name + '-' + this.type]: true,
-        [name + '-' + this.status]: true,
-        [name + '-loading']: this.loading,
+        [`${name}-${this.size}`]: true,
+        [`${name}-${this.type}`]: true,
+        [`${name}-${this.status}`]: true,
+        [`${name}-loading`]: this.loading,
       };
     },
   },
