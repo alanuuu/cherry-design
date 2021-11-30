@@ -1,10 +1,10 @@
 <template>
-  <span :class="`${baseClass}-item`">
+  <span :class="`c-breadcrumb-item`">
     <Link v-if="isLink" :href="href" :to="to" :replace="replace" :underline="false">
       <slot></slot>
     </Link>
 
-    <span v-else :class="`${baseClass}-item--inner`">
+    <span v-else :class="`c-breadcrumb-item--inner`">
       <slot></slot>
     </span>
 
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { prefix } from '../../constants';
 import Link from '../link/link.vue';
 
 export default {
@@ -45,14 +44,11 @@ export default {
   },
   inject: ['breadcrumb'],
   computed: {
-    baseClass() {
-      return prefix + '-breadcrumb';
-    },
     isLink() {
       return !!this.to || !!this.href;
     },
     separatorClass() {
-      return [`${this.baseClass}-separator`, ...this.className.split(' ')];
+      return ['c-breadcrumb-separator', ...this.className.split(' ')];
     },
   },
 };

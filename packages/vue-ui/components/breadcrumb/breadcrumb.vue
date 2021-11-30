@@ -1,11 +1,10 @@
 <template>
-  <div :class="cls">
+  <div class="c-breadcrumb">
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { prefix } from '../../constants';
 
 export default {
   name: 'Breadcrumb',
@@ -24,14 +23,6 @@ export default {
     routes: {
       type: Array,
       default: () => [],
-    },
-  },
-  computed: {
-    cls() {
-      const name = prefix + '-breadcrumb';
-      return {
-        [name]: true,
-      };
     },
   },
   provide() {

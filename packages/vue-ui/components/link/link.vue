@@ -5,15 +5,13 @@
     :href="disabled ? null : href"
     @click="handleClick"
   >
-    <span v-if="$slots.default" :class="innerCls">
+    <span v-if="$slots.default" class="c-link--inner">
       <slot></slot>
     </span>
   </a>
 </template>
 
 <script>
-import { prefix } from '../../constants';
-
 export default {
   name: 'Link',
   props: {
@@ -50,16 +48,12 @@ export default {
   },
   computed: {
     cls() {
-      const name = prefix + '-link';
       return {
-        [name]: true,
-        [`${name}-${this.status}`]: true,
+        'c-link': true,
+        [`c-link-${this.status}`]: true,
         disabled: this.disabled,
         underline: this.underline && !this.disabled,
       };
-    },
-    innerCls() {
-      return prefix + '-link--inner';
     },
   },
   methods: {
