@@ -1,5 +1,3 @@
-@prefix: 'c-btn';
-
 .c-btn {
   display: inline-block;
   box-sizing: border-box;
@@ -13,10 +11,72 @@
   user-select: none;
   line-height: @line-height-base;
   transition: all @transiton-duration linear;
+  border-radius: 100px;
+  cursor: pointer;
+  color: black;
 
   &:active {
     transition: none;
   }
 
+  @type: {
+    primary: @primary-color;
+    light: @btn-light-color;
+    ghost: white;
+  }
+  each(@type, {
+    &-@{key} {
+      background: @value;
+      &:hover {
+        background: mix(@value, @white, 80%)
+      }
+    }
+  });
 
+  @status: {
+    normal: @primary-color;
+    warning: #d4b77b;
+    danger: #E33E33;
+  }
+  each(@status, {
+    &-ghost&-@{key} {
+      border: 1px solid @value;
+      color: @value;
+      &:hover {
+        background: @value;
+        color: @white;
+      }
+    }
+  })
+
+  &-large {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  &-medium {
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+  &-small {
+    padding: 7px 13px;
+    font-size: 12px;
+  }
+
+  &-loading {
+    pointer-events: none;
+
+  }
+
+  >img {
+    animation: rotating 1s infinite linear;
+    margin-right: 4px;
+  }
+  @keyframes rotating {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+  }
 }
