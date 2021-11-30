@@ -9,7 +9,7 @@
     "build": "yarn workspace @csdn-design/vue-ui run build",
     "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
     "site": "yarn workspace @csdn-design/vue-ui-storybook run build-storybook",
-    "publish": "yarn build && lerna publish"
+    "release": "yarn build && lerna publish"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
