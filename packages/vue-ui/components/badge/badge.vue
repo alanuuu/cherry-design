@@ -1,12 +1,13 @@
 <template>
   <div class="c-badge">
     <slot></slot>
-    <div v-if="isShow" :class="cls">{{badgeValue}}</div>
+    <div v-if="isShowTip" :class="cls">{{badgeValue}}</div>
+    <div v-if="isShowDot" :class="dotCls"></div>
   </div>
 </template>
 
 <script>
-
+const preName = 'c-badge';
 export default {
   name: 'Badge',
   props: {
@@ -15,6 +16,10 @@ export default {
       default: -1,
     },
     hidden: {
+      type: Boolean,
+      default: false,
+    },
+    dot: {
       type: Boolean,
       default: false,
     },
@@ -31,14 +36,22 @@ export default {
     },
   },
   computed: {
-    isShow() {
+    isShowTip() {
       return this.value && !this.hidden;
     },
+    isShowDot() {
+      return this.dot && !this.value && !this.hidden;
+    },
     cls() {
-      const name = 'c-badge';
       return {
-        [name + '-tip']: true,
-        [name + '-' + this.type]: true,
+        [preName + '-tip']: true,
+        [preName + '-' + this.type]: true,
+      };
+    },
+    dotCls() {
+      return {
+        [preName + '-dot']: true,
+        [preName + '-' + this.type]: true,
       };
     },
     badgeValue() {

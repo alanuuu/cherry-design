@@ -38,6 +38,14 @@ export default {
       },
       description: 'Hide badge',
     },
+    dot: {
+      control: { type: 'boolean' },
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      description: 'Dot badge',
+    },
   },
 };
 
