@@ -7,8 +7,9 @@
   "scripts": {
     "start": "vue-scripts dev:component",
     "build:component": "vue-scripts build:component",
+    "build:release": "vue-scripts build:component -r",
     "build:style": "vue-scripts build:style",
-    "build": "vue-scripts build:component -r"
+    "build": "yarn build:release && yarn build:style"
   },
   "files": [
     "lib",

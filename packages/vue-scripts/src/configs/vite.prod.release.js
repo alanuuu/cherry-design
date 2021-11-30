@@ -2,17 +2,17 @@ const { defineConfig } = require('vite');
 const { createVuePlugin } = require('vite-plugin-vue2');
 const { terser } = require('rollup-plugin-terser')
 
-const name = "CSDNUI"
+const name = "csdn-ui"
 
 module.exports = defineConfig({
   mode: 'pruduction',
   build: {
     target: 'modules',
     outDir: 'dist',
-    emptyOutDir: false,
+    emptyOutDir: true,
     sourcemap: true,
     minify: false,
-    brotliSize: false,
+    brotliSize: true,
     rollupOptions: {
       output: [
         {
@@ -20,7 +20,7 @@ module.exports = defineConfig({
           entryFileNames: `csdn-ui.js`,
           globals: {
             vue: 'Vue'
-          }
+          },
         },
         {
           format: 'umd',
