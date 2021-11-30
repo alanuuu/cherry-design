@@ -7,6 +7,7 @@ const pkg = require('../package.json');
 const devComponent = require('./scripts/dev-component');
 const buildComponent = require('./scripts/build-component');
 const buildStyle = require('./scripts/build-style');
+const buildIcon = require('./scripts/build-icon');
 
 const program = new Command();
 const version = pkg.version || '1.0.0';
@@ -38,6 +39,13 @@ program
   .description('build style files')
   .action(async () => {
     await buildStyle();
+  });
+  
+program
+  .command('build:icon')
+  .description('build icon files')
+  .action(async () => {
+    await buildIcon();
   });
 
 program.parse(process.argv);
