@@ -7,16 +7,17 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     size: {
-      control: {type: 'number'},
-      description: "头像大小",
-      defaultValue: 'large'
+      control: { type: 'select' },
+      options: ['large', 'medium', 'small'],
+      description: '头像大小',
+      defaultValue: 'large',
     },
     shape: {
       control: { type: 'select' },
       options: ['circle', 'square'],
       description: '头像形状',
-      defaultValue: 'circle'
-    }
+      defaultValue: 'circle',
+    },
   },
 };
 
@@ -30,9 +31,9 @@ const Template = (args, { argTypes }) => ({
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = Template.bind({});
 Primary.args = {
-    src: 'https://i.loli.net/2017/08/21/599a521472424.jpg',
-    size: 50,
-    error (e) {
-        console.log(e)
-    }
+  src: 'https://i.loli.net/2017/08/21/599a521472424.jpg',
+  size: 'large',
+  error(e) {
+    console.log(e);
+  },
 };
