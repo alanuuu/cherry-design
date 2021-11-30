@@ -1,8 +1,5 @@
-const {defineConfig} = require('vite')
-// const vue = require('@vitejs/plugin-vue')
+const { defineConfig } = require('vite');
 const { createVuePlugin } = require('vite-plugin-vue2');
-
-
 
 module.exports = defineConfig({
   mode: 'pruduction',

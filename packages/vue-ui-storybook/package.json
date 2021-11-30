@@ -1,6 +1,6 @@
 {
   "name": "@csdn-design/vue-ui-storybook",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "webpack": "^5.64.2"
   },
   "dependencies": {
-    "@csdn-design/vue-ui": "^1.0.0",
+    "@csdn-design/vue-ui": "^0.1.2",
     "@vue/compiler-sfc": "^3.2.6",
     "css-loader": "^6.2.0",
     "less": "^4.1.2",

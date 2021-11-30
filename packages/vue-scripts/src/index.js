@@ -6,14 +6,17 @@ const pkg = require('../package.json');
 
 const devComponent = require('./scripts/dev-component');
 const buildComponent = require('./scripts/build-component');
+const buildStyle = require('./scripts/build-style');
 
 const program = new Command();
 const version = pkg.version || '1.0.0';
 
-program
-  .option('-d, --debug', 'output extra debugging')
+program.option('-d, --debug', 'output extra debugging');
 
-program.version(version).name('@csdn-design/vue-scripts').usage('command [options]');
+program
+  .version(version)
+  .name('@csdn-design/vue-scripts')
+  .usage('command [options]');
 
 program
   .command('dev:component')
@@ -25,11 +28,18 @@ program
 program
   .command('build:component')
   .description('build production files.')
-  .option('-u, --umd', 'build with UMD file')
-  .action(async ({ umd }) => {
-    await buildComponent({ umd });
-  }); 
-  
+  .option('-r, --release', 'build with release file')
+  .action(async ({ release }) => {
+    await buildComponent({ release });
+  });
+
+program
+  .command('build:style')
+  .description('build style files')
+  .action(async () => {
+    await buildStyle();
+  });
+
 program.parse(process.argv);
 const options = program.opts();
-if (options.debug) console.log(options);  
+if (options.debug) console.log(options);
