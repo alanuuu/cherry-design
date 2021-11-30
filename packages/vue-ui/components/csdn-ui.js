@@ -1,12 +1,14 @@
 import Button from './button';
 import Avatar from './avatar';
 import Layout from './layout';
+import Badge from './badge';
 
 const components = {
   Button,
+  Layout,
+  Badge,
   Avatar,
-  Layout
-}
+};
 
 const install = (app, options) => {
   // eslint-disable-next-line no-restricted-syntax
