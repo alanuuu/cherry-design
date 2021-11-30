@@ -1,50 +1,51 @@
 <template>
   <div class="c-badge">
     <slot></slot>
-    <div v-if="isShow" :class="cls">{{value | badgeValue(max)}}</div>
+    <div v-if="isShow" :class="cls">{{badgeValue}}</div>
   </div>
 </template>
 
 <script>
-import { prefix } from '../../constants';
 
 export default {
   name: 'Badge',
   props: {
     max: {
       type: Number,
-      default: -1
+      default: -1,
     },
     hidden: {
-      type: Boolean | String,
-      default: false
+      type: Boolean,
+      default: false,
     },
     type: {
       type: String,
-      default: 'primary'
+      default: 'primary',
+      validator(value) {
+        return ['primary', 'light'].indexOf(value) !== -1;
+      },
     },
     value: {
-      type: String | Number
-    }
+      type: [String, Number],
+      default: null,
+    },
   },
   computed: {
     isShow() {
       return this.value && !this.hidden;
     },
     cls() {
-      const name = prefix + '-badge';
+      const name = 'c-badge';
       return {
         [name + '-tip']: true,
-        [name + '-' + this.type]: true
+        [name + '-' + this.type]: true,
       };
-    }
+    },
+    badgeValue() {
+      if (!this.value || this.max < 0) return this.value;
+      if (+this.value > this.max) return this.max + '+';
+      return this.value;
+    },
   },
-  filters: {
-    badgeValue(value, max) {
-      if(!value || max < 0) return value; 
-      if(+value > max) return max + '+';
-      return value
-    }
-  }
 };
 </script>

@@ -1,6 +1,4 @@
-@prefix: c-badge;
-
-.@{prefix} {
+.c-badge {
   position: relative;
   display: inline-block;
   &-tip {
@@ -11,7 +9,7 @@
     font-size: @font-sm-size;
     border-radius: 999px;
     color: #fff;
-    transform: translateY(-50%) translateX(100%);
+    transform: translateX(100%) translateY(-50%);
   }
   &-primary {
     background: @tip-primary-color;

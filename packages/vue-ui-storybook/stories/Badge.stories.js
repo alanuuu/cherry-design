@@ -7,7 +7,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     type: {
-      control: {type: 'select'},
+      control: { type: 'select' },
       options: ['primary', 'light'],
       description: 'badge type',
       table: {
@@ -15,29 +15,29 @@ export default {
         defaultValue: { summary: 'primary' },
       },
     },
-    value: { 
-      control: {type: 'text'},
+    value: {
+      control: { type: 'text' },
       description: 'Display value',
       table: {
-        type: { summary: 'string' }
+        type: { summary: 'string' },
       },
     },
-    max: { 
-      control: {type: 'number'},
+    max: {
+      control: { type: 'number' },
       table: {
         type: { summary: 'number' },
         defaultValue: { summary: '-1' },
       },
       description: 'The maximum value, if it exceeds the maximum value,{max}+ will be displayed, and the value is required to be of type Number',
     },
-    hidden: { 
-      control: {type: 'boolean'},
+    hidden: {
+      control: { type: 'boolean' },
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
       description: 'Hide badge',
-    }
+    },
   },
 };
 
@@ -50,4 +50,3 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-
