@@ -21,7 +21,7 @@ yarn storybook
 - [ ] Button 按钮
 - [ ] Icon 图标
 - [ ] Layout 布局
-- [ ] Link 链接
+- [x] Link 链接(已完成，主题色待配置)
 - [ ] Tag 标签
 - [ ] Grid 栅格
 - [ ] Loading 加载中
@@ -29,11 +29,11 @@ yarn storybook
 - [ ] Carousel 走马灯
 - [ ] Affix 固钉
 - [ ] Breadcrumb 面包屑
-- [x] Badge 徽章数
+- [ ] Badge 徽章数
 - [ ] List 列表
 - [ ] BackTop 回到顶部 
 - [ ] Image 图片
-- [x] Avater 头像
+- [ ] Avater 头像
 
 - [ ] Riado 单选框
 - [ ] Checkbox 复选框

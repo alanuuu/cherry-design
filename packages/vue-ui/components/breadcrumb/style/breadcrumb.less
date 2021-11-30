@@ -1,0 +1,22 @@
+.c-breadcrumb {
+  font-size: @font-size;
+
+  &-item {
+    font-weight: 700;
+    &--inner {
+      font-weight: 400;
+      color: @text-info-color;
+      cursor: text;
+    }
+  }
+  
+  &-separator {
+    margin: 0 9px;
+    font-weight: 700;
+    color: #c0c4cc;
+  }
+
+  &-item:last-child &-separator {
+    display: none;
+  }
+}
