@@ -10,11 +10,7 @@ import { prefix } from '../../constants';
 /**
  * 按钮类型
  */
-export const btnTypes = [
-  'primary',
-  'ghost',
-  'light',
-];
+export const btnTypes = ['primary', 'ghost', 'light'];
 /**
  * 按钮状态
  */

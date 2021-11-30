@@ -20,5 +20,6 @@ module.exports = {
     'eol-last': 0,
     'prefer-template': 0,
     'no-unused-vars': 0,
+    'no-restricted-exports': 0,
   },
 };
