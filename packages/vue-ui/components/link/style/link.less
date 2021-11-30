@@ -1,9 +1,9 @@
-@statusMap: {
-  default: @text-primary-color;
-  primary: @primary-color;
-}
-
 .c-link {
+  @statusMap: {
+    default: @text-primary-color;
+    primary: @primary-color;
+  }
+
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -29,16 +29,12 @@
     &-@{key} {
       color: @value;
       &:hover {
-        color: mix(@value, @white, 80%)
+        color: mix(@value, @white, 80%);
       }
 
       &.disabled {
-        color: mix(@value, @white, 50%)
+        color: mix(@value, @white, 50%);
       }
     }
   })
-
-  
-
-  
 }

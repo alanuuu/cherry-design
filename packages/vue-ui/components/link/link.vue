@@ -14,15 +14,6 @@
 <script>
 import { prefix } from '../../constants';
 
-/**
- * 状态
- */
-export const btnStatus = [
-  'normal',
-  'warning',
-  'danger',
-];
-
 export default {
   name: 'Link',
   props: {
