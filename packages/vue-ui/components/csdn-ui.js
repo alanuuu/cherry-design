@@ -1,10 +1,12 @@
 import Button from './button';
+import Avatar from './avatar';
 import Layout from './layout';
 
 const components = {
   Button,
-  Layout,
-};
+  Avatar,
+  Layout
+}
 
 const install = (app, options) => {
   // eslint-disable-next-line no-restricted-syntax
