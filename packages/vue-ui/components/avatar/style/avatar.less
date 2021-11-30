@@ -1,0 +1,36 @@
+
+.c-avatar {
+    @sizeMap: {
+        large: 60px;
+        medium: 40px;
+        small: 20px;
+    }
+    border-radius: 50%;
+    background: #ccc;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    &-image{
+        background: transparent;
+    }
+    &-circle {
+        border-radius: 50%;
+    }
+    &-square {
+        border-radius: 4px;
+    }
+    each(@sizeMap, {
+        &-@{key} {
+            width: @value;
+            height: @value;
+            line-height: @value;
+        }
+    })
+    & > img {
+        width: 100%;
+        height: 100%;
+    }
+}
