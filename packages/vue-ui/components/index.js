@@ -8,3 +8,4 @@ export { default as Link } from './link';
 export { default as Breadcrumb } from './breadcrumb';
 export { default as BreadcrumbItem } from './breadcrumb-item';
 export { default as Tag } from './tag';
+export { default as Image } from './image';
