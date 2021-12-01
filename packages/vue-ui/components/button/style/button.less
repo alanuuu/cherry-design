@@ -5,7 +5,6 @@
   padding: 0;
   margin: 0;
   outline-style: none;
-  border: none;
   text-align: center;
   white-space: nowrap;
   -webkit-appearance: none;
@@ -19,9 +18,7 @@
   &:active {
     transition: none;
   }
-  &.c-btn-ghost {
-    background-color: #fff;
-  }
+
 
   @type: {
     primary: @btn-primary-color;
@@ -32,11 +29,23 @@
   each(@type, {
     &-@{key} {
       background: @value;
+      border: 1px solid @value;
       &:hover {
-        background: mix(@value, @white, 80%)
+        background: mix(@value, @white, 80%);
       }
     }
+    &-ghost.c-btn-@{key} {
+      border: 1px solid @value;
+      color: @value;
+      &:hover {
+        background: @white;
+      }
+    }
+
   });
+  &-ghost {
+    background-color: #fff;
+  }
 
   &-light {
     color: @text-primary-color;
@@ -60,5 +69,15 @@
 
   &-loading {
     pointer-events: none;
+  }
+
+  &&-disabled {
+    background-color: @disabled-color;
+    border-color: @disabled-color;
+    color: @white;
+    cursor: not-allowed;
+    &:hover {
+      background-color: @disabled-color; 
+    }
   }
 }
