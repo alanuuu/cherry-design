@@ -13,16 +13,18 @@
   transition: all @transiton-duration linear;
   border-radius: 100px;
   cursor: pointer;
-  color: black;
+  color: @white;
 
   &:active {
     transition: none;
   }
+  &.c-btn-ghost {
+    background-color: #fff;
+  }
 
   @type: {
-    primary: @primary-color;
+    primary: @btn-primary-color;
     light: @btn-light-color;
-    ghost: white;
   }
   each(@type, {
     &-@{key} {
