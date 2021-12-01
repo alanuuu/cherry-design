@@ -31,7 +31,7 @@ function hasSplitToUpperCase(name) {
   if (names.length > 1) {
     return names.map((v) => v.replace(/^\S/, (s) => s.toUpperCase())).join('');
   }
-  return name;
+  return name.replace(/^\S/, (s) => s.toUpperCase());
 }
 
 function createIndexTemp(data) {
@@ -42,9 +42,9 @@ function createIndexTemp(data) {
   for (const item of data) {
     const componentName ="Icon" +  hasSplitToUpperCase(item.name);
     components.push(componentName);
-    imports.push(`import ${componentName} from './${item.name}';`);
+    imports.push(`import ${componentName} from './${item.name}.vue';`);
     exports.push(
-      `export { default as ${componentName} } from './${item.name}'; `
+      `export { default as ${componentName} } from './${item.name}.vue'; `
     );
   }
 
