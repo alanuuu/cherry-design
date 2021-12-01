@@ -1,55 +1,53 @@
 <template>
   <button :class="cls" @click="onClick">
-    <slot></slot>
+    <span><slot></slot></span>
   </button>
 </template>
 
 <script>
-import { prefix } from '../../constants';
 /**
  * 按钮类型
  */
-export const btnTypes = ['primary', 'ghost', 'light'];
+export const btnTypes = ['primary', 'warning', 'light', 'black'];
 /**
- * 按钮状态
+ * 按钮大小
  */
-export const btnStatus = ['normal', 'warning', 'danger'];
+export const btnSize = ['large', 'medium', 'small'];
 
 export default {
   name: 'Button',
   props: {
+    // 按钮类型
     type: {
-      type: String,
+      type: btnTypes,
       default: 'primary',
-      validator: (val) => {
-        return btnTypes.includes(val);
-      },
     },
-    status: {
-      type: String,
-      default: 'normal',
-      validator: (val) => {
-        return btnStatus.includes(val);
-      },
+    // 按钮大小
+    size: {
+      type: btnSize,
+      default: 'medium',
     },
+    disabled: Boolean,
+    ghost: Boolean,
     loading: Boolean,
   },
   computed: {
     cls() {
-      const name = prefix + '-btn';
+      const name = 'c-btn';
       return {
         [name]: true,
-        [name + '-' + this.type]: true,
-        [name + '-' + this.status]: true,
-        [name + '-loading']: this.loading,
+        [`${name}-${this.size}`]: true,
+        [`${name}-${this.type}`]: true,
+        [`${name}-disabled`]: this.disabled,
+        [`${name}-loading`]: this.loading,
+        [`${name}-ghost`]: this.ghost,
       };
     },
   },
   methods: {
-    onClick() {
-      if (this.loading) return;
-
-      this.$emit('click');
+    onClick(event) {
+      if (this.loading || this.disabled) return;
+      this.$emit('click', event);
     },
   },
 };
