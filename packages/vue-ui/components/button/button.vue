@@ -1,12 +1,12 @@
 <template>
   <button :class="cls" @click="onClick">
-    <loading />
+    <icon-sync />
     <span><slot></slot></span>
   </button>
 </template>
 
 <script>
-import Loading from '../../icon/sync.svg';
+import IconSync from '../icon/sync.vue';
 /**
  * 按钮类型
  */
@@ -19,7 +19,7 @@ export const btnSize = ['large', 'medium', 'small'];
 export default {
   name: 'Button',
   components: {
-    Loading,
+    IconSync,
   },
   props: {
     // 按钮类型
