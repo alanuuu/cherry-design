@@ -1,5 +1,6 @@
 .c-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -24,7 +25,9 @@
 
   @type: {
     primary: @btn-primary-color;
+    danger: @btn-danger-color;
     light: @btn-light-color;
+    black: @btn-black-color;
   }
   each(@type, {
     &-@{key} {
@@ -35,21 +38,12 @@
     }
   });
 
-  @status: {
-    normal: @primary-color;
-    warning: #d4b77b;
-    danger: #E33E33;
+  &-light {
+    color: @text-primary-color;
   }
-  each(@status, {
-    &-ghost&-@{key} {
-      border: 1px solid @value;
-      color: @value;
-      &:hover {
-        background: @value;
-        color: @white;
-      }
-    }
-  })
+  &-icon {
+    margin-right: 4px;
+  }
 
   &-large {
     padding: 12px 20px;
@@ -66,19 +60,5 @@
 
   &-loading {
     pointer-events: none;
-
-  }
-
-  >img {
-    animation: rotating 1s infinite linear;
-    margin-right: 4px;
-  }
-  @keyframes rotating {
-    0% {
-      transform: rotate(0deg)
-    }
-    100% {
-      transform: rotate(1turn);
-    }
   }
 }
