@@ -71,4 +71,9 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {};
+Primary.args = {
+  label: 'Button',
+  onClick() {
+    console.log('click button');
+  },
+};
