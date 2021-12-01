@@ -1,31 +1,34 @@
 <template>
   <button :class="cls" @click="onClick">
+    <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" />
     <span><slot></slot></span>
   </button>
 </template>
 
 <script>
-/**
- * 按钮类型
- */
-export const btnTypes = ['primary', 'warning', 'light', 'black'];
-/**
- * 按钮大小
- */
-export const btnSize = ['large', 'medium', 'small'];
+import { IconSync } from '../icon';
 
 export default {
   name: 'Button',
+  components: {
+    IconSync,
+  },
   props: {
     // 按钮类型
     type: {
-      type: btnTypes,
+      type: String,
       default: 'primary',
+      validator: (val) => {
+        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
+      },
     },
     // 按钮大小
     size: {
-      type: btnSize,
+      type: String,
       default: 'medium',
+      validator: (val) => {
+        return ['large', 'medium', 'small'].indexOf(val) !== -1;
+      },
     },
     disabled: Boolean,
     ghost: Boolean,
