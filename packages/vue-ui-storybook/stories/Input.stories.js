@@ -1,51 +1,51 @@
-import { Badge } from '@csdn-design/vue-ui';
+import { Input as CInput } from '@csdn-design/vue-ui';
+import Demo from './input/index.vue';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: '组件/Badge 标记',
-  component: Badge,
+  title: '组件/Input 输入框',
+  component: CInput,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
-    type: {
-      control: { type: 'select' },
-      options: ['primary', 'light'],
-      description: 'badge type',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'primary' },
-      },
-    },
-    value: {
+    placeholder: {
       control: { type: 'text' },
-      description: 'Display value',
       table: {
         type: { summary: 'string' },
       },
     },
-    max: {
+    disabled: {
+      control: { type: 'boolean' },
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    maxlength: {
+      control: { type: 'number' },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    width: {
       control: { type: 'number' },
       table: {
         type: { summary: 'number' },
-        defaultValue: { summary: '-1' },
+        defaultValue: { summary: 'false' },
       },
-      description:
-        'The maximum value, if it exceeds the maximum value,{max}+ will be displayed, and the value is required to be of type Number',
     },
-    hidden: {
+    limit: {
       control: { type: 'boolean' },
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      description: 'Hide badge',
     },
-    dot: {
-      control: { type: 'boolean' },
+    type: {
+      control: { type: 'text' },
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      description: 'Dot badge',
     },
   },
 };
@@ -53,8 +53,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Badge },
-  template: '<badge v-bind="$props" ><button>标记</button></badge>',
+  components: { CInput, Demo },
+  template: '<div><demo></demo> <c-input v-bind="$props"></c-input></div>',
 });
 
 export const Primary = Template.bind({});

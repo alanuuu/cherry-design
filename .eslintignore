@@ -1,4 +1,5 @@
-components/icon/*
+packages/vue-ui/components/icon/*
+packages/vue-ui/icons/*
 packages/vue-ui/dist/*
 packages/vue-ui/es/*
 packages/vue-uilib/*

@@ -1,7 +1,6 @@
-@prefix: 'c-btn';
-
 .c-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -13,10 +12,53 @@
   user-select: none;
   line-height: @line-height-base;
   transition: all @transiton-duration linear;
+  border-radius: 100px;
+  cursor: pointer;
+  color: @white;
 
   &:active {
     transition: none;
   }
+  &.c-btn-ghost {
+    background-color: #fff;
+  }
 
-  
+  @type: {
+    primary: @btn-primary-color;
+    danger: @btn-danger-color;
+    light: @btn-light-color;
+    black: @btn-black-color;
+  }
+  each(@type, {
+    &-@{key} {
+      background: @value;
+      &:hover {
+        background: mix(@value, @white, 80%)
+      }
+    }
+  });
+
+  &-light {
+    color: @text-primary-color;
+  }
+  &-icon {
+    margin-right: 4px;
+  }
+
+  &-large {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  &-medium {
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+  &-small {
+    padding: 7px 13px;
+    font-size: 12px;
+  }
+
+  &-loading {
+    pointer-events: none;
+  }
 }

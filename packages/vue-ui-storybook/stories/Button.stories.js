@@ -1,46 +1,79 @@
-import { Button as CButton } from '@csdn-design/vue-ui';
+import { action } from '@storybook/addon-actions';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Button 按钮',
-  component: CButton,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+  args: {
+    size: 'medium',
+    type: 'primary',
+    loading: false,
+    disabled: false,
+    ghost: false,
+  },
   argTypes: {
-    backgroundColor: { control: 'color' },
     size: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
+      description: '按钮大小',
+      table: {
+        defaultValue: {
+          summary: 'medium',
+        },
+      },
+    },
+    type: {
+      control: { type: 'radio' },
+      options: ['primary', 'black', 'light', 'danger'],
+      description: '按钮类型',
+      table: {
+        defaultValue: {
+          summary: 'primary',
+        },
+      },
+    },
+    loading: {
+      control: { type: 'boolean' },
+      description: '加载状态',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: '禁用状态',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    ghost: {
+      control: { type: 'boolean' },
+      description: '幽灵状态',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
     },
   },
 };
-
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CButton },
-  template: '<c-button v-bind="$props" >按钮</c-button>',
+  template: '<c-button v-bind="$props" @click="onClick">Button</c-button>',
+  methods: {
+    onClick: action('click'),
+  },
 });
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-  primary: true,
   label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+  onClick() {
+    console.log('click button');
+  },
 };
