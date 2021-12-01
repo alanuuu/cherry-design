@@ -25,7 +25,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Avatar },
-  template: '<avatar v-bind="$props" @error="error"></avatar>',
+  template: '<avatar v-bind="$props"></avatar>',
 });
 
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
@@ -33,7 +33,4 @@ export const Primary = Template.bind({});
 Primary.args = {
   src: 'https://i.loli.net/2017/08/21/599a521472424.jpg',
   size: 'large',
-  error(e) {
-    console.log(e);
-  },
 };

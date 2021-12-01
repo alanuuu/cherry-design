@@ -1,24 +1,11 @@
 <template>
   <span :class="cls">
-    <img v-if="src" :src="src" @error="handleError" />
+    <img class="c-avatar-img" v-if="src" :src="src" @error="handleError" />
     <span v-else><slot></slot></span>
   </span>
 </template>
 
 <script>
-import { prefix } from '../../constants';
-/**
- * 头像大小
- */
-export const avatarSize = [
-  'large',
-  'medium',
-  'small'
-];
-export const avatarTypes = [
-  'circle',
-  'square'
-];
 export default {
   name: 'Avatar',
   props: {
@@ -26,21 +13,21 @@ export default {
       type: String,
       default: 'medium',
       validator(val) {
-        return avatarSize.includes(val);
+        return ['large', 'medium', 'small'].includes(val);
       },
     },
     shape: {
       type: String,
       default: 'circle',
       validator(val) {
-        return avatarTypes.includes(val);
+        return ['circle', 'square'].includes(val);
       },
     },
     src: String,
   },
   computed: {
     cls() {
-      const name = prefix + '-avatar';
+      const name = 'c-avatar';
       return {
         [name]: true,
         [name + '-image']: !!this.src,
