@@ -37,10 +37,10 @@ export default {
   },
   computed: {
     isShowTip() {
-      return this.value && !this.hidden;
+      return this.value && !this.hidden && !this.dot;
     },
     isShowDot() {
-      return this.dot && !this.value && !this.hidden;
+      return this.dot && !this.hidden;
     },
     cls() {
       return {
