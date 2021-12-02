@@ -23,7 +23,7 @@ export default {
     },
     type: {
       control: { type: 'radio' },
-      options: ['primary', 'warning', 'light', 'black'],
+      options: ['primary', 'black', 'light', 'danger'],
       description: '按钮类型',
       table: {
         defaultValue: {
@@ -63,7 +63,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-button v-bind="$props" @click="onClick">按钮</c-button>',
+  template: '<c-button v-bind="$props" @click="onClick">Button</c-button>',
   methods: {
     onClick: action('click'),
   },
@@ -71,4 +71,9 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {};
+Primary.args = {
+  label: 'Button',
+  onClick() {
+    console.log('click button');
+  },
+};

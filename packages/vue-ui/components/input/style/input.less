@@ -1,0 +1,38 @@
+.c-input {
+  position: relative;
+  width: auto;
+  min-width: 200px;
+  font-size: 14px;
+  &-content {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    height: 40px;
+    padding: 0 15px 0 15px;
+    width: 100%;
+  }
+  &-limit {
+    padding: 0 50px 0 15px;
+  }
+  &-disabled {
+    cursor: not-allowed;
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+  }
+  &-tip {
+    position: absolute;
+    right: 8px;
+    line-height: 40px;
+    color:#d7dadf;
+  }
+}
+input::placeholder{
+  color:#d7dadf;
+}  
+input:focus {
+  outline: none;
+  border: 1px solid #409eff;
+}

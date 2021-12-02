@@ -1,6 +1,6 @@
 <template>
   <button :class="cls" @click="onClick">
-    <icon-sync v-if="loading" />
+    <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" />
     <span><slot></slot></span>
   </button>
 </template>
@@ -19,7 +19,7 @@ export default {
       type: String,
       default: 'primary',
       validator: (val) => {
-        return ['primary', 'warning', 'light', 'black'].indexOf(val) !== -1;
+        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
       },
     },
     // 按钮大小
