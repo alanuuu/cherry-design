@@ -1,13 +1,16 @@
-import { Badge } from '@csdn-design/vue-ui';
-
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Badge 标记',
-  component: Badge,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+  args: {
+    type: 'primary',
+    value: '10',
+    max: 99,
+    hidden: false,
+    dot: false,
+  },
   argTypes: {
     type: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['primary', 'light'],
       description: 'badge type',
       table: {
@@ -53,8 +56,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Badge },
-  template: '<badge v-bind="$props" ><button>标记</button></badge>',
+  template: '<c-badge v-bind="$props" ><c-button type="black" style="border-radius:4px">标记</c-button></c-badge>',
 });
 
 export const Primary = Template.bind({});
