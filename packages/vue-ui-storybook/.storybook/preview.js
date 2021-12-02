@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import CSDNUI from '@csdn-design/vue-ui/es'
 import '../../vue-ui/components/index.less';
-
+console.log(CSDNUI);
 Vue.use(CSDNUI)
 
 export const parameters = {

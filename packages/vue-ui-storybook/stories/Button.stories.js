@@ -1,9 +1,7 @@
 import { action } from '@storybook/addon-actions';
-import { Button as CButton } from '@csdn-design/vue-ui';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Button 按钮',
-  component: CButton,
   args: {
     size: 'medium',
     type: 'primary',
@@ -64,7 +62,6 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CButton },
   template: '<c-button v-bind="$props" @click="onClick">Button</c-button>',
   methods: {
     onClick: action('click'),
@@ -74,8 +71,4 @@ const Template = (args, { argTypes }) => ({
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-  label: 'Button',
-  onClick() {
-    console.log('click button');
-  },
 };
