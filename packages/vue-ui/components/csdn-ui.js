@@ -5,6 +5,7 @@ import Badge from './badge';
 import Image from './image';
 import Breadcrumb from './breadcrumb';
 import Link from './link';
+import Switch from './switch';
 
 const components = {
   Button,
@@ -14,6 +15,7 @@ const components = {
   Image,
   Breadcrumb,
   Link,
+  Switch,
 };
 
 const install = (app, options) => {
