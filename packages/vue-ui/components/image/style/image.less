@@ -13,7 +13,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: @zindex-image-view;
+    z-index: @zindex-mask;
     &-mask {
       position: absolute;
       width: 100%;
@@ -31,7 +31,7 @@
       color: #000;
       position: absolute;
       cursor: pointer;
-      z-index: @zindex-image-view-icon;
+      z-index: @zindex-mask + 1;
     }
     &-size {
       left: 50%;
@@ -42,7 +42,7 @@
       background-color: #606266;
       border-radius: 22px;
       position: absolute;
-      z-index: @zindex-image-view-icon;
+      z-index: @zindex-mask + 1;
       display: flex;
       align-items: center;
       justify-content: center;
