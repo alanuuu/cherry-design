@@ -4,6 +4,7 @@ import Layout from './layout';
 import Badge from './badge';
 import Image from './image';
 import Breadcrumb from './breadcrumb';
+import Link from './link';
 
 const components = {
   Button,
@@ -12,6 +13,7 @@ const components = {
   Avatar,
   Image,
   Breadcrumb,
+  Link,
 };
 
 const install = (app, options) => {
