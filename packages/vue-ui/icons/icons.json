@@ -20,6 +20,10 @@
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/at.vue"
   },
   {
+    "name": "blow-up",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/blow-up.vue"
+  },
+  {
     "name": "code-block",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code-block.vue"
   },
@@ -30,6 +34,10 @@
   {
     "name": "code",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code.vue"
+  },
+  {
+    "name": "delete",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/delete.vue"
   },
   {
     "name": "download",
@@ -106,6 +114,10 @@
   {
     "name": "more",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/more.vue"
+  },
+  {
+    "name": "narrow",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/narrow.vue"
   },
   {
     "name": "poweroff",

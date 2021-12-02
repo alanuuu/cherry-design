@@ -2,12 +2,14 @@ import Button from './button';
 import Avatar from './avatar';
 import Layout from './layout';
 import Badge from './badge';
+import Image from './image';
 
 const components = {
   Button,
   Layout,
   Badge,
   Avatar,
+  Image,
 };
 
 const install = (app, options) => {
