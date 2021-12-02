@@ -6,6 +6,7 @@ import Image from './image';
 import Breadcrumb from './breadcrumb';
 import Link from './link';
 import Switch from './switch';
+import Loading from './loading';
 
 const components = {
   Button,
@@ -16,6 +17,7 @@ const components = {
   Breadcrumb,
   Link,
   Switch,
+  Loading,
 };
 
 const install = (app, options) => {

@@ -12,3 +12,4 @@ export { default as Input } from './input';
 export { default as Tag } from './tag';
 export { default as Image } from './image';
 export { default as Switch } from './switch';
+export { default as Loading } from './loading';
