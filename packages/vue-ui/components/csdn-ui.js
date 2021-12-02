@@ -7,6 +7,7 @@ import Breadcrumb from './breadcrumb';
 import Link from './link';
 import Switch from './switch';
 import Loading from './loading';
+import Dialog from './dialog';
 
 const components = {
   Button,
@@ -18,6 +19,7 @@ const components = {
   Link,
   Switch,
   Loading,
+  Dialog,
 };
 
 const install = (app, options) => {

@@ -1,16 +1,16 @@
 <template>
   <transition name="dialog-fade">
     <div class="c-dialog" v-show="visible">
-      <div class="c-dialog-body" :style="{width: width+'px'}">
+      <div class="c-dialog-body" :style="{width: width,marginTop: top}">
         <div :class="['c-dialog-header',{'c-dialog-center': center}]">
           <slot name="title">
             <div class="c-dialog-title">
               <span>{{title}}</span>
             </div>
           </slot>
-          <!-- <span class="c-dialog-close-botton" @click="close" v-show="showClose">
-            <img class="c-dialog-close" src="../common/images/close.png">
-          </span> -->
+          <span class="c-dialog-close-botton" @click="close" v-show="showClose">
+            <icon-close></icon-close>
+          </span>
         </div>
         <div class="c-dialog-content">
           <slot></slot>
@@ -28,10 +28,10 @@
 </template>
 <script>
 import CButton from '../button/button.vue';
-import { IconSync } from '../icon';
+import { IconClose } from '../icon';
 
 export default {
-  components: { CButton },
+  components: { CButton, IconClose },
   name: 'Dialog',
   props: {
     visible: {
@@ -43,8 +43,8 @@ export default {
       default: '标题名称',
     },
     width: {
-      type: Number,
-      default: 400,
+      type: String,
+      default: '50%',
     },
     showClose: {
       type: Boolean,
@@ -58,14 +58,10 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  computed: {
-
-  },
-  data() {
-    return {
-
-    };
+    top: {
+      type: String,
+      default: '15vh',
+    },
   },
   methods: {
     close() {

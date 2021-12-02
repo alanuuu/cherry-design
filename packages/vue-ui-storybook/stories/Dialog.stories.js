@@ -1,15 +1,13 @@
-import { Dialog as CDialog } from '@csdn-design/vue-ui';
-import { action } from '@storybook/addon-actions';
-
 export default {
   title: '组件/Dialog 对话框',
   args: {
     visible: true,
     title: '标题名称',
-    width: '400',
+    width: '30%',
     showClose: true,
     modal: true,
     center: false,
+    top: '30vh',
   },
   argTypes: {
     visible: {
@@ -26,11 +24,20 @@ export default {
       description: '标题',
     },
     width: {
-      control: { type: 'string' },
+      control: { type: 'text' },
       description: '宽度',
       table: {
         defaultValue: {
           summary: '50%',
+        },
+      },
+    },
+    top: {
+      control: { type: 'text' },
+      description: '距离顶部高度',
+      table: {
+        defaultValue: {
+          summary: '15vh',
         },
       },
     },
@@ -66,10 +73,16 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CDialog },
-  template: '<c-dialog v-bind="$props" @close="onClick"></c-dialog>',
+  template: `
+    <div>
+      <c-dialog v-bind="$props" @close="handleChange">CSDN</c-dialog>
+      <c-button @click="handleChange">点击弹窗</c-button>
+    </div>
+  `,
   methods: {
-    onClick: action('close'),
+    handleChange() {
+      this.visible = !this.visible;
+    },
   },
 });
 

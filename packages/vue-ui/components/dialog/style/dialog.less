@@ -1,21 +1,24 @@
 .c-dialog {
   box-sizing: border-box;
   display: flex;
-  align-items: center;
   justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   &-shadow {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    z-index: @zindex-mask;
     background-color: black;
     opacity: 0.3;
   }
   &-body {
-    width: 400px;
+    min-width: 400px;
     background-color: #fff;
-    z-index: 3;
+    z-index: @zindex-toast;
     border-radius: 4px;
+    margin:15vh auto auto;
   }
   &-header {
     padding: 15px 10px;
@@ -42,6 +45,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    color: gray;
   }
   &-close {
     height: 16px;
