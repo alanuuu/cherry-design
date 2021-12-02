@@ -124,9 +124,9 @@ export default {
     IconVoice,
     IconWeiboCircleFill,
   },
-  data() {
-    return {
-      icons: [
+  computed:{
+    icons() {
+      return [
         IconArrowDown,
         IconArrowLeft,
         IconArrowRight,
