@@ -1,12 +1,11 @@
 <template>
   <span :class="cls">
-    <img v-if="src" :src="src" @error="handleError" />
-    <span v-else><slot></slot>CSDN</span>
+    <img class="c-avatar-img" v-if="src" :src="src" @error="handleError" />
+    <span v-else><slot></slot></span>
   </span>
 </template>
 
 <script>
-const name = 'c-avatar';
 export default {
   name: 'Avatar',
   props: {
@@ -28,6 +27,7 @@ export default {
   },
   computed: {
     cls() {
+      const name = 'c-avatar';
       return {
         [name]: true,
         [name + '-image']: !!this.src,

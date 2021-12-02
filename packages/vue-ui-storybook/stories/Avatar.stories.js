@@ -7,7 +7,7 @@ export default {
   args: {
     src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
     size: 'medium',
-    shape: 'circle'
+    shape: 'circle',
   },
   argTypes: {
     src: {
