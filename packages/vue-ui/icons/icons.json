@@ -24,6 +24,22 @@
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/blow-up.vue"
   },
   {
+    "name": "check-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/check-circle.vue"
+  },
+  {
+    "name": "check-square",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/check-square.vue"
+  },
+  {
+    "name": "close-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/close-circle.vue"
+  },
+  {
+    "name": "close",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/close.vue"
+  },
+  {
     "name": "code-block",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code-block.vue"
   },
@@ -88,6 +104,14 @@
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/import.vue"
   },
   {
+    "name": "left-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/left-circle.vue"
+  },
+  {
+    "name": "left",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/left.vue"
+  },
+  {
     "name": "list",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/list.vue"
   },
@@ -120,6 +144,14 @@
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/narrow.vue"
   },
   {
+    "name": "plus-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/plus-circle.vue"
+  },
+  {
+    "name": "plus",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/plus.vue"
+  },
+  {
     "name": "poweroff",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/poweroff.vue"
   },
@@ -128,12 +160,24 @@
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/qq-circle-fill.vue"
   },
   {
+    "name": "question-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/question-circle.vue"
+  },
+  {
     "name": "refresh",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/refresh.vue"
   },
   {
     "name": "reply",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/reply.vue"
+  },
+  {
+    "name": "right-circle",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/right-circle.vue"
+  },
+  {
+    "name": "right",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/right.vue"
   },
   {
     "name": "save",
@@ -198,6 +242,22 @@
   {
     "name": "thumb-up",
     "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/thumb-up.vue"
+  },
+  {
+    "name": "to-bottom",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/to-bottom.vue"
+  },
+  {
+    "name": "to-left",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/to-left.vue"
+  },
+  {
+    "name": "to-right",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/to-right.vue"
+  },
+  {
+    "name": "to-top",
+    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/to-top.vue"
   },
   {
     "name": "translate",

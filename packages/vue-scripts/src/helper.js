@@ -12,7 +12,7 @@ ${c}
 </template>
 <script>
   export default {
-    name: '${name}',
+    name: 'icon-${name}',
     computed: {
       cls() {
         return {
@@ -72,7 +72,7 @@ function createIndexTemp(data) {
   });
 
   fs.outputFile(
-    path.resolve(path.resolve(root, 'icons'), 'icons.json'),
+    path.resolve(path.resolve(iconPath), 'icons.json'),
     JSON.stringify(data, null, 2),
     (err) => {
       if (err) {
@@ -94,7 +94,7 @@ const icons = {
 
 const install = (Vue, options) => {
   for (const key of Object.keys(icons)) {
-    Vue.component(icons[key], options);
+    Vue.component(icons[key].name, icons[key]);
   }
 };
 
