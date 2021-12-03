@@ -6,14 +6,24 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   args: {
     src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
-    fit: 'none',
+    fit: 'contain',
     preview: false,
     alt: '无图片',
+    'preview-src': 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
   },
   argTypes: {
     src: {
       control: { type: 'text' },
       description: '图片地址',
+      table: {
+        defaultValue: {
+          summary: null,
+        },
+      },
+    },
+    'preview-src': {
+      control: { type: 'text' },
+      description: '预览图片地址',
       table: {
         defaultValue: {
           summary: null,
@@ -26,7 +36,7 @@ export default {
       description: '图片适应容器框',
       table: {
         defaultValue: {
-          summary: 'none',
+          summary: 'contain',
         },
       },
     },

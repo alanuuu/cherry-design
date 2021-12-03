@@ -15,6 +15,9 @@
 4. alt：原生的alt
    type: String
 
+5. preview-src：预览图片地址
+   type: String
+   
 ### 二、event
 
 1. error: 图片加载失败
