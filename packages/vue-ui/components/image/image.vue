@@ -10,7 +10,7 @@
       @load="handleLoad"
     />
     <template v-if="preview">
-      <image-view :src="src" v-if="showView" @close="closeView"></image-view>
+      <image-view :src="(previewSrc && previewSrc !== '') ? previewSrc : src" v-show="showView" @close="closeView"></image-view>
     </template>
   </div>
 </template>
@@ -23,12 +23,17 @@ export default {
   props: {
     // 图片地址
     src: String,
+    // 预览图片地址
+    previewSrc: String,
     // 原生object-fit
-    fit: String,
+    fit: {
+      type: String,
+      default: 'contain',
+    },
     // 点击图片预览
     preview: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     alt: String,
   },
