@@ -2,7 +2,7 @@
   <div class="c-image-view">
     <div class="c-image-view-mask" @click="clickView"></div>
     <!-- 关闭按钮 -->
-    <icon-delete class="c-image-view-close" @click.native="close"></icon-delete>
+    <icon-close-circle class="c-image-view-close" @click.native="close"></icon-close-circle>
     <!-- 改变图片大小按钮 -->
     <div class="c-image-view-size">
       <!-- 缩小 -->
@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import { IconDelete, IconBlowUp, IconNarrow } from '../icon';
+import { IconCloseCircle, IconBlowUp, IconNarrow } from '../icon';
 export default {
   name: 'Image',
   components: {
-    IconDelete,
+    IconCloseCircle,
     IconBlowUp,
     IconNarrow,
   },

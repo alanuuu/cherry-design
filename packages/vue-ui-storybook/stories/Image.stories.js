@@ -7,9 +7,9 @@ export default {
   args: {
     src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
     fit: 'contain',
-    preview: false,
+    preview: true,
     alt: '无图片',
-    'preview-src': 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
+    previewSrc: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
   },
   argTypes: {
     src: {
@@ -21,7 +21,7 @@ export default {
         },
       },
     },
-    'preview-src': {
+    previewSrc: {
       control: { type: 'text' },
       description: '预览图片地址',
       table: {
@@ -45,7 +45,7 @@ export default {
       description: '是否开启点击图片放大预览',
       table: {
         defaultValue: {
-          summary: false,
+          summary: true,
         },
       },
     },

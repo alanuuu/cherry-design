@@ -33,7 +33,7 @@ export default {
     // 点击图片预览
     preview: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     alt: String,
   },
