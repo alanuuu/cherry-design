@@ -5,7 +5,7 @@ export default {
   args: {
     value: false,
     disabled: false,
-    width: 70,
+    width: 40,
   },
   argTypes: {
     value: {
