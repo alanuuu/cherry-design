@@ -1,9 +1,23 @@
 import Button from './button';
+import Avatar from './avatar';
 import Layout from './layout';
+import Badge from './badge';
+import Image from './image';
+import Breadcrumb from './breadcrumb';
+import Link from './link';
+import Switch from './switch';
+import Loading from './loading';
 
 const components = {
   Button,
   Layout,
+  Badge,
+  Avatar,
+  Image,
+  Breadcrumb,
+  Link,
+  Switch,
+  Loading,
 };
 
 const install = (app, options) => {

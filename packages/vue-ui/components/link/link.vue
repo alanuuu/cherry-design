@@ -1,6 +1,5 @@
 <template>
   <a
-    v-bind="$attrs"
     :class="cls"
     :href="disabled ? null : href"
     @click="handleClick"

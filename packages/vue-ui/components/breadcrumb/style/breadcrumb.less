@@ -1,8 +1,9 @@
 .c-breadcrumb {
+  display: inline-flex;
+  align-items: center;
   font-size: @font-size;
-
+  color: @text-second-color;
   &-item {
-    font-weight: 700;
     &--inner {
       font-weight: 400;
       color: @text-info-color;
@@ -11,9 +12,8 @@
   }
   
   &-separator {
-    margin: 0 9px;
-    font-weight: 700;
-    color: #c0c4cc;
+    margin: 0 4px;
+    color: @text-info-color;
   }
 
   &-item:last-child &-separator {
