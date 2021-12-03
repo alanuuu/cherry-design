@@ -15,3 +15,4 @@ export { default as Switch } from './switch';
 export { default as Loading } from './loading';
 export { default as Dialog } from './dialog';
 export { default as Card } from './card';
+export { default as Empty } from './empty';

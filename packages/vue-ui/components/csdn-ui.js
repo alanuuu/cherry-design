@@ -9,6 +9,7 @@ import Switch from './switch';
 import Loading from './loading';
 import Dialog from './dialog';
 import Card from './card';
+import Empty from './empty';
 
 const components = {
   Button,
@@ -22,6 +23,7 @@ const components = {
   Loading,
   Dialog,
   Card,
+  Empty,
 };
 
 const install = (app, options) => {
