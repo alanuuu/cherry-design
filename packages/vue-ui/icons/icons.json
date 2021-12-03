@@ -1,23 +1,23 @@
 [
   {
     "name": "arrow-down",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/arrow-down.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/arrow-down.vue"
   },
   {
     "name": "arrow-left",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/arrow-left.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/arrow-left.vue"
   },
   {
     "name": "arrow-right",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/arrow-right.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/arrow-right.vue"
   },
   {
     "name": "arrow-up",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/arrow-up.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/arrow-up.vue"
   },
   {
     "name": "at",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/at.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/at.vue"
   },
   {
     "name": "blow-up",
@@ -41,15 +41,15 @@
   },
   {
     "name": "code-block",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code-block.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/code-block.vue"
   },
   {
     "name": "code-square",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code-square.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/code-square.vue"
   },
   {
     "name": "code",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/code.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/code.vue"
   },
   {
     "name": "delete",
@@ -57,51 +57,51 @@
   },
   {
     "name": "download",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/download.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/download.vue"
   },
   {
     "name": "export",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/export.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/export.vue"
   },
   {
     "name": "eye-invisible",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/eye-invisible.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/eye-invisible.vue"
   },
   {
     "name": "eye",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/eye.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/eye.vue"
   },
   {
     "name": "faceBook-circle-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/faceBook-circle-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/faceBook-circle-fill.vue"
   },
   {
     "name": "facebook-square-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/facebook-square-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/facebook-square-fill.vue"
   },
   {
     "name": "google-circle-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/google-circle-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/google-circle-fill.vue"
   },
   {
     "name": "heart-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/heart-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/heart-fill.vue"
   },
   {
     "name": "heart",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/heart.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/heart.vue"
   },
   {
     "name": "history",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/history.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/history.vue"
   },
   {
     "name": "home",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/home.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/home.vue"
   },
   {
     "name": "import",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/import.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/import.vue"
   },
   {
     "name": "left-circle",
@@ -113,31 +113,31 @@
   },
   {
     "name": "list",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/list.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/list.vue"
   },
   {
     "name": "menu-fold",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/menu-fold.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/menu-fold.vue"
   },
   {
     "name": "menu-unfold",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/menu-unfold.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/menu-unfold.vue"
   },
   {
     "name": "message-banned",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/message-banned.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/message-banned.vue"
   },
   {
     "name": "message",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/message.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/message.vue"
   },
   {
     "name": "more-vertical",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/more-vertical.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/more-vertical.vue"
   },
   {
     "name": "more",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/more.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/more.vue"
   },
   {
     "name": "narrow",
@@ -153,11 +153,11 @@
   },
   {
     "name": "poweroff",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/poweroff.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/poweroff.vue"
   },
   {
     "name": "qq-circle-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/qq-circle-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/qq-circle-fill.vue"
   },
   {
     "name": "question-circle",
@@ -165,11 +165,11 @@
   },
   {
     "name": "refresh",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/refresh.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/refresh.vue"
   },
   {
     "name": "reply",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/reply.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/reply.vue"
   },
   {
     "name": "right-circle",
@@ -181,67 +181,67 @@
   },
   {
     "name": "save",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/save.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/save.vue"
   },
   {
     "name": "scan",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/scan.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/scan.vue"
   },
   {
     "name": "search",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/search.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/search.vue"
   },
   {
     "name": "select-all",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/select-all.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/select-all.vue"
   },
   {
     "name": "send",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/send.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/send.vue"
   },
   {
     "name": "settings",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/settings.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/settings.vue"
   },
   {
     "name": "share-alt",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/share-alt.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/share-alt.vue"
   },
   {
     "name": "share-external",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/share-external.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/share-external.vue"
   },
   {
     "name": "share-internal",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/share-internal.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/share-internal.vue"
   },
   {
     "name": "star-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/star-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/star-fill.vue"
   },
   {
     "name": "star",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/star.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/star.vue"
   },
   {
     "name": "sync",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/sync.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/sync.vue"
   },
   {
     "name": "thumb-down-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/thumb-down-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/thumb-down-fill.vue"
   },
   {
     "name": "thumb-down",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/thumb-down.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/thumb-down.vue"
   },
   {
     "name": "thumb-up-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/thumb-up-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/thumb-up-fill.vue"
   },
   {
     "name": "thumb-up",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/thumb-up.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/thumb-up.vue"
   },
   {
     "name": "to-bottom",
@@ -261,22 +261,22 @@
   },
   {
     "name": "translate",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/translate.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/translate.vue"
   },
   {
     "name": "twitter-circle-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/twitter-circle-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/twitter-circle-fill.vue"
   },
   {
     "name": "upload",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/upload.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/upload.vue"
   },
   {
     "name": "voice",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/voice.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/voice.vue"
   },
   {
     "name": "weibo-circle-fill",
-    "path": "/Users/csdn/Documents/csdn/csdn-design/packages/vue-ui/components/icon/weibo-circle-fill.vue"
+    "path": "/Users/zhaizhuo/Documents/CSDN/前端项目/csdn-design/packages/vue-ui/components/icon/weibo-circle-fill.vue"
   }
 ]
