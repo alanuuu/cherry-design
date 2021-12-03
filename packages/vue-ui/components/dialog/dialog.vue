@@ -1,5 +1,5 @@
 <template>
-  <transition name="dialog-fade">
+  <transition name="c-fade">
     <div class="c-dialog" v-show="visible">
       <div class="c-dialog-body" :style="{width: width,marginTop: top}">
         <div :class="['c-dialog-header',{'c-dialog-center': center}]">
@@ -17,8 +17,8 @@
         </div>
         <div :class="['c-dialog-footer',{'c-dialog-center': center}]">
           <slot name="footer">
-            <c-button @click="close">确定</c-button>
-            <c-button @click="close" style="margin-right:16px">取消</c-button>
+            <c-button @click="close">确 定</c-button>
+            <c-button @click="close" :ghost="true" style="margin-right:16px">取 消</c-button>
           </slot>
         </div>
       </div>
@@ -36,11 +36,10 @@ export default {
   props: {
     visible: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     title: {
       type: String,
-      default: '标题名称',
     },
     width: {
       type: String,
