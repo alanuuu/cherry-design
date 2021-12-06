@@ -20,7 +20,7 @@ yarn storybook
 
 - [x] Button 按钮
 - [x] Icon 图标
-- [ ] Layout 布局
+- [x] Layout 布局
 - [x] Link 链接(已完成，主题色待配置)
 - [ ] Tag 标签
 - [ ] Grid 栅格

@@ -10,13 +10,18 @@
       @load="handleLoad"
     />
     <template v-if="preview">
-      <image-view :src="(previewSrc && previewSrc !== '') ? previewSrc : src" v-show="showView" @close="closeView"></image-view>
+      <image-view
+        :src="previewSrc && previewSrc !== '' ? previewSrc : src"
+        v-show="showView"
+        @close="closeView"
+      ></image-view>
     </template>
   </div>
 </template>
 
 <script>
 import ImageView from './image-view.vue';
+
 const name = 'c-image';
 export default {
   name: 'Image',
@@ -52,14 +57,13 @@ export default {
       };
     },
     imageStyle() {
-      const fitType =
-        this.fit && this.fit !== ''
-          ? {
-              'object-fit': this.fit,
-            }
-          : { 'object-fit': 'none' };
+      const fitType = this.fit && this.fit !== ''
+        ? {
+          'object-fit': this.fit,
+        }
+        : { 'object-fit': 'none' };
       if (this.preview) {
-        fitType['cursor'] = 'pointer';
+        fitType.cursor = 'pointer';
       }
       return fitType;
     },
