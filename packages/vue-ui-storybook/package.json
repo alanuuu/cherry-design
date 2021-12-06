@@ -12,7 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/builder-webpack5": "^6.3.7",
@@ -28,7 +27,9 @@
   },
   "dependencies": {
     "@csdn-design/vue-ui": "^0.1.2",
+    "@storybook/addon-actions": "^6.3.12",
     "@vue/compiler-sfc": "^3.2.6",
+    "copy-to-clipboard": "^3.3.1",
     "css-loader": "^6.2.0",
     "less": "^4.1.2",
     "less-loader": "^7.3.0",

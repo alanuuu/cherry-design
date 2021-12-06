@@ -1,10 +1,10 @@
 .c-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   outline-style: none;
-  border: none;
   text-align: center;
   white-space: nowrap;
   -webkit-appearance: none;
@@ -13,41 +13,46 @@
   transition: all @transiton-duration linear;
   border-radius: 100px;
   cursor: pointer;
-  color: black;
+  color: @white;
 
   &:active {
     transition: none;
   }
 
+
   @type: {
-    primary: @primary-color;
+    primary: @btn-primary-color;
+    danger: @btn-danger-color;
     light: @btn-light-color;
-    ghost: white;
+    black: @btn-black-color;
   }
   each(@type, {
     &-@{key} {
       background: @value;
+      border: 1px solid @value;
       &:hover {
-        background: mix(@value, @white, 80%)
+        background: mix(@value, @white, 80%);
       }
     }
-  });
-
-  @status: {
-    normal: @primary-color;
-    warning: #d4b77b;
-    danger: #E33E33;
-  }
-  each(@status, {
-    &-ghost&-@{key} {
+    &-ghost.c-btn-@{key} {
       border: 1px solid @value;
       color: @value;
       &:hover {
-        background: @value;
-        color: @white;
+        background: @white;
       }
     }
-  })
+
+  });
+  &-ghost {
+    background-color: #fff;
+  }
+
+  &-light {
+    color: @text-primary-color;
+  }
+  &-icon {
+    margin-right: 4px;
+  }
 
   &-large {
     padding: 12px 20px;
@@ -64,19 +69,15 @@
 
   &-loading {
     pointer-events: none;
-
   }
 
-  >img {
-    animation: rotating 1s infinite linear;
-    margin-right: 4px;
-  }
-  @keyframes rotating {
-    0% {
-      transform: rotate(0deg)
-    }
-    100% {
-      transform: rotate(1turn);
+  &&-disabled {
+    background-color: @disabled-color;
+    border-color: @disabled-color;
+    color: @white;
+    cursor: not-allowed;
+    &:hover {
+      background-color: @disabled-color; 
     }
   }
 }

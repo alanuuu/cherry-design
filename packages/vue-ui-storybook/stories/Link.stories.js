@@ -1,9 +1,6 @@
-import { Link as CLink } from '@csdn-design/vue-ui';
-
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Link 链接',
-  component: CLink,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     status: {
@@ -26,8 +23,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CLink },
-  template: '<c-link v-bind="$props" >文字链接</c-link>',
+  template: '<c-link v-bind="$props" target="_blank">CSDN</c-link>',
 });
 
 export const Primary = Template.bind({});
@@ -36,6 +32,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   underline: true,
   disabled: false,
-  to: '',
+  href: 'https://www.csdn.net',
   replace: false,
 };

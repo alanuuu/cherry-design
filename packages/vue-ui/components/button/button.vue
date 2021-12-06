@@ -1,76 +1,56 @@
 <template>
   <button :class="cls" @click="onClick">
-    <img v-if="loading" width="12"  src="../../icon/sync.svg" />
+    <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" />
     <span><slot></slot></span>
   </button>
 </template>
 
 <script>
-import { prefix } from '../../constants';
-/**
- * 按钮类型
- */
-export const btnTypes = ['primary', 'ghost', 'light'];
-/**
- * 按钮状态
- */
-export const btnStatus = [
-  'normal',
-  'warning',
-  'danger',
-];
-/**
- * 按钮大小
- */
-export const btnSize = [
-  'large',
-  'medium',
-  'small',
-];
+import { IconSync } from '../icon';
 
 export default {
   name: 'Button',
+  components: {
+    IconSync,
+  },
   props: {
+    // 按钮类型
     type: {
       type: String,
       default: 'primary',
       validator: (val) => {
-        return btnTypes.includes(val);
+        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
       },
     },
-    status: {
-      type: String,
-      default: 'normal',
-      validator: (val) => {
-        return btnStatus.includes(val);
-      },
-    },
+    // 按钮大小
     size: {
       type: String,
       default: 'medium',
       validator: (val) => {
-        return btnSize.includes(val);
+        return ['large', 'medium', 'small'].indexOf(val) !== -1;
       },
     },
+    disabled: Boolean,
+    ghost: Boolean,
     loading: Boolean,
   },
   computed: {
     cls() {
-      const name = `${prefix}-btn`;
+      const name = 'c-btn';
       return {
         [name]: true,
         [`${name}-${this.size}`]: true,
         [`${name}-${this.type}`]: true,
-        [`${name}-${this.status}`]: true,
+        [`${name}-disabled`]: this.disabled,
         [`${name}-loading`]: this.loading,
+        [`${name}-ghost`]: this.ghost,
       };
     },
   },
   methods: {
-    onClick() {
-      if (this.loading) return;
-
-      this.$emit('click');
+    onClick(event) {
+      if (this.loading || this.disabled) return;
+      this.$emit('click', event);
     },
   },
 };

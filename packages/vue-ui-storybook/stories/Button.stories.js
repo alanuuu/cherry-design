@@ -1,13 +1,17 @@
-import { Button as CButton } from '@csdn-design/vue-ui';
-
+import { action } from '@storybook/addon-actions';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Button 按钮',
-  component: CButton,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+  args: {
+    size: 'medium',
+    type: 'primary',
+    loading: false,
+    disabled: false,
+    ghost: false,
+  },
   argTypes: {
     size: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
       description: '按钮大小',
       table: {
@@ -17,8 +21,8 @@ export default {
       },
     },
     type: {
-      control: { type: 'select' },
-      options: ['primary', 'ghost', 'light'],
+      control: { type: 'radio' },
+      options: ['primary', 'black', 'light', 'danger'],
       description: '按钮类型',
       table: {
         defaultValue: {
@@ -26,19 +30,27 @@ export default {
         },
       },
     },
-    status: {
-      control: { type: 'select' },
-      options: ['normal', 'warning', 'danger'],
-      description: '按钮状态',
+    loading: {
+      control: { type: 'boolean' },
+      description: '加载状态',
       table: {
         defaultValue: {
-          summary: 'normal',
+          summary: false,
         },
       },
     },
-    loading: {
+    disabled: {
       control: { type: 'boolean' },
-      description: '是否处于加载状态',
+      description: '禁用状态',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    ghost: {
+      control: { type: 'boolean' },
+      description: '幽灵状态',
       table: {
         defaultValue: {
           summary: false,
@@ -47,19 +59,16 @@ export default {
     },
   },
 };
-
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CButton },
-  template: '<c-button v-bind="$props" @click="onClick" >按钮</c-button>',
+  template: '<c-button v-bind="$props" @click="onClick">Button</c-button>',
+  methods: {
+    onClick: action('click'),
+  },
 });
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-  label: 'Button',
-  onClick() {
-    console.log('click button');
-  }
 };

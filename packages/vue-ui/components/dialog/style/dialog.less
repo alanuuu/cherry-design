@@ -1,0 +1,57 @@
+.c-dialog {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  &-shadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: @zindex-mask;
+    background-color: black;
+    opacity: 0.3;
+  }
+  &-body {
+    min-width: 400px;
+    background-color: #fff;
+    z-index: @zindex-dialog;
+    border-radius: 4px;
+    margin:15vh auto auto;
+  }
+  &-header {
+    padding: 15px 10px;
+    position: relative;
+    display: flex;
+  }
+  &-content {
+    padding: 10px 15px;
+  }
+  &-footer {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &-title {
+    font-size: 18px;
+    color: black;
+  }
+  &-close-botton {
+    height: 18px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: gray;
+  }
+  &-close {
+    height: 16px;
+    width: 16px;
+  }
+  &-center {
+    justify-content: center;
+  }
+}
