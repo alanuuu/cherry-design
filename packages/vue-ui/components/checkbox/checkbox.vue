@@ -1,34 +1,38 @@
 <template>
-  <div class="c-checkbox" :class="classes">
-    <!-- 复选框组 -->
-    <input
-      v-if="group"
-      class="c-checkbox-input"
-      :class="classesinput"
-      type="checkbox"
-      :name="name"
-      v-model="model"
-      :value="label"
-      :disabled="disabled"
-      @change="change"
-    />
-    <!-- 单个复选框 -->
-    <input
-      v-else
-      class="c-checkbox-input"
-      :class="classesinput"
-      type="checkbox"
-      :name="name"
-      :checked="checkValue"
-      :disabled="disabled"
-      @change="change"
-    />
-    <span>
-      <slot>{{ label }}</slot>
+  <label class="c-checkbox-all" :class="clsAll">
+    <span :class="classes" class="c-checkbox">
+      <span class="c-checkbox-inner" :class="clsinner"></span>
+      <!-- 复选框组 -->
+      <input
+        v-if="group"
+        class="c-checkbox-input"
+        :class="classesinput"
+        type="checkbox"
+        :name="name"
+        v-model="model"
+        :value="label"
+        :disabled="disabled"
+        @change="change"
+      />
+      <!-- 单个复选框 -->
+      <input
+        v-else
+        class="c-checkbox-input"
+        :class="classesinput"
+        type="checkbox"
+        :name="name"
+        :checked="checkValue"
+        :disabled="disabled"
+        @change="change"
+      />
     </span>
-  </div>
+    <slot
+      ><span>{{ label }}</span></slot
+    >
+  </label>
 </template>
 <script>
+const name = 'c-checkbox';
 export default {
   name: 'Checkbox',
   props: {
@@ -50,23 +54,28 @@ export default {
       type: [String, Number, Boolean],
       default: false,
     },
-    border: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
+    clsAll() {
+      return {
+        [name + '-' + this.groupSize]: true,
+        [name + '-all-disabled']: this.disabled,
+        [name + '-checked']: this.checkValue,
+      };
+    },
     classes() {
       return {
-        [`c-checkbox-${this.groupSize}`]: true,
-        'c-checkbox-border': this.border,
-        'c-checkbox-checked': this.checkValue,
+        [name + '-checked']: this.checkValue,
+      };
+    },
+    clsinner() {
+      return {
+        [name + '-' + this.groupSize]: true,
       };
     },
     classesinput() {
       return {
-        [`c-checkbox-input-${this.groupSize}`]: true,
-        'c-checkbox-input-disabled': this.disabled,
+        [name + '-input-disabled']: this.disabled,
       };
     },
   },
@@ -74,7 +83,7 @@ export default {
     return {
       checkValue: this.value, // 是否被选中
       parent:
-        this.$parent.$options.name === 'WCheckboxGroup' ? this.$parent : null,
+        this.$parent.$options.name === 'CheckboxGroup' ? this.$parent : null,
       groupSize: this.size, // 组件大小
       group: false, // 是否未复选框组
       model: [],

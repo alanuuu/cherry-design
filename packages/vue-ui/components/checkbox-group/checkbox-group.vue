@@ -24,8 +24,9 @@ export default {
   },
   computed: {
     classes() {
+      const name = 'c-checkbox-group';
       return {
-        [`c-checkbox-group-${this.size}`]: true,
+        [name]: true,
       };
     },
   },
@@ -47,7 +48,7 @@ export default {
         const { value } = this;
         this.children.forEach((item) => {
           item.model = value;
-          item.checkValue = value.indexOf(item.label) >= 0;
+          item.checkValue = value.indexOf(item.label) > -1;
         });
       }
     },
