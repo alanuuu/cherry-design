@@ -9,6 +9,7 @@ export default {
     autoPlay: false,
     interval: 3000,
     height: 150,
+    dots: true,
   },
   argTypes: {
     autoPlay: {
@@ -37,6 +38,15 @@ export default {
       table: {
         defaultValue: {
           summary: 150,
+        },
+      },
+    },
+    dots: {
+      control: { type: 'boolean' },
+      description: '是否显示指示点面板',
+      table: {
+        defaultValue: {
+          summary: true,
         },
       },
     },

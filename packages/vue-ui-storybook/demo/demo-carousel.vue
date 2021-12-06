@@ -5,7 +5,7 @@
       :key="index"
       class="carousel-item-demo"
     >
-      <img :src="item" width="100%">
+      <img :src="item" height="100%" />
     </carousel-item>
   </carousel>
 </template>
@@ -23,22 +23,17 @@ export default {
       pictList: [
         require('./pic1.jpg'),
         require('./pic2.jpg'),
-        require('./pic3.jpg')
-      ]
-    }
-  }
+        require('./pic3.jpg'),
+        require('./pic2.jpg'),
+        require('./pic3.jpg'),
+        require('./pic2.jpg'),
+      ],
+    };
+  },
 };
 </script>
 <style lang="less" scoped>
 .carousel-item-demo {
-  &:nth-child(3n) {
-    background: seagreen;
-  }
-  &:nth-child(3n + 1) {
-    background: skyblue;
-  }
-  &:nth-child(3n + 2) {
-    background: sandybrown;
-  }
+  // background: snow;
 }
 </style>

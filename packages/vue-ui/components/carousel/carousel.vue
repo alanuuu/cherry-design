@@ -1,12 +1,21 @@
 <template>
   <div :class="classes">
-    <div class="c-carousel__container" :style="{ height: `${height}px` }">
-      <button class="btn left" @click="prev">
+    <div class="c-carousel-container" :style="{ height: `${height}px` }">
+      <button class="c-btn c-btn-left" @click="prev">
         <i class="c-icon arrow-left"></i>
       </button>
-      <button class="btn right" @click="next">
+      <button class="c-btn c-btn-right" @click="next">
         <i class="c-icon arrow-right"></i>
       </button>
+      <!-- 面板指示点 -->
+      <ul class="c-carousel-dot" v-if="dots">
+        <li v-for="index in itemsLen" :key="index" @click="activeIndex = index - 1">
+          <button
+            class="c-carousel-dot-btn"
+            :class="{ 'btn-active': index - 1 === activeIndex }"
+          ></button>
+        </li>
+      </ul>
       <slot></slot>
     </div>
   </div>
@@ -26,6 +35,10 @@ export default {
     height: {
       type: Number,
       default: 150,
+    },
+    dots: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -61,9 +74,12 @@ export default {
         this.activeIndex += 1;
       }
     },
-    setItemPosition() {
+    setItemPosition(oldVal, newVal) {
       this.items.forEach((item, index) => {
-        item.calculateTranslate(index, this.activeIndex);
+        item.calculateTranslate(index, this.activeIndex, this.itemsLen);
+        if (oldVal === index || newVal === index) {
+          item.setAnimation();
+        }
       });
     },
   },
@@ -96,8 +112,8 @@ export default {
       this.stopAutoPlay();
       this.stopAutoPlay();
     },
-    activeIndex() {
-      this.setItemPosition();
+    activeIndex(oldVal, newVal) {
+      this.setItemPosition(oldVal, newVal);
     },
   },
 };

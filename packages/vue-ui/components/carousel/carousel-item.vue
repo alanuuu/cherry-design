@@ -9,12 +9,15 @@ export default {
   data() {
     return {
       translateVal: 0,
-      bg: ['skyblue', 'gray', 'seagreen'],
+      isAnimating: false,
     };
   },
   computed: {
     classes() {
-      return ['c-carousel-item'];
+      return [
+        'c-carousel-item',
+        { 'c-carousel-item-animation': this.isAnimating },
+      ];
     },
     styles() {
       // let translate ;
@@ -29,11 +32,22 @@ export default {
      * @param index 当前子项的索引
      * @param activeIndex 展示的子项的索引
      */
-    calculateTranslate(index, activeIndex) {
+    calculateTranslate(index, activeIndex, childLen) {
       const parentWidth = this.$parent.$el.offsetWidth;
-      console.log('parent width:', parentWidth);
-      // console.log("offset:", index, "/", activeIndex);
-      this.translateVal = (index - activeIndex) * parentWidth;
+      // 首先计算出最近的间隔
+      let interval = index - activeIndex;
+      if (interval > childLen / 2) {
+        interval -= childLen;
+      }
+      if (interval < -childLen / 2) {
+        interval += childLen;
+      }
+      // 计算
+      this.translateVal = interval * parentWidth;
+      this.isAnimating = false;
+    },
+    setAnimation() {
+      this.isAnimating = true;
     },
   },
 };
