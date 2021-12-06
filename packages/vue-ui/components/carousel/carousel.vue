@@ -2,14 +2,18 @@
   <div :class="classes">
     <div class="c-carousel-container" :style="{ height: `${height}px` }">
       <button class="c-btn c-btn-left" @click="prev">
-        <i class="c-icon arrow-left"></i>
+        <icon-left />
       </button>
       <button class="c-btn c-btn-right" @click="next">
-        <i class="c-icon arrow-right"></i>
+        <icon-right />
       </button>
       <!-- 面板指示点 -->
       <ul class="c-carousel-dot" v-if="dots">
-        <li v-for="index in itemsLen" :key="index" @click="activeIndex = index - 1">
+        <li
+          v-for="index in itemsLen"
+          :key="index"
+          @click="activeIndex = index - 1"
+        >
           <button
             class="c-carousel-dot-btn"
             :class="{ 'btn-active': index - 1 === activeIndex }"
@@ -21,6 +25,8 @@
   </div>
 </template>
 <script>
+import { IconLeft, IconRight } from '../icon';
+
 export default {
   name: 'Carousel',
   props: {
@@ -66,6 +72,7 @@ export default {
       } else {
         this.activeIndex -= 1;
       }
+      this.$emit('prev');
     },
     next() {
       if (this.activeIndex + 1 > this.itemsLen - 1) {
@@ -73,6 +80,7 @@ export default {
       } else {
         this.activeIndex += 1;
       }
+      this.$emit('next');
     },
     setItemPosition(oldVal, newVal) {
       this.items.forEach((item, index) => {

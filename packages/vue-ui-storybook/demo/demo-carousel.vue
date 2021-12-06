@@ -1,5 +1,5 @@
 <template>
-  <carousel v-bind="attr">
+  <carousel v-bind="attr" @prev="onPrev" @next="onNext">
     <carousel-item
       v-for="(item, index) in pictList"
       :key="index"
@@ -29,6 +29,16 @@ export default {
         require('./pic2.jpg'),
       ],
     };
+  },
+  methods: {
+    onPrev() {
+      console.log('点击了上一个');
+      this.$emit('prev');
+    },
+    onNext() {
+      console.log('点击了下一个');
+      this.$emit('next');
+    },
   },
 };
 </script>

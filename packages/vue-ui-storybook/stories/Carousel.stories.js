@@ -1,9 +1,10 @@
 import { Carousel, CarouselItem } from '@csdn-design/vue-ui';
+import { action } from '@storybook/addon-actions';
 import DemoCarousel from '../demo/demo-carousel.vue';
 
 export default {
   name: 'carouse走马灯',
-  title: '组件/carousel',
+  title: '组件/Carousel走马灯',
   component: [Carousel, CarouselItem, DemoCarousel],
   args: {
     autoPlay: false,
@@ -57,8 +58,12 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Carousel, CarouselItem, DemoCarousel },
   template: `
-    <demo-carousel :attr="$props" />
+    <demo-carousel :attr="$props" @prev="prev" @next="next" />
   `,
+  methods: {
+    prev: action('prev'),
+    next: action('next'),
+  },
 });
 
 export const car = Template.bind({});
