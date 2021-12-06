@@ -54,18 +54,11 @@ export default {
       type: [String, Number, Boolean],
       default: false,
     },
-    border: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
     clsAll() {
       return {
-        [name + '-border']: this.border,
         [name + '-' + this.groupSize]: true,
-        [name + '-border-color']:
-          this.border && this.checkValue && !this.disabled,
         [name + '-all-disabled']: this.disabled,
         [name + '-checked']: this.checkValue,
       };

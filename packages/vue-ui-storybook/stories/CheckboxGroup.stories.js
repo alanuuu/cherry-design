@@ -8,7 +8,6 @@ export default {
     size: 'medium',
     checked: ['1'],
     disabled: false,
-    border: false,
     list: [
       {
         value: '1',
@@ -49,9 +48,9 @@ export default {
         },
       },
     },
-    border: {
+    disabled: {
       control: { type: 'boolean' },
-      description: '是否有边框',
+      description: '是否禁用',
       table: {
         defaultValue: {
           summary: false,
