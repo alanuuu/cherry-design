@@ -1,17 +1,20 @@
 <template>
   <button :class="cls" @click="onClick">
-    <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" />
+    <!-- <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" /> -->
+    <loading class="c-btn-icon" v-if="loading"></loading>
     <span><slot></slot></span>
   </button>
 </template>
 
 <script>
 import { IconSync } from '../icon';
+import Loading from '../loading/loading.vue';
 
 export default {
   name: 'Button',
   components: {
     IconSync,
+    Loading,
   },
   props: {
     // 按钮类型
