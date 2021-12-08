@@ -10,6 +10,7 @@ import Loading from './loading';
 import Dialog from './dialog';
 import Card from './card';
 import Empty from './empty';
+import BackTop from './backtop';
 
 const components = {
   Button,
@@ -24,6 +25,7 @@ const components = {
   Dialog,
   Card,
   Empty,
+  BackTop,
 };
 
 const install = (app, options) => {
