@@ -1,13 +1,38 @@
-// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
+import DemoLoading from './loading/index.vue';
+
 export default {
   title: '组件/Loading 加载中',
+  component: { DemoLoading },
+  args: {
+    isLoading: true,
+    loadingTip: '正在加载',
+  },
+  argTypes: {
+    isLoading: {
+      type: { control: 'boolean' },
+      description: '是否处于正在加载状态',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    loadingTip: {
+      type: { control: 'text' },
+      description: '加载中显示的自定义文本',
+      table: {
+        defaultValue: {
+          summary: '正在加载',
+        },
+      },
+    },
+  },
 };
 
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-loading v-bind="$props"></c-loading>',
+  components: { DemoLoading },
+  template: '<demo-loading :attr="$props"></demo-loading>',
 });
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
