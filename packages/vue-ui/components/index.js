@@ -20,3 +20,4 @@ export { default as Card } from './card';
 export { default as Empty } from './empty';
 export { default as BackTop } from './backtop';
 export { Col, Row } from './grid';
+export { default as Rate } from './rate';
