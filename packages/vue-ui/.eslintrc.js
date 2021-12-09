@@ -20,5 +20,7 @@ module.exports = {
     'prefer-template': 0,
     'no-unused-vars': 0,
     'no-restricted-exports': 0,
+    'consistent-return': 0,
+    'no-underscore-dangle': 0,
   },
 };
