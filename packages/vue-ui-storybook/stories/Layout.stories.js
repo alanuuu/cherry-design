@@ -12,7 +12,7 @@ export default {
   argTypes: {
     hasSider: {
       control: { type: 'boolean' },
-      description: '是否有侧边栏',
+      description: '是否有侧边栏; 一般不需要传；主要用于防止服务端渲染闪烁',
       table: {
         defaultValue: {
           summary: '-',

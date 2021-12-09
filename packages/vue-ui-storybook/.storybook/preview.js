@@ -1,9 +1,8 @@
 import Vue from 'vue';
-import CSDNUI from '@csdn-design/vue-ui/es'
+import CSDNUI from '@csdn-design/vue-ui/components'
 import CSDNIcon from '@csdn-design/vue-ui/components/icon';
 import '@csdn-design/vue-ui/components/index.less';
-console.log(CSDNUI)
-console.log(CSDNIcon)
+
 Vue.use(CSDNUI);
 Vue.use(CSDNIcon);
 

@@ -15,6 +15,7 @@ import Input from './input';
 import { Col, Row } from './grid';
 import Rate from './rate';
 import Affix from './affix';
+import Navs from './navs';
 
 const components = {
   Button,
@@ -35,6 +36,7 @@ const components = {
   Col,
   Rate,
   Affix,
+  Navs,
 };
 
 const install = (app, options) => {

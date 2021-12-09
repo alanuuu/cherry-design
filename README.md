@@ -43,6 +43,7 @@ yarn storybook
 - [x] Rate 评分
 - [x] Switch 开关
 - [ ] Form 表单
+- [ ] Rate 评分
 
 - [ ] Table 表格
 - [ ] Pagination 分页
