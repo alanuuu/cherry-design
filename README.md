@@ -40,7 +40,7 @@ yarn storybook
 - [ ] Checkbox 复选框
 - [ ] Input 输入框
 - [ ] Select 选择器
-- [ ] Rate 评分
+- [x] Rate 评分
 - [x] Switch 开关
 - [ ] Form 表单
 
