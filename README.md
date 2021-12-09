@@ -27,7 +27,7 @@ yarn storybook
 - [ ] Loading 加载中
 - [ ] Card 卡片
 - [ ] Carousel 走马灯
-- [ ] Affix 固钉
+- [x] Affix 固钉
 - [x] Breadcrumb 面包屑
 - [x] Badge 徽章数
 - [ ] List 列表

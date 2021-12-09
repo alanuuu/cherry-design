@@ -11,6 +11,10 @@ import Dialog from './dialog';
 import Card from './card';
 import Empty from './empty';
 import BackTop from './backtop';
+import Input from './input';
+import { Col, Row } from './grid';
+import Rate from './rate';
+import Affix from './affix';
 
 const components = {
   Button,
@@ -26,6 +30,11 @@ const components = {
   Card,
   Empty,
   BackTop,
+  Input,
+  Row,
+  Col,
+  Rate,
+  Affix,
 };
 
 const install = (app, options) => {
