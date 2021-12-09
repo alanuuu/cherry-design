@@ -13,6 +13,7 @@ import Empty from './empty';
 import BackTop from './backtop';
 import Input from './input';
 import { Col, Row } from './grid';
+import Rate from './rate';
 
 const components = {
   Button,
@@ -31,6 +32,7 @@ const components = {
   Input,
   Row,
   Col,
+  Rate,
 };
 
 const install = (app, options) => {
