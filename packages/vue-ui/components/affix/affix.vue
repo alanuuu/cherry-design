@@ -46,7 +46,7 @@ export default {
       const winHight = window.innerHeight;
       const affixHight = this.$el.getElementsByTagName('div')[0].offsetHeight;
       const divTop = this.$el.getBoundingClientRect().top;
-      if (this.offsetType === 'top' && divTop > this.offsetTop && !this.affix) {
+      if (this.offsetType === 'top' && divTop < this.offsetTop && !this.affix) {
         this.affix = true;
         this.styles = {
           top: this.offsetTop + 'px',
@@ -54,7 +54,7 @@ export default {
         this.$emit('onChange', true);
       } else if (
         this.offsetType === 'top' &&
-        divTop < this.offsetTop &&
+        divTop > this.offsetTop &&
         this.affix
       ) {
         this.affix = false;
