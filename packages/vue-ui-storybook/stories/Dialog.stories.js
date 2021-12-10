@@ -1,7 +1,7 @@
 export default {
   title: '组件/Dialog 对话框',
   args: {
-    visible: true,
+    visible: false,
     title: '标题名称',
     width: '30%',
     showClose: true,

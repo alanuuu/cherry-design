@@ -1,8 +1,5 @@
-import DemoLoading from './loading/index.vue';
-
 export default {
   title: '组件/Loading 加载中',
-  component: { DemoLoading },
   args: {
     isLoading: true,
     loadingTip: '正在加载',
@@ -31,8 +28,18 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { DemoLoading },
-  template: '<demo-loading :attr="$props"></demo-loading>',
+  template: `
+  <div style="width: 300px;border: 1px solid #ebebeb;padding: 12px;">
+    <c-loading v-bind="$props">
+      <div>
+        <h2>this is a pharagraph</h2>
+        <h3>another pharagraph</h3>
+        <input />
+      </div>
+    </c-loading>
+    <!-- <c-loading /> -->
+  </div>
+  `,
 });
 
 export const Primary = Template.bind({});
