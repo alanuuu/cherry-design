@@ -1,5 +1,5 @@
 <template>
-  <div :class="flexClasses" :style="gutterStyle">
+  <div :class="cls" :style="gutterStyle">
     <slot></slot>
   </div>
 </template>
@@ -13,8 +13,6 @@ export default {
       type: Number,
       default: 0,
     },
-    // 布局模式，可设置为flex
-    type: String,
     // flex布局下的水平对齐方式
     justify: {
       type: String,
@@ -26,23 +24,27 @@ export default {
       default: 'top',
     },
   },
+  provide() {
+    return {
+      gutter: this.gutter,
+    };
+  },
   computed: {
     gutterStyle() {
-      if (this.gutter === 0) return '';
-      // 给row加一个margin的目的是，”col中嵌套row“的情况保证间隔正常
+      if (this.gutter === 0) return null;
       const marginVal = `-${this.gutter / 2}px`;
       return {
         marginLeft: marginVal,
         marginRight: marginVal,
       };
     },
-    flexClasses() {
-      return [
-        'c-row',
-        { 'c-row-flex': this.type === 'flex' },
-        `is-justify-${this.justify}`,
-        this.align === 'top' ? '' : `is-align-${this.align}`,
-      ];
+    cls() {
+      const name = 'c-row';
+      return {
+        [name]: true,
+        [`is-justify-${this.justify}`]: true,
+        [`is-align-${this.align}`]: this.align === 'top',
+      };
     },
   },
 };

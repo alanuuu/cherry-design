@@ -7,7 +7,7 @@
       <div class="c-form-item--content">
         <slot></slot>
       </div>
-      <form-item-message></form-item-message>
+      <form-item-message>123</form-item-message>
     </c-col>
   </c-row>
 </template>
@@ -25,12 +25,6 @@ export default {
     FormItemLabel,
     FormItemMessage,
   },
-  inject: {
-    name: this.name,
-    fields: this.fields,
-    addField: this.addField,
-    labelCol: this.labelCol,
-    wrapperCol: this.wrapperCol,
-  },
+  inject: ['fields', 'addField', 'labelCol', 'wrapperCol'],
 };
 </script>

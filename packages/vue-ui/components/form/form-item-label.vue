@@ -1,5 +1,5 @@
 <template>
-  <label for="labelFor">
+  <label for="labelFor" class="c-form-item--label">
     <slot></slot>
   </label>
 </template>

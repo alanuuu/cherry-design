@@ -1,19 +1,16 @@
 <template>
   <button :class="cls" @click="onClick">
-    <!-- <icon-sync class="c-btn-icon c-motion-rotating" v-if="loading" /> -->
     <loading class="c-btn-icon" v-if="loading"></loading>
     <span><slot></slot></span>
   </button>
 </template>
 
 <script>
-import { IconSync } from '../icon';
 import Loading from '../loading/loading.vue';
 
 export default {
   name: 'Button',
   components: {
-    IconSync,
     Loading,
   },
   props: {
@@ -28,7 +25,7 @@ export default {
     // 按钮大小
     size: {
       type: String,
-      default: 'medium',
+      default: 'small',
       validator: (val) => {
         return ['large', 'medium', 'small'].indexOf(val) !== -1;
       },

@@ -26,3 +26,4 @@ export { default as Navs } from './navs';
 export { default as Radio } from './radio';
 export { default as RadioGroup } from './radio-group';
 export { default as Space } from './space';
+export { default as Form } from './form';

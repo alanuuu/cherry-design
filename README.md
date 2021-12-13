@@ -23,11 +23,11 @@ yarn storybook
 - [x] Layout 布局
 - [x] Link 链接(已完成，主题色待配置)
 - [x] Tag 标签
-- [ ] Grid 栅格
-- [ ] Loading 加载中
+- [x] Grid 栅格
+- [x] Loading 加载中
 - [x] Card 卡片
 - [x] Carousel 走马灯
-- [ ] Affix 固钉
+- [x] Affix 固钉
 - [x] Breadcrumb 面包屑
 - [x] Badge 徽章数
 - [ ] List 列表
@@ -43,7 +43,6 @@ yarn storybook
 - [x] Rate 评分
 - [x] Switch 开关
 - [ ] Form 表单
-- [ ] Rate 评分
 
 - [ ] Table 表格
 - [ ] Pagination 分页

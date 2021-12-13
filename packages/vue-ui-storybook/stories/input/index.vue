@@ -1,9 +1,9 @@
 <template>
-  <div class="mb-16">
+  <div class="mb-16" style="width: 600px">
     <span>展示用例，demo在展示用例下方</span>
     <div>
       <span class="mb-8 mt-16">通用</span>
-      <c-input v-model="input1" @input="change" :width="400"></c-input>
+      <c-input v-model="input1" @input="change"></c-input>
     </div>
     <div class="mt-32">
       <span class="mb-8">限制字数</span>

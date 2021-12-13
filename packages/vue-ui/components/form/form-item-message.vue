@@ -1,5 +1,5 @@
 <template>
-  <div class="c-form-item-message">
+  <div class="c-form-item--message">
     <slot></slot>
   </div>
 </template>

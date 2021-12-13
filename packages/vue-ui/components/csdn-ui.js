@@ -21,6 +21,7 @@ import CarouselItem from './carousel-item';
 import Radio from './radio';
 import RadioGroup from './radio-group';
 import Space from './space';
+import Form from './form';
 
 const components = {
   Button,
@@ -47,6 +48,7 @@ const components = {
   Radio,
   RadioGroup,
   Space,
+  Form,
 };
 
 const install = (app, options) => {

@@ -1,45 +1,67 @@
 <template>
-  <div :class="classes" :style="styles">
+  <div :class="classes" class="c-col" :style="styles">
     <slot></slot>
   </div>
 </template>
 
 <script>
+const spans = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+
 export default {
   name: 'Col',
   props: {
+    /**
+     * 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'
+     */
     span: {
-      type: Number,
+      type: [Number, Object],
       default: 24,
     },
     offset: {
-      type: Number,
+      type: [Number, Object],
       default: 0,
     },
   },
+  inject: ['gutter'],
   computed: {
-    gutter() {
-      // 拿到父元素的gutter值作为col之间的间隔
-      let parent = this.$parent;
-      while (parent && parent.$options['_componentTag'] !== 'c-row') {
-        parent = parent.$parent;
-      }
-      return parent ? parent.gutter : 0;
-    },
     classes() {
-      const classes = ['c-col', `c-col-${this.span}`];
-      if (this.offset !== 0) {
-        classes.push(`c-col-offset-${this.offset}`);
-      }
-      return classes;
+      const span = this.adaptationGrid(this.span, 'span');
+      const offset = this.adaptationGrid(this.offset, 'offset');
+      return {
+        ...span,
+        ...offset,
+      };
     },
     styles() {
-      const style = {};
-      if (this.gutter) {
-        style.paddingLeft = `${this.gutter / 2}px`;
-        style.paddingRight = style.paddingLeft;
+      return this.gutter
+        ? {
+          'padding-left': `${this.gutter / 2}px`,
+          'padding-right': `${this.gutter / 2}px`,
+        }
+        : null;
+    },
+  },
+  methods: {
+    adaptationGrid(layout, type) {
+      const name = 'c-col';
+      const cls = {};
+      if (typeof layout === 'object') {
+        Object.keys(layout).map((key) => {
+          if (key === 'span') {
+            cls[`${name}-${layout[key]}`] = true;
+          } else {
+            cls[`${name}-${type}-${key}-${layout[key]}`] = true;
+          }
+          return '';
+        });
+      } else if (layout > 0) {
+        if (type === 'span') {
+          cls[`${name}-${layout}`] = true;
+        } else {
+          cls[`${name}-${type}-${layout}`] = true;
+        }
       }
-      return style;
+      return cls;
     },
   },
 };

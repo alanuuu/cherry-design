@@ -1,5 +1,5 @@
 <template>
-  <div class="c-input" :style="{width: `${width}px`}">
+  <div class="c-input">
     <input
       :class="cls"
       :disabled="disabled"
@@ -33,10 +33,6 @@ export default {
     },
     maxlength: {
       type: Number,
-    },
-    width: {
-      type: Number,
-      default: 200,
     },
     limit: {
       type: Boolean,

@@ -1,7 +1,9 @@
+import './style/grid.less';
+
 export default {
   title: '组件/Grid栅栏格',
   args: {
-    gutter: 0,
+    gutter: 8,
     type: '',
     justify: 'start',
     align: 'top',
@@ -56,23 +58,28 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
-  <div>
-    <div>基本布局</div>
-    <c-row :gutter="8" style="background: #f9fafc;margin: 6px 0;">
-      <c-col :span="item" v-for="item in [2, 4, 6, 12]" :key="item">
-        <div class="block double" 
-          style="border-radius: 2px;display: flex;justify-content: center;align-items: center;text-align: center;height: 30px;background: #e6e9f1;"
-        >{{ item }}</div>
-      </c-col>
-    </c-row>
-    <c-row :gutter="8" style="background: #f9fafc;margin: 6px 0;">
-      <c-col :span="2" v-for="item in 12" :key="item">
-        <div class="block double"
-          style="border-radius: 2px;display: flex;justify-content: center;align-items: center;text-align: center;height: 30px;background: #e6e9f1;"
-        >2</div>
-      </c-col>
-    </c-row>
-  </div>
+    <div style="width: 958px;">
+      <c-row :gutter="16">
+        <c-col :span="item" v-for="(item, index) in [12, 12]" :key="index">
+          <div class="grid-item" >{{ item }}</div>
+        </c-col>
+      </c-row>
+      <c-row :gutter="16" style="margin-top: 10px;">
+        <c-col :span="item" v-for="(item, index) in [6, 6, 6, 6]" :key="index">
+          <div class="grid-item" >{{ item }}</div>
+        </c-col>
+      </c-row>
+      <c-row :gutter="16" style="margin-top: 10px;">
+        <c-col :span="item" v-for="(item, index) in [2, 4, 6, 12]" :key="index">
+          <div class="grid-item" >{{ item }}</div>
+        </c-col>
+      </c-row>
+      <c-row :gutter="8" style="margin-top: 10px;">
+        <c-col :span="2" v-for="(item, index) in 12" :key="index">
+          <div class="grid-item" >2</div>
+        </c-col>
+      </c-row>
+    </div>
   `,
 });
 const Template1 = (args, { argTypes }) => ({
