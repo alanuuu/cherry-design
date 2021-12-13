@@ -1,16 +1,19 @@
 .c-row {
   box-sizing: border-box;
   position: relative;
-
+  display: flex;
+  flex-flow: row wrap;
   // 清除浮动
   &::before, &::after {
     display: table;
     content: "";
     clear: both;
   }
-  &-flex {
-    display: flex;
-  }
+}
+.c-col {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
 }
 
 @justify: {
@@ -44,16 +47,12 @@ each(@align, {
 
 .loop(@i, @max: 24, @class: c-col) when (@i <= @max) {
   .@{class}-@{i} {
-    width: (@i * 100% / @max);
-    float: left;
+    flex: 0 0 (@i * 100% / @max);
+    max-width: (@i * 100% / @max);
   }
   .@{class}-offset-@{i} {
     margin-left: (@i * 100% / @max);
   }
   .loop((@i + 1), @max, @class)
-}
-.c-col {
-  box-sizing: border-box;
-  margin: 5px 0;
 }
 .loop(1);
