@@ -16,6 +16,8 @@ import { Col, Row } from './grid';
 import Rate from './rate';
 import Affix from './affix';
 import Navs from './navs';
+import Carousel from './carousel';
+import CarouselItem from './carousel-item';
 import Radio from './radio';
 import RadioGroup from './radio-group';
 import Space from './space';
@@ -40,6 +42,8 @@ const components = {
   Rate,
   Affix,
   Navs,
+  Carousel,
+  CarouselItem,
   Radio,
   RadioGroup,
   Space,

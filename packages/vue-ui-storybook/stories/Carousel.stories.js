@@ -1,11 +1,12 @@
-import { Carousel, CarouselItem } from '@csdn-design/vue-ui';
 import { action } from '@storybook/addon-actions';
-import DemoCarousel from '../demo/demo-carousel.vue';
+import Pic1 from './asset/images/pic1.jpg';
+import Pic2 from './asset/images/pic2.jpg';
+import Pic3 from './asset/images/pic3.jpg';
 
 export default {
   name: 'carouse走马灯',
   title: '组件/Carousel走马灯',
-  component: [Carousel, CarouselItem, DemoCarousel],
+  // component: [Carousel, CarouselItem],
   args: {
     autoPlay: false,
     interval: 3000,
@@ -56,13 +57,28 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Carousel, CarouselItem, DemoCarousel },
+  // components: { Carousel, CarouselItem },
   template: `
-    <demo-carousel :attr="$props" @prev="prev" @next="next" />
+  <div style="width: 33%">
+  <c-carousel v-bind="$props" @prev="onPrev" @next="onNext">
+    <c-carousel-item
+      v-for="(item, index) in pictList"
+      :key="index"
+      class="carousel-item-demo"
+    >
+      <img :src="item" height="100%" />
+    </c-carousel-item>
+  </c-carousel>
+  </div>
   `,
   methods: {
-    prev: action('prev'),
-    next: action('next'),
+    onPrev: action('prev'),
+    onNext: action('next'),
+  },
+  data() {
+    return {
+      pictList: [Pic1, Pic2, Pic3, Pic2, Pic3],
+    };
   },
 });
 
