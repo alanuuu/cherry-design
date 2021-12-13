@@ -16,6 +16,7 @@ import { Col, Row } from './grid';
 import Rate from './rate';
 import Affix from './affix';
 import Navs from './navs';
+import Space from './space';
 
 const components = {
   Button,
@@ -37,6 +38,7 @@ const components = {
   Rate,
   Affix,
   Navs,
+  Space,
 };
 
 const install = (app, options) => {

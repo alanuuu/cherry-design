@@ -23,3 +23,4 @@ export { Col, Row } from './grid';
 export { default as Rate } from './rate';
 export { default as Affix } from './affix';
 export { default as Navs } from './navs';
+export { default as Space } from './space';
