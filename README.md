@@ -34,9 +34,9 @@ yarn storybook
 - [x] BackTop 回到顶部 
 - [x] Image 图片
 - [x] Avater 头像
-- [ ] Space 间隔
+- [x] Space 间隔
 
-- [ ] Riado 单选框
+- [x] Riado 单选框
 - [ ] Checkbox 复选框
 - [ ] Input 输入框
 - [ ] Select 选择器

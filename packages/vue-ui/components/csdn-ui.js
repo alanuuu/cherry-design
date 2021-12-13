@@ -18,6 +18,9 @@ import Affix from './affix';
 import Navs from './navs';
 import Carousel from './carousel';
 import CarouselItem from './carousel-item';
+import Radio from './radio';
+import RadioGroup from './radio-group';
+import Space from './space';
 
 const components = {
   Button,
@@ -41,6 +44,9 @@ const components = {
   Navs,
   Carousel,
   CarouselItem,
+  Radio,
+  RadioGroup,
+  Space,
 };
 
 const install = (app, options) => {
