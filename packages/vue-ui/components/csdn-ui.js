@@ -18,6 +18,7 @@ import Affix from './affix';
 import Navs from './navs';
 import Radio from './radio';
 import RadioGroup from './radio-group';
+import Space from './space';
 
 const components = {
   Button,
@@ -41,6 +42,7 @@ const components = {
   Navs,
   Radio,
   RadioGroup,
+  Space,
 };
 
 const install = (app, options) => {
