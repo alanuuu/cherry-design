@@ -22,6 +22,7 @@ import Radio from './radio';
 import RadioGroup from './radio-group';
 import Space from './space';
 import Form from './form';
+import List from './list';
 
 const components = {
   Button,
@@ -49,6 +50,7 @@ const components = {
   RadioGroup,
   Space,
   Form,
+  List,
 };
 
 const install = (app, options) => {
