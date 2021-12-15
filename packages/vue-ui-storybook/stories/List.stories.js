@@ -62,48 +62,83 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
-const Template = (args, { argTypes }) => ({
+const TemplatePrimary = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<div>
     <c-list v-bind="$props">
         <c-list-item>csdn</c-list-item>
         <c-list-item>csdn</c-list-item>
         <c-list-item>csdn</c-list-item>
-        <c-list-item>
-            <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
-            <div>内容</div>
-                <template slot="action">
-                    <li>
-                        编辑
-                    </li>
-                    <li>
-                        删除
-                    </li>
-                </template>
-        </c-list-item>
-    </c-list>
-    <div style="height: 50px"></div>
-    <c-list itemLayout="vertical">
-        <c-list-item>
-            <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
-            <div>内容</div>
-                <template slot="action">
-                    <li>
-                        编辑
-                    </li>
-                    <li>
-                        删除
-                    </li>
-                </template>
-                <template slot="extra">
-                    <c-image style="width: 120px; height: 120px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg"></c-image>
-                </template>
-        </c-list-item>
     </c-list>
     </div>`,
-  methods: {},
+});
+const TemplateHorizontal = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: `<div>
+      <c-list v-bind="$props">
+          <c-list-item>
+              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <div>内容</div>
+                  <template slot="action">
+                      <li>
+                          编辑
+                      </li>
+                      <li>
+                          删除
+                      </li>
+                  </template>
+          </c-list-item>
+          <c-list-item>
+              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <div>内容</div>
+                  <template slot="action">
+                      <li>
+                          编辑
+                      </li>
+                      <li>
+                          删除
+                      </li>
+                  </template>
+          </c-list-item>
+      </c-list>
+      </div>`,
+});
+const TemplateVertical = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: `<div>
+      <c-list v-bind="$props">
+          <c-list-item>
+              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <div>内容</div>
+                  <template slot="action">
+                      <li>
+                          编辑
+                      </li>
+                      <li>
+                          删除
+                      </li>
+                  </template>
+                  <template slot="extra">
+                      <c-image style="width: 120px; height: 120px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg"></c-image>
+                  </template>
+          </c-list-item>
+      </c-list>
+      </div>`,
 });
 
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-export const Primary = Template.bind({});
+export const Primary = TemplatePrimary.bind({});
 Primary.args = {};
+
+export const Horizontal = TemplateHorizontal.bind({});
+Horizontal.args = {
+  header: '',
+  footer: '',
+};
+
+export const Vertical = TemplateVertical.bind({});
+Vertical.args = {
+  header: '',
+  footer: '',
+  itemLayout: 'vertical',
+};
