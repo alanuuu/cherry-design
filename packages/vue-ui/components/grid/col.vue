@@ -5,7 +5,7 @@
 </template>
 
 <script>
-const spans = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+const spans = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'offset'];
 
 export default {
   name: 'Col',
@@ -22,7 +22,12 @@ export default {
       default: 0,
     },
   },
-  inject: ['gutter'],
+  inject: {
+    gutter: {
+      from: 'gutter',
+      default: 0,
+    },
+  },
   computed: {
     classes() {
       const span = this.adaptationGrid(this.span, 'span');
@@ -47,14 +52,14 @@ export default {
       const cls = {};
       if (typeof layout === 'object') {
         Object.keys(layout).map((key) => {
-          if (key === 'span') {
-            cls[`${name}-${layout[key]}`] = true;
+          if (spans.indexOf(key) > -1) {
+            cls[`${name}-${key}-${layout[key]}`] = true;
           } else {
-            cls[`${name}-${type}-${key}-${layout[key]}`] = true;
+            cls[`${name}-${layout[key]}`] = true;
           }
           return '';
         });
-      } else if (layout > 0) {
+      } else if (typeof layout === 'number' && layout > 0) {
         if (type === 'span') {
           cls[`${name}-${layout}`] = true;
         } else {
