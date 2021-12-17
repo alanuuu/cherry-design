@@ -1,8 +1,44 @@
 .c-form {
+  font-size: 14px;
   &-item {
-    margin-bottom: 10px;
+    position: relative;
+    margin: 0 0 24px;
+    &.has-status {
+      margin: 0;
+    }
+    &--label {
+      display: block;
+      text-align: right;
+      height: 40px;
+      line-height: 40px;
+      &.is-required {
+        &::before {
+          display: inline-block;
+          margin-right: 4px;
+          color: #ff4d4f;
+          font-size: 14px;
+          font-family: SimSun,sans-serif;
+          line-height: 1;
+          content: "*";
+        }
+      }
+      &::after {
+        content: ":";
+        position: relative;
+        top: -0.5px;
+        margin: 0 8px 0 2px;
+      }
+    }
     &--content {
       margin-bottom: 4px;
     }
+    &--message {
+      height: 24px;
+      opacity: 1;
+      &_error {
+        color: @danger-color;
+      }
+    }
   }
+
 }

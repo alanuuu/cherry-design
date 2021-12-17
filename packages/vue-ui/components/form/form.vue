@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { formKey } from './context';
+
 export default {
   name: 'Form',
   props: {
@@ -19,13 +21,13 @@ export default {
     labelCol: {
       type: Object,
       default: () => ({
-        span: 8,
+        span: 5,
       }),
     },
     wrapperCol: {
       type: Object,
       default: () => ({
-        span: 16,
+        span: 19,
       }),
     },
     name: {
@@ -40,11 +42,13 @@ export default {
   },
   provide() {
     return {
-      name: this.name,
-      fields: this.fields,
-      addField: this.addField,
-      labelCol: this.labelCol,
-      wrapperCol: this.wrapperCol,
+      [formKey]: {
+        model: this.model,
+        fields: this.fields,
+        addField: this.addField,
+        labelCol: this.labelCol,
+        wrapperCol: this.wrapperCol,
+      },
     };
   },
   methods: {
