@@ -125,5 +125,8 @@ export default {
       }
     },
   },
+  destroyed() {
+    document.removeEventListener('click', this.clickBlank);
+  },
 };
 </script>
