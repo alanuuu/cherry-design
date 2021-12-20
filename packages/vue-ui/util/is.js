@@ -3,5 +3,13 @@ export function isWindow(obj) {
 }
 
 export function isFunction(v) {
-  return String.prototype.toString.call(v) === '[object Function]';
+  return Object.prototype.toString.call(v) === '[object Function]';
+}
+
+export function isArray(v) {
+  return Object.prototype.toString.call(v) === '[object Array]';
+}
+
+export function isObject(v) {
+  return Object.prototype.toString.call(v) === '[object Object]';
 }

@@ -1,7 +1,9 @@
 <template>
-  <div class="c-form-item--message" :class="cls">
-    <slot></slot>
-  </div>
+  <transition appear>
+    <div class="c-form-item--message" :class="cls">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script>

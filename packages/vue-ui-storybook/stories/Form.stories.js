@@ -25,10 +25,10 @@ const Template = (args, { argTypes }) => ({
   },
   template: `<div style="width: 800px;">
     <c-form v-bind="$props" @onSubmit="onClick" name="form">
-      <c-form-item label="用户名" name="usename" :rules="rule.username">
+      <c-form-item label="用户名" field="usename" :rules="rule.username">
         <c-input />
       </c-form-item>
-      <c-form-item label="密码" name="password" :rules="rule.password">
+      <c-form-item label="密码" field="password" :rules="rule.password">
         <c-input type="password" />
       </c-form-item>
       <c-form-item>

@@ -9,7 +9,9 @@
       <div class="c-form-item--content">
         <slot></slot>
       </div>
-      <form-item-message status="status">123</form-item-message>
+      <form-item-message status="status" v-if="message">
+        {{ message }}
+      </form-item-message>
     </c-col>
   </c-row>
 </template>
@@ -21,7 +23,9 @@ import Schema from 'async-validator';
 import { Col, Row } from '../grid';
 import FormItemLabel from './form-item-label.vue';
 import FormItemMessage from './form-item-message.vue';
-import { formKey, formItemKey, status } from './context';
+import { formKey, formItemKey, Status } from './context';
+
+const name = 'c-form-item';
 
 export default {
   name: 'FormItem',
@@ -33,6 +37,13 @@ export default {
   },
   inject: {
     formCtx: formKey,
+  },
+  provide() {
+    return {
+      [formItemKey]: {
+        updateValidateState: this.updateValidateState,
+      },
+    };
   },
   props: {
     label: String,
@@ -49,7 +60,7 @@ export default {
         return this.formCtx.wrapperCol;
       },
     },
-    name: {
+    field: {
       type: [Array, String],
     },
     rules: {
@@ -61,20 +72,26 @@ export default {
     return {
       status: '',
       message: '',
+      validateStatus: {},
+      validateMessage: {},
+      // 重置表弟；不验证
+      validateDisabled: false,
       // 记录初始值
       initVal: {},
-      // 禁用验证
-      disableValidate: false,
+      formItemInfo: {},
     };
   },
   computed: {
     cls() {
-      const name = 'c-form-item';
       return {
         [name + '--required']: this.isRequired,
         [name + '--error']: this.status === 'error',
         [name + '--validating']: this.status === 'validating',
       };
+    },
+    fieldId() {
+      const formName = this.formCtx.field;
+      return formName + '_' + this.field.join('_');
     },
     isRequired() {
       if (this.required) {
@@ -90,43 +107,61 @@ export default {
       }
       return false;
     },
+    isDisabled() {
+      return false;
+    },
+    isError() {
+      return this.status === 'error';
+    },
   },
   mounted() {
     this.init();
   },
+  beforeDestroy() {
+    if (this.field) {
+      this.formCtx?.removeField(this.formItemInfo);
+    }
+  },
   methods: {
     init() {
+      this.formItemInfo = {
+        field: this.field,
+        disabled: this.isDisabled,
+        error: this.isError,
+        validate: this.validator,
+        clearValidate: this.clearValidate,
+        resetField: this.resetField,
+        setField: this.setField,
+      };
+      console.log(this.formItemInfo);
+      // 记录初始化值
       this.initVal = this.getVal();
+      if (this.field) {
+        this.formCtx?.addField(this.formItemInfo);
+      }
     },
     getVal() {
-      // eslint-disable-next-line prefer-destructuring
-      const { name, model } = this;
-      return get(model, name);
+      return get(this.formKey?.model, this.field);
     },
     getRules() {
       const required = this.isRequired ? { required: true } : [];
       return [].concat(required).concat(this.rules);
     },
-    getFilterRule(trigger) {
-      const rules = this.getRules();
-      return rules.filter(
-        (rule) => !rule.trigger || rule.trigger.indexOf(trigger) !== -1,
-      );
-    },
-    validator(trigger, callback = () => {}) {
-      if (this.disableValidate) {
+    validator() {
+      if (this.validateDisabled) {
         return Promise.resolve();
       }
-      const rules = this.getFilterRule(trigger);
+      const rules = this.rules?.slice();
       if (!rules || rules.length === 0) {
-        callback();
-        return true;
+        return Promise.resolve();
       }
-
-      this.status = status.validating;
+      this.updateValidateState(this.field, {
+        status: Status.validating,
+        message: '',
+      });
 
       const schema = new Schema({
-        [this.name]: rules.map((rule) => {
+        [this.field]: rules.map((rule) => {
           if (!rule.type && !rule.validator) {
             // eslint-disable-next-line no-param-reassign
             rule.type = 'string';
@@ -134,31 +169,70 @@ export default {
           return rule;
         }),
       });
-      const field = this.name;
+      // eslint-disable-next-line prefer-destructuring
+      const field = this.field;
       return new Promise((resolve) => {
         schema.validate({ [field]: this.getVal() }, (error, fields) => {
-          const isError = Boolean(error?.[field]);
+          const isError = Boolean(error);
           this.updateValidateState(field, {
             status: isError ? 'error' : 'success',
-            message: error?.[field].message ?? '',
+            message: error?.[0].message ?? '',
           });
-          const err = isError
-            ? {
-              field,
-              value: error[field].value,
-              type: error[field].type,
-              isRequiredError: Boolean(error[field].RequiredError),
-              message: error[field].message,
-            }
-            : undefined;
+          const data = {
+            field,
+            value: error[field].value,
+            type: error[field].type,
+            isRequiredError: Boolean(error[field].RequiredError),
+            message: error[field].message,
+          };
+          const err = isError ? data : undefined;
 
           resolve(err);
         });
       });
     },
-    updateValidateState(name, state) {
+    updateValidateState(field, state) {
+      this.validateStatus[field] = state.status;
+      this.validateMessage[field] = state.message;
       this.status = state.status;
       this.message = state.message;
+    },
+    clearValidate() {
+      if (this.field) {
+        this.updateValidateState(this.field, {
+          status: '',
+          message: '',
+        });
+      }
+    },
+    resetField() {
+      this.clearValidate();
+      this.validateDisabled = true;
+      if (this.formCtx?.model[this.field]) {
+        this.formCtx.model[this.field] = this.initVal;
+      }
+      this.$nextTick(() => {
+        this.validateDisabled = false;
+      });
+    },
+    setField({ value, status, message }) {
+      if (this.field) {
+        this.validateDisabled = true;
+        if (value && this.formCtx?.model[this.field]) {
+          this.formCtx.model[this.field] = value;
+        }
+
+        if (status || message) {
+          this.updateValidateState(this.field, {
+            status: status ?? '',
+            message: message ?? '',
+          });
+        }
+
+        this.$nextTick(() => {
+          this.validateDisabled = false;
+        });
+      }
     },
   },
 };
