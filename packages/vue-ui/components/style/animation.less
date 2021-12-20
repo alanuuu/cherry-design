@@ -38,3 +38,31 @@
     opacity: 0;
   }
 }
+
+.c-drop-enter-active {
+  animation: select-drop-in .3s;
+}
+.c-drop-leave-active {
+  animation: select-drop-out .3s;
+}
+@keyframes select-drop-in {
+  0% {
+      opacity: 0;
+      transform: translateY(-10%) scaleY(0.8);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes select-drop-out {
+  0% {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-10%) scaleY(0.8);
+  }
+}
