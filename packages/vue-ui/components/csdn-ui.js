@@ -22,6 +22,7 @@ import Radio from './radio';
 import RadioGroup from './radio-group';
 import Space from './space';
 import Form from './form';
+import { Select, Option } from './select';
 import List from './list';
 
 const components = {
@@ -50,6 +51,8 @@ const components = {
   RadioGroup,
   Space,
   Form,
+  Select,
+  Option,
   List,
 };
 
