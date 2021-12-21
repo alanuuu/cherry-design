@@ -9,8 +9,8 @@
       <div class="c-form-item--content">
         <slot></slot>
       </div>
-      <form-item-message status="status" v-if="message">
-        {{ message }}
+      <form-item-message :status="status">
+          {{ message }}
       </form-item-message>
     </c-col>
   </c-row>
@@ -26,7 +26,6 @@ import FormItemMessage from './form-item-message.vue';
 import { formKey, formItemKey, Status } from './context';
 
 const name = 'c-form-item';
-
 export default {
   name: 'FormItem',
   components: {
@@ -133,7 +132,6 @@ export default {
         resetField: this.resetField,
         setField: this.setField,
       };
-      console.log(this.formItemInfo);
       // 记录初始化值
       this.initVal = this.getVal();
       if (this.field) {
@@ -141,7 +139,7 @@ export default {
       }
     },
     getVal() {
-      return get(this.formKey?.model, this.field);
+      return get(this.formCtx?.model, this.field);
     },
     getRules() {
       const required = this.isRequired ? { required: true } : [];
@@ -169,24 +167,21 @@ export default {
           return rule;
         }),
       });
-      // eslint-disable-next-line prefer-destructuring
-      const field = this.field;
+      const field = this.field ? this.field : false;
+      if (!field) {
+        // eslint-disable-next-line no-console
+        console.warn('filed 为必填项！');
+        return Promise.resolve();
+      }
+      const val = this.getVal();
       return new Promise((resolve) => {
-        schema.validate({ [field]: this.getVal() }, (error, fields) => {
+        schema.validate({ [field]: val }, (error, fields) => {
           const isError = Boolean(error);
           this.updateValidateState(field, {
             status: isError ? 'error' : 'success',
             message: error?.[0].message ?? '',
           });
-          const data = {
-            field,
-            value: error[field].value,
-            type: error[field].type,
-            isRequiredError: Boolean(error[field].RequiredError),
-            message: error[field].message,
-          };
-          const err = isError ? data : undefined;
-
+          const err = isError ? error[0] : undefined;
           resolve(err);
         });
       });
@@ -206,6 +201,7 @@ export default {
       }
     },
     resetField() {
+      console.log('reset');
       this.clearValidate();
       this.validateDisabled = true;
       if (this.formCtx?.model[this.field]) {

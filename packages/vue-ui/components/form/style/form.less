@@ -2,10 +2,6 @@
   font-size: 14px;
   &-item {
     position: relative;
-    margin: 0 0 24px;
-    &.has-status {
-      margin: 0;
-    }
     &--label {
       display: block;
       text-align: right;
@@ -30,15 +26,25 @@
       }
     }
     &--content {
-      margin-bottom: 4px;
+      position: relative;
     }
     &--message {
       height: 24px;
+      line-height: 24px;
+      font-size: @font-sm-size;
       opacity: 1;
       &_error {
         color: @danger-color;
       }
     }
   }
-
+}
+.c-form {
+  &-item {
+    &&--error {
+      input {
+        border-color: @danger-color;
+      }
+    }
+  }
 }

@@ -152,7 +152,6 @@ export default {
       });
       // async validate
       return Promise.all(list).then((result) => {
-        console.log(result);
         const errors = {};
         let hasError = false;
         result.forEach((item) => {
@@ -161,15 +160,20 @@ export default {
             errors[item.field] = item;
           }
         });
-
+        console.log('result', errors);
         if (hasError) {
-          this.$emit('onFinishFail', { values: this.model, errors }, e);
+          this.$emit('onSuccess', { values: this.model }, e);
         } else {
-          this.$emit('onFinish', this.model, e);
+          this.$emit('onFail', this.model, e);
         }
 
         this.$emit('submit', { values: this.model, errors: hasError ? errors : undefined });
       });
+    },
+  },
+  watch: {
+    rules() {
+      this.validate();
     },
   },
 };

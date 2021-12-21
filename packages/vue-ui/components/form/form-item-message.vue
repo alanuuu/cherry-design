@@ -1,12 +1,16 @@
 <template>
-  <transition appear>
-    <div class="c-form-item--message" :class="cls">
-      <slot></slot>
-    </div>
-  </transition>
+  <div class="c-form-item--message" :class="cls" >
+    <transition appear name="c-inner">
+      <div v-if="show">
+        <slot></slot>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
+import { Status } from './context';
+
 const name = 'c-form-item--message';
 
 export default {
@@ -21,6 +25,9 @@ export default {
       return {
         [name + '_' + this.status]: this.status,
       };
+    },
+    show() {
+      return this.status === Status.error;
     },
   },
 };
