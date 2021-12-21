@@ -17,5 +17,7 @@ module.exports = {
     'no-restricted-exports': 0,
     'consistent-return': 0,
     'no-underscore-dangle': 0,
+    'no-plusplus': 0,
+    'no-restricted-syntax': 0,
   },
 };
