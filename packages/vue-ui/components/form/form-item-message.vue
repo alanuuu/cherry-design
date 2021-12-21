@@ -11,8 +11,6 @@
 <script>
 import { Status } from './context';
 
-const name = 'c-form-item--message';
-
 export default {
   name: 'FormItemMessage',
   props: {
@@ -22,6 +20,7 @@ export default {
   },
   computed: {
     cls() {
+      const name = 'c-form-item--message';
       return {
         [name + '_' + this.status]: this.status,
       };

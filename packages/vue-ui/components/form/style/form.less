@@ -7,17 +7,6 @@
       text-align: right;
       height: 40px;
       line-height: 40px;
-      &.is-required {
-        &::before {
-          display: inline-block;
-          margin-right: 4px;
-          color: #ff4d4f;
-          font-size: 14px;
-          font-family: SimSun,sans-serif;
-          line-height: 1;
-          content: "*";
-        }
-      }
       &::after {
         content: ":";
         position: relative;
@@ -38,10 +27,26 @@
       }
     }
   }
-}
-.c-form {
+  &-item--error {
+    .c-input-content {
+        border-color: @danger-color;
+    }
+  }
+  &-item--required {
+    .c-form-item--label {
+      &::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: #ff4d4f;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
   &-item {
-    &&--error {
+    &&--validating {
       input {
         border-color: @danger-color;
       }

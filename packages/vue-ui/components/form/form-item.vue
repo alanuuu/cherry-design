@@ -7,7 +7,7 @@
     </c-col>
     <c-col :span="wrapperCol">
       <div class="c-form-item--content">
-        <slot></slot>
+        <slot :disabled="isDisabled"></slot>
       </div>
       <form-item-message :status="status">
           {{ message }}
@@ -25,7 +25,6 @@ import FormItemLabel from './form-item-label.vue';
 import FormItemMessage from './form-item-message.vue';
 import { formKey, formItemKey, Status } from './context';
 
-const name = 'c-form-item';
 export default {
   name: 'FormItem',
   components: {
@@ -66,6 +65,7 @@ export default {
       type: Array,
       default: () => [],
     },
+    disabled: Boolean,
   },
   data() {
     return {
@@ -82,10 +82,12 @@ export default {
   },
   computed: {
     cls() {
+      const name = 'c-form-item';
       return {
         [name + '--required']: this.isRequired,
         [name + '--error']: this.status === 'error',
         [name + '--validating']: this.status === 'validating',
+        [name + '--disabled']: this.isDisabled,
       };
     },
     fieldId() {
@@ -107,7 +109,7 @@ export default {
       return false;
     },
     isDisabled() {
-      return false;
+      return this.disabled || this.formCtx?.disabled;
     },
     isError() {
       return this.status === 'error';
@@ -146,6 +148,7 @@ export default {
       return [].concat(required).concat(this.rules);
     },
     validator() {
+      console.log(this.formCtx);
       if (this.validateDisabled) {
         return Promise.resolve();
       }
@@ -201,7 +204,6 @@ export default {
       }
     },
     resetField() {
-      console.log('reset');
       this.clearValidate();
       this.validateDisabled = true;
       if (this.formCtx?.model[this.field]) {

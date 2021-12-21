@@ -1,5 +1,5 @@
 <template>
-  <form class="c-form" @submit.prevent="handleSubmit">
+  <form class="c-form" @submit.prevent="handleSubmit" :disabled="disabled">
     <slot></slot>
   </form>
 </template>
@@ -35,6 +35,7 @@ export default {
       type: String,
       required: true,
     },
+    disabled: Boolean,
   },
   data() {
     return {
@@ -52,6 +53,7 @@ export default {
         validateField: this.validateField,
         labelCol: this.labelCol,
         wrapperCol: this.wrapperCol,
+        disabled: this.disabled,
       },
     };
   },
@@ -160,11 +162,10 @@ export default {
             errors[item.field] = item;
           }
         });
-        console.log('result', errors);
         if (hasError) {
-          this.$emit('onSuccess', { values: this.model }, e);
+          this.$emit('success', { values: this.model });
         } else {
-          this.$emit('onFail', this.model, e);
+          this.$emit('fail', this.model);
         }
 
         this.$emit('submit', { values: this.model, errors: hasError ? errors : undefined });
