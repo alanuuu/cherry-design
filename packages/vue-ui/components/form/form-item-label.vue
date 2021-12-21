@@ -1,5 +1,5 @@
 <template>
-  <div class="c-form-item--label" :class="cls">
+  <div class="c-form-item--label">
     <label :for="labelFor">
       <slot></slot>
     </label>
@@ -13,12 +13,6 @@ export default {
     labelFor: String,
     required: Boolean,
   },
-  computed: {
-    cls() {
-      return {
-        'is-required': this.required,
-      };
-    },
-  },
+  computed: {},
 };
 </script>

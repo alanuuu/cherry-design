@@ -9,6 +9,7 @@ export default {
     wrapperCol: {
       span: 19,
     },
+    disabled: false,
   },
   argTypes: {},
 };
@@ -18,26 +19,48 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       rule: {
-        username: [{ required: true }],
-        password: [{ required: true }],
+        username: [{ required: true, message: '请输入用户名' }],
+        password: [
+          { required: true, message: '请输入密码' },
+          {
+            len: 8,
+            pattern: /^[a-z0-9]+$/,
+            transform(value) {
+              return value.trim();
+            },
+            message: '请输入由字母、数字组成长度为8的密码',
+          },
+        ],
       },
     };
   },
   template: `<div style="width: 800px;">
-    <c-form v-bind="$props" @onSubmit="onClick" name="form">
-      <c-form-item label="用户名" name="usename" :rules="rule.username">
-        <c-input />
-      </c-form-item>
-      <c-form-item label="密码" name="password" :rules="rule.password">
-        <c-input type="password" />
-      </c-form-item>
-      <c-form-item>
-        <c-button htmltype="submit">登 录</c-button>
-      </c-form-item>
+    <c-form 
+      v-bind="$props" 
+      @submit="onSubmit" 
+      @success="onSuccess" 
+      @fail="onFail" 
+      name="form" 
+      ref="formRef">
+        <c-form-item label="用户名" field="username" :rules="rule.username">
+          <c-input v-model="model.username" />
+        </c-form-item>
+        <c-form-item label="密码" field="password" :rules="rule.password">
+          <c-input type="password"  v-model="model.password"/>
+        </c-form-item>
+        <c-form-item>
+          <c-button htmlType="submit">登 录</c-button>
+          <c-button @click="onReset">重 置</c-button>
+        </c-form-item>
     </c-form>
   </div>`,
   methods: {
-    onClick: action('click'),
+    onSubmit: action('submit'),
+    onSuccess: action('success'),
+    onFail: action('fail'),
+    onReset() {
+      this.$refs.formRef.resetFields();
+    },
   },
   mounted() {
     console.log(this.rule);

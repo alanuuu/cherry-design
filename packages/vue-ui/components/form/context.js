@@ -13,7 +13,7 @@ export const FormItemInfo = {
   setField: noop,
 };
 
-export const status = {
+export const Status = {
   success: 'success',
   error: 'error',
   validating: 'validating',

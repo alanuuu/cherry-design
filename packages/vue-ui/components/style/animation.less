@@ -1,3 +1,5 @@
+@import './vars.less';
+
 .c-motion-rotating {
   animation: rotating 1s infinite linear;
 }
@@ -8,6 +10,39 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.c-inner-enter-from,
+.c-inner-appear-from {
+  opacity: 0;
+}
+
+.c-inner-enter-to,
+.c-inner-appear-to {
+  opacity: 1;
+}
+
+.c-inner-enter-active,
+.c-inner-appear-active {
+  transition: opacity @transiton-duration linear;
+  animation: c-inner @transiton-duration linear;
+}
+
+
+@keyframes c-inner {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

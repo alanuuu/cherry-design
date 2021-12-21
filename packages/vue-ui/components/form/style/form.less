@@ -2,26 +2,11 @@
   font-size: 14px;
   &-item {
     position: relative;
-    margin: 0 0 24px;
-    &.has-status {
-      margin: 0;
-    }
     &--label {
       display: block;
       text-align: right;
       height: 40px;
       line-height: 40px;
-      &.is-required {
-        &::before {
-          display: inline-block;
-          margin-right: 4px;
-          color: #ff4d4f;
-          font-size: 14px;
-          font-family: SimSun,sans-serif;
-          line-height: 1;
-          content: "*";
-        }
-      }
       &::after {
         content: ":";
         position: relative;
@@ -30,15 +15,41 @@
       }
     }
     &--content {
-      margin-bottom: 4px;
+      position: relative;
     }
     &--message {
       height: 24px;
+      line-height: 24px;
+      font-size: @font-sm-size;
       opacity: 1;
       &_error {
         color: @danger-color;
       }
     }
   }
-
+  &-item--error {
+    .c-input-content {
+        border-color: @danger-color;
+    }
+  }
+  &-item--required {
+    .c-form-item--label {
+      &::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: #ff4d4f;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
+  &-item {
+    &&--validating {
+      input {
+        border-color: @danger-color;
+      }
+    }
+  }
 }

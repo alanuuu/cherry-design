@@ -30,16 +30,16 @@ yarn storybook
 - [x] Affix 固钉
 - [x] Breadcrumb 面包屑
 - [x] Badge 徽章数
-- [ ] List 列表
+- [x] List 列表
 - [x] BackTop 回到顶部 
 - [x] Image 图片
 - [x] Avater 头像
 - [x] Space 间隔
 
 - [x] Riado 单选框
-- [ ] Checkbox 复选框
-- [ ] Input 输入框
-- [x] Select 选择器
+- [x] Checkbox 复选框
+- [x] Input 输入框
+- [ ] Select 选择器
 - [x] Rate 评分
 - [x] Switch 开关
 - [ ] Form 表单

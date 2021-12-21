@@ -1,5 +1,5 @@
 <template>
-  <button :class="cls" @click="onClick">
+  <button :class="cls" @click="onClick" :type="htmlType">
     <loading class="c-btn-icon" v-if="loading"></loading>
     <span><slot></slot></span>
   </button>
@@ -29,6 +29,10 @@ export default {
       validator: (val) => {
         return ['large', 'medium', 'small'].indexOf(val) !== -1;
       },
+    },
+    htmlType: {
+      type: String,
+      default: 'button',
     },
     disabled: Boolean,
     ghost: Boolean,
