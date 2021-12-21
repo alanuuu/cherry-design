@@ -23,6 +23,7 @@ import RadioGroup from './radio-group';
 import Space from './space';
 import Form from './form';
 import { Select, Option } from './select';
+import List from './list';
 
 const components = {
   Button,
@@ -52,6 +53,7 @@ const components = {
   Form,
   Select,
   Option,
+  List,
 };
 
 const install = (app, options) => {

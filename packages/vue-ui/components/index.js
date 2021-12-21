@@ -28,3 +28,4 @@ export { default as RadioGroup } from './radio-group';
 export { default as Space } from './space';
 export { default as Form } from './form';
 export { Select, option } from './select';
+export { default as List } from './list';
