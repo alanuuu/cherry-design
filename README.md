@@ -39,17 +39,17 @@ yarn storybook
 - [x] Riado 单选框
 - [x] Checkbox 复选框
 - [x] Input 输入框
-- [ ] Select 选择器
+- [x] Select 选择器
 - [x] Rate 评分
 - [x] Switch 开关
-- [ ] Form 表单
+- [x] Form 表单
 
 - [ ] Table 表格
 - [ ] Pagination 分页
 - [x] Dialog 对话框
 - [ ] Toast 消息提示
 - [ ] Tabs 标签页
-- [ ] Navs 导航栏
+- [x] Navs 导航栏
 - [x] Empty 空状态
 - [ ] Popover 气泡卡片
 - [ ] Drawer 抽屉
