@@ -1,6 +1,5 @@
 <template>
   <label class="c-radio" :class="{ 'is-disabled': isDisabled }">
-    <!-- 模拟radio代替原生radio -->
     <span class="c-radio-input">
       <span
         class="c-radio-inner"
@@ -18,9 +17,6 @@
         :name="group"
         :disabled="isDisabled"
       />
-      <!-- 点击选中一个radio后，触发input事件，因为v-model绑定了model，input事件将model的值设置为value(即label），监听input事件 -->
-      <!-- 改变了model，触发model计算属性的setter方法，再次触发外层组件的input事件， -->
-      <!-- 外层v-model绑定了value，触发外层input事件后，把demo-radio的value变量变成了被点击的input的label -->
     </span>
     <span class="c-radio-label">
       <slot></slot>

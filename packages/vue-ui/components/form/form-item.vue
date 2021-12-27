@@ -10,7 +10,7 @@
         <slot :disabled="isDisabled"></slot>
       </div>
       <form-item-message :status="status">
-          {{ message }}
+        {{ message }}
       </form-item-message>
     </c-col>
   </c-row>
@@ -60,6 +60,7 @@ export default {
     },
     field: {
       type: [Array, String],
+      required: true,
     },
     rules: {
       type: Array,
