@@ -1,6 +1,6 @@
 <template>
   <div :class="cls" ref="select">
-    <div class="c-select-selectbox" @click="clickBox">
+    <div class="c-select-selectbox c-input-content" @click="clickBox">
       <input
         v-if="filterable"
         type="text"
@@ -30,12 +30,10 @@
 
 <script>
 import { IconRight } from '../icon';
-import Input from '../input/input.vue';
 export default {
   name: 'Select',
   components: {
     IconRight,
-    Input,
   },
   props: {
     placeholder: {
