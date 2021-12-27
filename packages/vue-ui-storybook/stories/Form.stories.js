@@ -32,7 +32,7 @@ const Template = (args, { argTypes }) => ({
           },
         ],
         checkbox: [{ required: true, message: '请选择' }],
-        radio: [{ required: true, message: '请选择', type: 'boolean' }],
+        radio: [{ required: true, message: '请选择' }],
         select: [{ required: true, message: '请选择' }],
         rate: [{ required: true, message: '请选择', type: 'number' }],
       },
@@ -54,8 +54,8 @@ const Template = (args, { argTypes }) => ({
         </c-form-item>
         <c-form-item label="CheckBox" field="checkbox" :rules="rule.checkbox">
           <c-checkbox-group v-model="model.checkbox">
-            <c-checkbox label="1">1</c-checkbox>
-            <c-checkbox label="0">0</c-checkbox>
+            <c-checkbox label="1">item1</c-checkbox>
+            <c-checkbox label="0">item0</c-checkbox>
           </c-checkbox-group>
         </c-form-item>
         <c-form-item label="Radio" field="radio" :rules="rule.radio">
