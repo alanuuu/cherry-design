@@ -31,3 +31,4 @@ export { default as Space } from './space';
 export { default as Form } from './form';
 export { Select, Option } from './select';
 export { default as List } from './list';
+export { default as Popover } from './popover';

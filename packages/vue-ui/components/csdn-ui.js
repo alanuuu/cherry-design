@@ -26,6 +26,7 @@ import { Select, Option } from './select';
 import List from './list';
 import CheckboxGroup from './checkbox-group';
 import Checkbox from './checkbox';
+import Popover from './popover';
 
 const components = {
   Button,
@@ -58,6 +59,7 @@ const components = {
   List,
   CheckboxGroup,
   Checkbox,
+  Popover,
 };
 
 const install = (app, options) => {
