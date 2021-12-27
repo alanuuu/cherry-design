@@ -1,0 +1,44 @@
+.c-pagination {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  &-btn {
+    height: 28px;
+    background: #F5F5F7;
+    border: none;
+    cursor: pointer;
+    &-disable {
+      cursor: not-allowed;
+    }
+  }
+
+  .c-page {
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    padding: 0 10px;
+
+    .num {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 32px;
+      line-height: 28px;
+      height: 28px;
+      padding: 0 4px;
+      background: #F5F5F7;
+      border-radius: 2px;
+      text-align: center;
+      margin-right: 10px;
+      cursor: pointer;
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+      
+    }
+    .active {
+      background: #777888;
+      color: #fff;
+    }
+    
+  }
+}
