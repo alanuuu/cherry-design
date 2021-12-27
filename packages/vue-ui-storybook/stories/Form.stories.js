@@ -31,6 +31,7 @@ const Template = (args, { argTypes }) => ({
             message: '请输入由字母、数字组成长度为8的密码',
           },
         ],
+        sex: [{ required: true, message: '请选择性别' }],
       },
     };
   },
@@ -48,9 +49,17 @@ const Template = (args, { argTypes }) => ({
         <c-form-item label="密码" field="password" :rules="rule.password">
           <c-input type="password"  v-model="model.password"/>
         </c-form-item>
+        <c-form-item label="性别" field="sex" :rules="rule.sex">
+          <c-checkbox-group v-model="model.sex">
+            <c-checkbox label="1">男</c-checkbox>
+            <c-checkbox label="0">女</c-checkbox>
+          </c-checkbox-group>
+        </c-form-item>
         <c-form-item>
-          <c-button htmlType="submit">登 录</c-button>
-          <c-button @click="onReset">重 置</c-button>
+          <c-space :size="20">
+            <c-button htmlType="submit">登 录</c-button>
+            <c-button @click="onReset" ghost>重 置</c-button>
+          </c-space>
         </c-form-item>
     </c-form>
   </div>`,
@@ -73,5 +82,6 @@ Primary.args = {
   model: {
     username: '',
     password: '',
+    sex: [],
   },
 };

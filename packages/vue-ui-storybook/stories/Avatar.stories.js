@@ -5,7 +5,6 @@ export default {
   title: '组件/Avatar 头像',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   args: {
-    src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
     size: 'medium',
     shape: 'circle',
   },
@@ -45,7 +44,21 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-avatar v-bind="$props" @error="error"></c-avatar>',
+  template: `<div>
+    <c-avatar v-bind="$props" @error="error"></c-avatar>
+  </div>`,
+  methods: {
+    error: action('error'),
+  },
+});
+
+const TemplateICon = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: `<div>
+    <c-avatar v-bind="$props" @error="error">
+      <icon-google-circle-fill />
+    </c-avatar>
+  </div>`,
   methods: {
     error: action('error'),
   },
@@ -53,4 +66,11 @@ const Template = (args, { argTypes }) => ({
 
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
+};
+
+export const Icon = TemplateICon.bind({});
+Icon.args = {
+  color: 'red',
+};

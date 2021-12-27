@@ -33,7 +33,19 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template:
-    '<div><div style="height: 200px"></div>top定位<c-affix v-bind="$props" @onChange="change"><c-button>top</c-button></c-affix><div style="height: 400px"></div>bottom定位<c-affix :offsetBottom="50"><c-button>bottom</c-button></c-affix><div style="height: 400px"></div></div>',
+    `<div>
+      <div style="height: 200px"></div>
+      top定位
+      <c-affix v-bind="$props" @onChange="change" :offsetTop="50">
+        <c-button>top</c-button>
+      </c-affix>
+      <p style="height: 300px">滚动定位</p>
+      bottom定位
+      <c-affix :offsetBottom="50">
+        <c-button>bottom</c-button>
+      </c-affix>
+        <div style="height: 400px"></div>
+    </div>`,
   methods: {
     change: action('change'),
   },

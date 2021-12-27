@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: '组件/Image 图片',
+  title: '组件/Img 图片',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   args: {
     src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
@@ -64,7 +64,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-image v-bind="$props" @error="error" @load="load" style="width: 100px;height: 100px;"></c-image>',
+  template: '<c-img v-bind="$props" @error="error" @load="load" style="width: 100px;height: 100px;"></c-img>',
   methods: {
     error: action('error'),
     load: action('load'),

@@ -2,7 +2,7 @@ import Button from './button';
 import Avatar from './avatar';
 import Layout from './layout';
 import Badge from './badge';
-import Image from './image';
+import Img from './img';
 import Breadcrumb from './breadcrumb';
 import Link from './link';
 import Switch from './switch';
@@ -24,13 +24,15 @@ import Space from './space';
 import Form from './form';
 import { Select, Option } from './select';
 import List from './list';
+import CheckboxGroup from './checkbox-group';
+import Checkbox from './checkbox';
 
 const components = {
   Button,
   Layout,
   Badge,
   Avatar,
-  Image,
+  Img,
   Breadcrumb,
   Link,
   Switch,
@@ -54,6 +56,8 @@ const components = {
   Select,
   Option,
   List,
+  CheckboxGroup,
+  Checkbox,
 };
 
 const install = (app, options) => {

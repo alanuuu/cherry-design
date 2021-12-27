@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  name: 'Switch',
+  name: 'CSwitch',
   props: {
     value: {
       type: Boolean,

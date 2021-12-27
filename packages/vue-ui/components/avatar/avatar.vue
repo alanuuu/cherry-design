@@ -1,7 +1,7 @@
 <template>
-  <span :class="cls">
+  <span :class="cls" :style="styles">
     <img class="c-avatar-img" v-if="src" :src="src" @error="handleError" />
-    <span v-else><slot></slot></span>
+    <slot v-else></slot>
   </span>
 </template>
 
@@ -24,6 +24,7 @@ export default {
       },
     },
     src: String,
+    color: String,
   },
   computed: {
     cls() {
@@ -33,6 +34,11 @@ export default {
         [name + '-image']: !!this.src,
         [name + '-' + this.shape]: true,
         [name + '-' + this.size]: true,
+      };
+    },
+    styles() {
+      return {
+        color: this.color,
       };
     },
   },

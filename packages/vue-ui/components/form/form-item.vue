@@ -148,7 +148,6 @@ export default {
       return [].concat(required).concat(this.rules);
     },
     validator() {
-      console.log(this.formCtx);
       if (this.validateDisabled) {
         return Promise.resolve();
       }
@@ -162,13 +161,7 @@ export default {
       });
 
       const schema = new Schema({
-        [this.field]: rules.map((rule) => {
-          if (!rule.type && !rule.validator) {
-            // eslint-disable-next-line no-param-reassign
-            rule.type = 'string';
-          }
-          return rule;
-        }),
+        [this.field]: rules,
       });
       const field = this.field ? this.field : false;
       if (!field) {

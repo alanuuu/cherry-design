@@ -6,18 +6,8 @@ export default {
   component: { CheckboxGroup, Checkbox },
   args: {
     size: 'medium',
-    checked: ['1'],
+    checked: [],
     disabled: false,
-    list: [
-      {
-        value: '1',
-        label: '苹果',
-      },
-      {
-        value: '2',
-        label: '西瓜',
-      },
-    ],
   },
   argTypes: {
     size: {
@@ -27,15 +17,6 @@ export default {
       table: {
         defaultValue: {
           summary: 'medium',
-        },
-      },
-    },
-    list: {
-      control: { type: 'array' },
-      description: '选择列表',
-      table: {
-        defaultValue: {
-          summary: '[]',
         },
       },
     },
@@ -64,7 +45,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { CheckboxGroup, Checkbox },
   template:
-    '<div><checkbox-group @change="change" :size="size" v-model="checked"><checkbox :border="border" :disabled="disabled" v-for="(item, index) in list" :key="index" :label="item.value">{{item.label}}</checkbox></checkbox-group></div>',
+    `<checkbox-group @change="change" :size="size" v-model="checked">
+      <checkbox :disabled="disabled" label="1">苹果</checkbox>
+      <checkbox :disabled="disabled" label="2">西瓜</checkbox>
+    </checkbox-group>
+  `,
   methods: {
     change: action('change'),
   },

@@ -9,7 +9,7 @@ export default {
   props: {
     value: {
       type: Array,
-      default: [],
+      default: () => [],
     },
     size: {
       type: String,
@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     change(val) {
+      console.log(val);
       this.$emit('input', val);
       this.$emit('change', val);
     },
@@ -47,7 +48,9 @@ export default {
       if (this.children) {
         const { value } = this;
         this.children.forEach((item) => {
+          // eslint-disable-next-line no-param-reassign
           item.model = value;
+          // eslint-disable-next-line no-param-reassign
           item.checkValue = value.indexOf(item.label) > -1;
         });
       }

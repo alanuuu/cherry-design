@@ -1,5 +1,9 @@
 <template>
-  <form class="c-form" @submit.prevent="handleSubmit" :disabled="disabled">
+  <form
+    class="c-form"
+    :class="cls"
+    @submit.prevent="handleSubmit"
+    :disabled="disabled">
     <slot></slot>
   </form>
 </template>
@@ -18,6 +22,9 @@ export default {
     size: {
       type: String,
       default: 'medium',
+      validator: (val) => {
+        return ['large', 'medium', 'small'].indexOf(val) > -1;
+      },
     },
     labelCol: {
       type: Object,

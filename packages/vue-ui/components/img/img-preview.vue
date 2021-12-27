@@ -24,8 +24,9 @@
 
 <script>
 import { IconCloseCircle, IconBlowUp, IconNarrow } from '../icon';
+
 export default {
-  name: 'Image',
+  name: 'ImgPreview',
   components: {
     IconCloseCircle,
     IconBlowUp,
@@ -41,9 +42,8 @@ export default {
   },
   computed: {
     imgStyle() {
-      const scale = this.scale;
       return {
-        transform: `scale(${scale})`,
+        transform: this.scale ? `scale(${this.scale})` : null,
       };
     },
   },

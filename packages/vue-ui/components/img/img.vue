@@ -10,21 +10,21 @@
       @load="handleLoad"
     />
     <template v-if="preview">
-      <image-view
+      <img-preview
         :src="previewSrc && previewSrc !== '' ? previewSrc : src"
         v-show="showView"
         @close="closeView"
-      ></image-view>
+      ></img-preview>
     </template>
   </div>
 </template>
 
 <script>
-import ImageView from './image-view.vue';
+import ImgPreview from './img-preview.vue';
 
 const name = 'c-image';
 export default {
-  name: 'Image',
+  name: 'Img',
   props: {
     // 图片地址
     src: String,
@@ -43,7 +43,7 @@ export default {
     alt: String,
   },
   components: {
-    ImageView,
+    ImgPreview,
   },
   data() {
     return {

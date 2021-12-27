@@ -26,9 +26,9 @@
         @change="change"
       />
     </span>
-    <slot
-      ><span>{{ label }}</span></slot
-    >
+    <slot>
+      <span>{{ label }}</span>
+    </slot>
   </label>
 </template>
 <script>
@@ -60,7 +60,6 @@ export default {
       return {
         [name + '-' + this.groupSize]: true,
         [name + '-all-disabled']: this.disabled,
-        [name + '-checked']: this.checkValue,
       };
     },
     classes() {

@@ -1,12 +1,22 @@
 .c-form {
   font-size: 14px;
+  &-size-large {
+    .c-item--content {
+      min-height: 40px;
+    }
+  }
+  &-size-small {
+    .c-item--content {
+      min-height: 32px;
+    }
+  }
   &-item {
     position: relative;
     &--label {
       display: block;
       text-align: right;
-      height: 40px;
-      line-height: 40px;
+      height: 36px;
+      line-height: 36px;
       &::after {
         content: ":";
         position: relative;
@@ -15,7 +25,10 @@
       }
     }
     &--content {
+      display: flex;
+      width: 100%;
       position: relative;
+      min-height: 36px;
     }
     &--message {
       height: 24px;

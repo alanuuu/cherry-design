@@ -37,7 +37,7 @@ export default {
       this.$emit('back');
     },
   },
-  destroyed() {
+  beforeDestroy() {
     window.removeEventListener('resize', this.changeScroll);
     window.removeEventListener('scroll', this.changeScroll);
   },

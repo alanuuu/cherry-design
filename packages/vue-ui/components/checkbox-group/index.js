@@ -1,3 +1,8 @@
+import CheckboxGroup from './checkbox-group.vue';
+import { prefix } from '../../constants';
 
-import WCheckboxGroup from './checkbox-group.vue'
-export default WCheckboxGroup
+CheckboxGroup.install = (Vue) => {
+  Vue.component(prefix + CheckboxGroup.name, CheckboxGroup);
+};
+
+export default CheckboxGroup;

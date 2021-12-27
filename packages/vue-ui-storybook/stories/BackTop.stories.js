@@ -24,7 +24,15 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template:
-    '<div><div style="height: 1000px">顶部</div><c-back-top v-bind="$props" @back="back" style="bottom: 100px;right: 100px;"><c-button>回到顶部</c-button></c-back-top></div>',
+    `<div>
+      <div style="height: 1000px">
+      顶部
+      <p>开始滚动</p>
+      <c-back-top v-bind="$props" @back="back" style="bottom: 100px;right: 100px;">
+        <c-button>回到顶部</c-button>
+      </c-back-top>
+      </div>
+    </div>`,
   methods: {
     back: action('back'),
   },
