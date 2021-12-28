@@ -1,8 +1,14 @@
 export default {
   title: '组件/Tag 标签',
+  args: {
+    size: 'medium',
+    circle: false,
+    theme: 'normal',
+    active: false,
+  },
   argTypes: {
     size: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
     },
     theme: {
@@ -20,10 +26,15 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-tag v-bind="$props">tag</c-tag>',
+  template: '<c-tag v-bind="$props">标签</c-tag>',
 });
 
-export const Large = Template.bind({});
-Large.args = {
+export const Primary = Template.bind({});
+Primary.args = {
 
+};
+
+export const Link = Template.bind({});
+Link.args = {
+  link: 'www.csdn.net',
 };
