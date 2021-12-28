@@ -27,6 +27,7 @@ import List from './list';
 import CheckboxGroup from './checkbox-group';
 import Checkbox from './checkbox';
 import Popover from './popover';
+import Tabs from './tabs';
 import Tag from './tag';
 
 const components = {
@@ -61,6 +62,7 @@ const components = {
   CheckboxGroup,
   Checkbox,
   Popover,
+  Tabs,
   Tag,
 };
 
