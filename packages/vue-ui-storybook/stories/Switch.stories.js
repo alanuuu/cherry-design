@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: '组件/Switch 开关',
   args: {
-    value: false,
+    value: true,
     disabled: false,
     width: 40,
   },

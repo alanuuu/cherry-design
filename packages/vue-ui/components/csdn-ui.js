@@ -28,6 +28,7 @@ import CheckboxGroup from './checkbox-group';
 import Checkbox from './checkbox';
 import Popover from './popover';
 import Tabs from './tabs';
+import Tag from './tag';
 
 const components = {
   Button,
@@ -62,6 +63,7 @@ const components = {
   Checkbox,
   Popover,
   Tabs,
+  Tag,
 };
 
 const install = (app, options) => {
