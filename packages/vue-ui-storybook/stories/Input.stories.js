@@ -6,7 +6,7 @@ export default {
     maxlength: 50,
     limit: false,
     type: 'primary',
-    value: ''
+    value: '',
   },
   argTypes: {
     placeholder: {
@@ -47,7 +47,6 @@ export default {
     },
   },
 };
-
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
