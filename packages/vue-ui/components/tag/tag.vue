@@ -1,7 +1,23 @@
 <template>
-  <span class="c-tag" :class="classes" @click="clickTag">
+  <span
+    v-if="!link"
+    class="c-tag"
+    :class="classes"
+    :style="styles"
+    @click="onClick"
+  >
     <slot></slot>
   </span>
+  <a
+    class="c-tag"
+    :class="classes"
+    :style="styles"
+    :href="link"
+    v-else
+    @click="onClick"
+  >
+    <slot></slot>
+  </a>
 </template>
 <script>
 export default {
@@ -29,6 +45,8 @@ export default {
       type: Boolean,
       default: true,
     },
+    color: String,
+    link: String,
   },
   computed: {
     classes() {
@@ -36,15 +54,18 @@ export default {
         [`c-tag-${this.size}`]: true,
         [`c-tag-${this.theme}`]: true,
         [`c-tag-${this.theme}-active`]: this.active,
-        'c-tag-pointer': this.$listeners.hasOwnProperty('click'),
         'c-tag-circle': this.circle,
+      };
+    },
+    styles() {
+      return {
+        background: this.color,
       };
     },
   },
   methods: {
-    clickTag() {
+    onClick() {
       this.$emit('click');
-      console.log(this.$listeners);
     },
   },
 };

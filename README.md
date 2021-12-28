@@ -45,11 +45,11 @@ yarn storybook
 - [x] Form 表单
 
 - [ ] Table 表格
-- [ ] Pagination 分页
+- [x] Pagination 分页
 - [x] Dialog 对话框
 - [ ] Toast 消息提示
 - [ ] Tabs 标签页
 - [x] Navs 导航栏
 - [x] Empty 空状态
-- [ ] Popover 气泡卡片
+- [x] Popover 气泡卡片
 - [ ] Drawer 抽屉
