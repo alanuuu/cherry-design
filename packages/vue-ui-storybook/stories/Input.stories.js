@@ -1,11 +1,13 @@
-import { Input as CInput } from '@csdn-design/vue-ui';
-import Demo from './input/index.vue';
-
-// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Input 输入框',
-  component: CInput,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
+  args: {
+    placeholder: '请输入内容',
+    disabled: false,
+    maxlength: 50,
+    limit: false,
+    type: 'primary',
+    value: ''
+  },
   argTypes: {
     placeholder: {
       control: { type: 'text' },
@@ -26,13 +28,6 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    width: {
-      control: { type: 'number' },
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: 'false' },
-      },
-    },
     limit: {
       control: { type: 'boolean' },
       table: {
@@ -47,15 +42,32 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
+    value: {
+      control: { type: 'text' },
+    },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
+
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CInput, Demo },
-  template: '<div><demo></demo> <c-input v-bind="$props"></c-input></div>',
+  template: '<div style="width:600px;"><c-input v-bind="$props" v-model="value"></c-input></div>',
 });
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
+
+export const Limit = Template.bind({});
+Limit.args = {
+  limit: true,
+  maxlength: 50,
+};
+
+export const Password = Template.bind({});
+Password.args = {
+  type: 'password',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
