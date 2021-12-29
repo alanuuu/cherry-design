@@ -31,6 +31,7 @@ import Popover from './popover';
 import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
+import Progress from './progress';
 
 const components = {
   Button,
@@ -67,6 +68,7 @@ const components = {
   Tabs,
   Tag,
   Toast,
+  Progress,
 };
 
 const install = (app, options) => {

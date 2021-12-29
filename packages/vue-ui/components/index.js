@@ -33,3 +33,5 @@ export { default as Popover } from './popover';
 export { default as Tabs } from './tabs';
 export { default as Tag } from './tag';
 export { default as Toast } from './toast';
+export { default as Progress } from './progress';
+export { default as Upload } from './upload';

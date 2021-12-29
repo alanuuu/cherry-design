@@ -1,7 +1,7 @@
 import { Pagination } from '@csdn-design/vue-ui';
 
 export default {
-  title: '组件/pagination 分页',
+  title: '组件/Pagination 分页',
   component: Pagination,
   argTypes: {
     maxNum: {
