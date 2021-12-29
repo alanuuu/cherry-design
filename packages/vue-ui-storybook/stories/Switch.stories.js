@@ -10,7 +10,7 @@ export default {
   argTypes: {
     value: {
       control: { type: 'boolean' },
-      description: 'switch value',
+      description: '值',
       table: {
         type: { summary: 'string' },
       },
@@ -21,7 +21,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      description: 'is disabled',
+      description: '是否禁用',
     },
     width: {
       control: { type: 'number' },
@@ -29,7 +29,7 @@ export default {
         type: { summary: 'number' },
         defaultValue: { summary: '40' },
       },
-      description: 'switch width',
+      description: '宽度',
     },
   },
 };

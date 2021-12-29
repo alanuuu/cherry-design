@@ -12,6 +12,7 @@ export default {
       table: {
         type: { summary: 'string' },
       },
+      description: '背景图片',
     },
     description: {
       control: { type: 'text' },
@@ -19,6 +20,7 @@ export default {
         type: { summary: 'string' },
         defaultValue: { summary: '暂无数据' },
       },
+      description: '下方描述',
     },
     width: {
       control: { type: 'text' },
@@ -26,6 +28,7 @@ export default {
         type: { summary: 'string' },
         defaultValue: { summary: '200px' },
       },
+      description: '背景图片宽度',
     },
   },
 };

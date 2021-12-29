@@ -1,7 +1,10 @@
 <template>
   <transition name="c-fade">
     <div class="c-dialog" v-show="visible">
-      <div class="c-dialog-body" :style="{width: width,marginTop: top}">
+      <div class="c-dialog-body"
+           :class="{'c-dialog-border-shadow': !modal}"
+           :style="{width: width,marginTop: top}"
+      >
         <div :class="['c-dialog-header',{'c-dialog-center': center}]">
           <slot name="title">
             <div class="c-dialog-title">

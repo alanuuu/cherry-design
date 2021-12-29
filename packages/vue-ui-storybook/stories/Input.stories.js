@@ -14,6 +14,7 @@ export default {
       table: {
         type: { summary: 'string' },
       },
+      description: '提示',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -21,12 +22,14 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
+      description: '是否禁用',
     },
     maxlength: {
       control: { type: 'number' },
       table: {
         type: { summary: 'boolean' },
       },
+      description: '可输入最大长度',
     },
     limit: {
       control: { type: 'boolean' },
@@ -34,6 +37,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
+      description: '是否显示字数限制文案',
     },
     type: {
       control: { type: 'text' },
@@ -41,9 +45,14 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
+      description: '输入框类型',
     },
     value: {
       control: { type: 'text' },
+      table: {
+        type: { summary: 'string|number' },
+      },
+      description: '值',
     },
   },
 };
