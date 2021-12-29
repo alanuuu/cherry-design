@@ -24,7 +24,7 @@ import Space from './space';
 import Form from './form';
 import { Select, Option } from './select';
 import List from './list';
-export { default as Pagination } from './pagination';
+import Pagination from './pagination';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Popover from './popover';
@@ -69,6 +69,7 @@ const components = {
   Tag,
   Toast,
   Progress,
+  Pagination,
 };
 
 const install = (app, options) => {
