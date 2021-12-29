@@ -12,7 +12,6 @@ export { default as IconClose } from './close.vue';
 export { default as IconCodeBlock } from './code-block.vue'; 
 export { default as IconCodeSquare } from './code-square.vue'; 
 export { default as IconCode } from './code.vue'; 
-export { default as IconDelete } from './delete.vue'; 
 export { default as IconDownload } from './download.vue'; 
 export { default as IconExport } from './export.vue'; 
 export { default as IconEyeInvisible } from './eye-invisible.vue'; 
