@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 import Button from './button';
 import Avatar from './avatar';
 import Layout from './layout';
@@ -84,7 +86,6 @@ const CSDNUI = {
   install,
 };
 
-import Vue from 'vue';
 Vue.prototype.$toast = Toast;
 
 export default CSDNUI;

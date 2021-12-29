@@ -17,7 +17,7 @@ export default {
     header: {
       control: { type: 'text' },
       table: {
-        type: { summary: 'string' },
+        type: { summary: 'string|slot' },
       },
     },
   },
