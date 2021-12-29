@@ -1,0 +1,39 @@
+.c-toast {
+  font-size: 14px;
+  position: fixed;
+  z-index: 1010;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  color: @text-primary-color;
+  pointer-events: none;
+  text-align: center;
+  &-content {
+    display: inline-block;
+    pointer-events: all;
+    padding: 8px 13px;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+    background: #fff;
+    position: relative;
+    min-width: 100px;
+    &-text {
+      display: inline-block;
+      &-close {
+        padding-right: 30px;
+      }
+    }
+    &-icon {
+      margin-right: 4px;
+      font-size: 16px;
+      vertical-align: middle;
+      color: @primary-color;
+    }
+    &-close {
+      font-size: 16px;
+      vertical-align: middle;
+      color: #b8b7b3;
+      cursor: pointer;
+    }
+  }
+}
