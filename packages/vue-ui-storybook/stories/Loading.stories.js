@@ -12,6 +12,9 @@ export default {
         defaultValue: {
           summary: 'true',
         },
+        type: {
+          summary: 'boolean',
+        },
       },
     },
     loadingTip: {
@@ -20,6 +23,9 @@ export default {
       table: {
         defaultValue: {
           summary: '正在加载',
+        },
+        type: {
+          summary: 'string',
         },
       },
     },

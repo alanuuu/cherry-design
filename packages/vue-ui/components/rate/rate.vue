@@ -40,7 +40,7 @@ export default {
     // icon类型
     icon: {
       type: String,
-      default: 'icon-star',
+      default: 'icon-star-fill',
     },
     character: {
       type: String,

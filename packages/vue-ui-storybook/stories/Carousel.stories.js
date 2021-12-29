@@ -22,6 +22,9 @@ export default {
           summary: false,
           detail: '默认不自动播放',
         },
+        type: {
+          summary: 'boolean',
+        },
       },
     },
     interval: {
@@ -32,6 +35,9 @@ export default {
           summary: 3000,
           detail: '默认间隔3000ms',
         },
+        type: {
+          summary: 'number',
+        },
       },
     },
     height: {
@@ -41,6 +47,9 @@ export default {
         defaultValue: {
           summary: 150,
         },
+        type: {
+          summary: 'number',
+        },
       },
     },
     dots: {
@@ -49,6 +58,9 @@ export default {
       table: {
         defaultValue: {
           summary: true,
+        },
+        type: {
+          summary: 'boolean',
         },
       },
     },
@@ -66,7 +78,7 @@ const Template = (args, { argTypes }) => ({
       :key="index"
       class="carousel-item-demo"
     >
-      <img :src="item" height="100%" />
+      <img :src="item" height="100%" width="100%" />
     </c-carousel-item>
   </c-carousel>
   </div>
@@ -82,5 +94,5 @@ const Template = (args, { argTypes }) => ({
   },
 });
 
-export const car = Template.bind({});
-car.args = {};
+export const Primary = Template.bind({});
+Primary.args = {};

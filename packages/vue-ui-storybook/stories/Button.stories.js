@@ -18,6 +18,9 @@ export default {
         defaultValue: {
           summary: 'medium',
         },
+        type: {
+          summary: 'string',
+        },
       },
     },
     type: {
@@ -28,6 +31,9 @@ export default {
         defaultValue: {
           summary: 'primary',
         },
+        type: {
+          summary: 'string',
+        },
       },
     },
     loading: {
@@ -36,6 +42,9 @@ export default {
       table: {
         defaultValue: {
           summary: false,
+        },
+        type: {
+          summary: 'boolean',
         },
       },
     },
@@ -46,6 +55,9 @@ export default {
         defaultValue: {
           summary: false,
         },
+        type: {
+          summary: 'boolean',
+        },
       },
     },
     ghost: {
@@ -54,6 +66,9 @@ export default {
       table: {
         defaultValue: {
           summary: false,
+        },
+        type: {
+          summary: 'boolean',
         },
       },
     },

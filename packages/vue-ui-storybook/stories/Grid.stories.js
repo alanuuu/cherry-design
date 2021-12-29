@@ -16,6 +16,9 @@ export default {
         defaultValue: {
           summary: '0',
         },
+        type: {
+          summary: 'number',
+        },
       },
     },
     justify: {
@@ -31,6 +34,9 @@ export default {
       defaultValue: 'start',
       table: {
         defaultValue: { summary: 'start', detail: '默认flex-start' },
+        type: {
+          summary: 'string',
+        },
       },
     },
     align: {
@@ -40,6 +46,19 @@ export default {
       defaultValue: 'top',
       table: {
         defaultValue: { summary: 'top', detail: '默认flex-start' },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    offset: {
+      description: '每个col的偏移量',
+      control: { type: 'number' },
+      table: {
+        defaultValue: { summary: '0', detail: '默认0' },
+        type: {
+          summary: 'number',
+        },
       },
     },
   },
