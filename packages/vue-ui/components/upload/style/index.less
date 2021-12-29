@@ -1,0 +1,55 @@
+.c-upload {
+  @prefix: c-upload;
+
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  &:focus {
+    border-color: @primary-color;
+    color: @primary-color;
+    .@{prefix}-dragger {
+
+    }
+  }
+  &__input {
+    display: none;
+  }
+
+  &__top {
+    font-size: 12px;
+    color: #606266;
+    margin-top: 7px;
+  }
+
+  iframe {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+
+  &--pictrue-card {
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 148px;
+    height: 148px;
+    cursor: pointer;
+    line-height: 146px;
+    vertical-align: top;
+
+    i {
+      font-size: 28px;
+      color: #8c939d;
+    }
+
+    &:hover {
+      border-color: @primary-color;
+      color: @primary-color;
+    }
+  }
+}
