@@ -29,6 +29,7 @@ import Checkbox from './checkbox';
 import Popover from './popover';
 import Tabs from './tabs';
 import Tag from './tag';
+import Toast from './toast';
 
 const components = {
   Button,
@@ -64,6 +65,7 @@ const components = {
   Popover,
   Tabs,
   Tag,
+  Toast,
 };
 
 const install = (app, options) => {
@@ -77,5 +79,8 @@ const CSDNUI = {
   ...components,
   install,
 };
+
+import Vue from 'vue';
+Vue.prototype.$toast = Toast;
 
 export default CSDNUI;

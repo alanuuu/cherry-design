@@ -32,3 +32,4 @@ export { Select, Option } from './select';
 export { default as List } from './list';
 export { default as Popover } from './popover';
 export { default as Tabs } from './tabs';
+export { default as Toast } from './toast';
