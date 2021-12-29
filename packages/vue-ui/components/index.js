@@ -32,3 +32,4 @@ export { default as CheckboxGroup } from './checkbox-group';
 export { default as Popover } from './popover';
 export { default as Tabs } from './tabs';
 export { default as Tag } from './tag';
+export { default as Toast } from './toast';
