@@ -13,12 +13,14 @@ export default {
         type: { summary: 'string' },
         defaultValue: { summary: 'always' },
       },
+      description: '阴影显示方式',
     },
     header: {
       control: { type: 'text' },
       table: {
-        type: { summary: 'string' },
+        type: { summary: 'string|slot' },
       },
+      description: '头部内容',
     },
   },
 };

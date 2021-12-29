@@ -12,7 +12,7 @@ export default {
     type: {
       control: { type: 'radio' },
       options: ['primary', 'light'],
-      description: 'badge type',
+      description: '类型',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'primary' },
@@ -20,7 +20,7 @@ export default {
     },
     value: {
       control: { type: 'text' },
-      description: 'Display value',
+      description: '显示的值',
       table: {
         type: { summary: 'string' },
       },
@@ -31,8 +31,7 @@ export default {
         type: { summary: 'number' },
         defaultValue: { summary: '-1' },
       },
-      description:
-        'The maximum value, if it exceeds the maximum value,{max}+ will be displayed, and the value is required to be of type Number',
+      description: '最大值，超出会显示{max+}',
     },
     hidden: {
       control: { type: 'boolean' },
@@ -40,7 +39,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      description: 'Hide badge',
+      description: '是否隐藏',
     },
     dot: {
       control: { type: 'boolean' },
@@ -48,7 +47,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      description: 'Dot badge',
+      description: '是否为点',
     },
   },
 };
