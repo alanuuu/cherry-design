@@ -7,6 +7,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 13,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   plugins: ['vue'],
   rules: {
@@ -19,5 +22,6 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-plusplus': 0,
     'no-restricted-syntax': 0,
+    'no-prototype-builtins': 0,
   },
 };
