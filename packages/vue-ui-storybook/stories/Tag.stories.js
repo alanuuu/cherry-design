@@ -10,16 +10,52 @@ export default {
     size: {
       control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
+      description: 'tag大小',
+      table: {
+        defaultValue: {
+          summary: 'medium',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
     },
     theme: {
       control: { type: 'radio', defaultValue: 'normal' },
       options: ['normal', 'light'],
+      description: 'tag主题',
+      table: {
+        defaultValue: {
+          summary: 'normal',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
     },
     circle: {
       control: { type: 'boolean' },
+      description: '是否圆角',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
     },
     active: {
       control: { type: 'boolean' },
+      description: '是否激活状态',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
     },
   },
 };
