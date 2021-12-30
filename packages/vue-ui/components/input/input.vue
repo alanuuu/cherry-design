@@ -4,7 +4,9 @@
       :class="cls"
       :disabled="disabled"
       :placeholder="placeholder"
-      @input="handleInput"
+      @input="onInput"
+      @change="onChange"
+      @blur="onBlur"
       :maxlength="maxlength"
       :type="type"
       :value="value"
@@ -15,6 +17,7 @@
 
 <script>
 import { prefix } from '../../constants';
+import { formItemKey } from '../form/context';
 
 export default {
   name: 'Input',
@@ -43,6 +46,9 @@ export default {
       default: 'text',
     },
   },
+  inject: {
+    formItem: formItemKey,
+  },
   computed: {
     textNum() {
       return this.value.length;
@@ -62,8 +68,18 @@ export default {
     },
   },
   methods: {
-    handleInput(e) {
-      this.$emit('input', e.target.value);
+    onInput(e) {
+      this.$emit('input', e.target?.value);
+      this.formItem.onField('change');
+    },
+    onChange(e) {
+      this.$emit('change', e.target?.value);
+    },
+    onBlur(e) {
+      this.$emit('blur');
+    },
+    onFocus(e) {
+      this.$emit('focus');
     },
   },
 };

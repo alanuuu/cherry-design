@@ -8,6 +8,8 @@
   </div>
 </template>
 <script>
+import { formItemKey } from '../form/context';
+
 export default {
   name: 'CSwitch',
   props: {
@@ -24,6 +26,9 @@ export default {
       default: false,
     },
   },
+  inject: {
+    formItem: formItemKey,
+  },
   computed: {
     cls() {
       const name = 'c-switch';
@@ -39,6 +44,7 @@ export default {
       if (this.disabled) return;
       this.$emit('change', !this.value);
       this.$emit('input', !this.value);
+      this.formItem.onField('change');
     },
   },
 };

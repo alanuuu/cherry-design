@@ -29,7 +29,9 @@
 </template>
 
 <script>
+import { formItemKey } from '../form/context';
 import { IconRight } from '../icon';
+
 export default {
   name: 'Select',
   components: {
@@ -70,6 +72,9 @@ export default {
       };
     },
   },
+  inject: {
+    formItem: formItemKey,
+  },
   mounted() {
     if (this.value) {
       this.children = this.getChildren('Option');
@@ -77,6 +82,7 @@ export default {
         if (item.value === this.value) {
           this.label = item.label;
         }
+        return item;
       });
     }
     document.addEventListener('click', this.clickBlank);
@@ -98,7 +104,8 @@ export default {
     selectData(value, label) {
       this.label = label;
       this.$emit('input', value);
-      this.$emit('on-change', value);
+      this.$emit('change', value);
+      this.formItem.onField('change');
       this.visiable = false;
       this.query = label;
     },
@@ -107,7 +114,7 @@ export default {
       this.children.forEach((item) => {
         item.inputText = e.target.value;
       });
-      this.$emit('on-query-change', e.target.value);
+      this.$emit('query-change', e.target.value);
     },
     clickBlank(e) {
       if (!this.$refs.select.contains(e.target) && this.visiable) {
@@ -118,8 +125,10 @@ export default {
             if (item.value === this.value) {
               this.query = item.label;
             }
+            return item;
           });
         }
+        this.formItem.onField('change');
       }
     },
   },

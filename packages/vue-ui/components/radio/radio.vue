@@ -25,12 +25,14 @@
   </label>
 </template>
 <script>
+import { formItemKey } from '../form/context';
+
 export default {
   name: 'Radio',
   props: {
     group: String,
     label: [String, Number],
-    value: {},
+    value: [String, Number],
     disabled: {
       type: Boolean,
       default: false,
@@ -40,6 +42,9 @@ export default {
     return {
       radioGroup: null,
     };
+  },
+  inject: {
+    formItem: formItemKey,
   },
   methods: {
     setGroup(parent) {
@@ -51,7 +56,6 @@ export default {
       let parent = this.$parent;
       while (parent) {
         if (parent.$options.name !== 'RadioGroup') {
-          console.log('find parent', parent);
           parent = parent.$parent;
         } else {
           this.setGroup(parent);
@@ -69,16 +73,15 @@ export default {
           this.radioGroup.triggerInput(val);
         } else {
           this.$emit('input', val);
+          if (!this.isGroup) {
+            this.formItem.onField('change');
+          }
         }
       },
     },
     isDisabled() {
       return this.disabled;
     },
-  },
-  mounted() {
-    console.log('mounted', this.inGroup);
-    console.log('model', this.model);
   },
 };
 </script>

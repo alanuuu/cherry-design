@@ -21,6 +21,7 @@
 
 <script>
 import CAvatar from '../avatar/avatar.vue';
+
 export default {
   name: 'ListItemMeta',
   inject: ['itemLayout'],

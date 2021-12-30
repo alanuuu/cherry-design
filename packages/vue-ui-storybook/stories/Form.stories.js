@@ -23,12 +23,9 @@ const Template = (args, { argTypes }) => ({
         password: [
           { required: true, message: '请输入' },
           {
-            len: 8,
-            pattern: /^[a-z0-9]+$/,
-            transform(value) {
-              return value.trim();
-            },
-            message: '请输入由字母、数字组成长度为8的密码',
+            type: 'string',
+            min: 8,
+            message: '请输入长度大于8的密码',
           },
         ],
         checkbox: [{ required: true, message: '请选择' }],
@@ -85,7 +82,7 @@ const Template = (args, { argTypes }) => ({
         <c-form-item label="Rate" field="rate" rule="rule.rate">
           <c-rate v-model="model.rate" />
         </c-form-item>
-        <c-form-item field="">
+        <c-form-item>
           <c-space :size="20">
             <c-button htmlType="submit">登 录</c-button>
             <c-button @click="onReset" ghost>重 置</c-button>
@@ -102,7 +99,6 @@ const Template = (args, { argTypes }) => ({
     },
   },
   mounted() {
-    console.log(this.rule);
   },
 });
 
