@@ -42,6 +42,6 @@ module.exports = defineConfig({
 
   plugins: [
     // vue(),
-    createVuePlugin()
+    createVuePlugin({ jsx: true })
   ],
 });
