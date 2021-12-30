@@ -17,6 +17,7 @@ export default {
         defaultValue: {
           summary: 12,
         },
+        type: { summary: 'Number' },
       },
     },
     direction: {
@@ -27,6 +28,7 @@ export default {
         defaultValue: {
           summary: 'horizontal',
         },
+        type: { summary: 'String' },
       },
     },
     alignItems: {
@@ -37,6 +39,7 @@ export default {
         defaultValue: {
           summary: 'center',
         },
+        type: { summary: 'String' },
       },
     },
   },

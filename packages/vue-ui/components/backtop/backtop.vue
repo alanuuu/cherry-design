@@ -1,5 +1,5 @@
 <template>
-  <div class="c-backtop">
+  <div class="c-backtop" :style="styles">
     <div v-if="show" @click="backTop">
       <slot></slot>
     </div>
@@ -14,6 +14,14 @@ export default {
       type: Number,
       default: 300,
     },
+    bottom: {
+      type: Number,
+      default: 50,
+    },
+    right: {
+      type: Number,
+      default: 50,
+    },
   },
   data() {
     return {
@@ -23,6 +31,14 @@ export default {
   mounted() {
     window.addEventListener('resize', this.changeScroll);
     window.addEventListener('scroll', this.changeScroll);
+  },
+  computed: {
+    styles() {
+      return {
+        bottom: this.bottom + 'px',
+        right: this.right + 'px',
+      };
+    },
   },
   methods: {
     changeScroll() {

@@ -9,6 +9,7 @@ export default {
     closable: false,
     duration: 3000,
     top: 20,
+    toastType: 'info',
   },
   argTypes: {
     content: {
@@ -19,6 +20,7 @@ export default {
         defaultValue: {
           summary: null,
         },
+        type: { summary: 'String' },
       },
     },
     closable: {
@@ -29,6 +31,7 @@ export default {
         defaultValue: {
           summary: false,
         },
+        type: { summary: 'Boolean' },
       },
     },
     duration: {
@@ -38,6 +41,7 @@ export default {
         defaultValue: {
           summary: 3000,
         },
+        type: { summary: 'Number' },
       },
     },
     top: {
@@ -47,6 +51,18 @@ export default {
         defaultValue: {
           summary: 20,
         },
+        type: { summary: 'Number' },
+      },
+    },
+    toastType: {
+      control: { type: 'radio' },
+      options: ['info', 'success', 'error'],
+      description: '按钮类型',
+      table: {
+        defaultValue: {
+          summary: 'info',
+        },
+        type: { summary: 'String' },
       },
     },
   },
@@ -65,6 +81,7 @@ const Template = (args, { argTypes }) => ({
         closable: args.closable,
         duration: args.duration,
         top: args.top,
+        toastType: args.toastType,
       });
     },
   },

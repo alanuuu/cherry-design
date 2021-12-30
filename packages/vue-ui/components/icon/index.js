@@ -67,4 +67,5 @@ export { default as IconTranslate } from './translate.vue';
 export { default as IconTwitterCircleFill } from './twitter-circle-fill.vue'; 
 export { default as IconUpload } from './upload.vue'; 
 export { default as IconVoice } from './voice.vue'; 
+export { default as IconWarningCircle } from './warning-circle.vue'; 
 export { default as IconWeiboCircleFill } from './weibo-circle-fill.vue'; 

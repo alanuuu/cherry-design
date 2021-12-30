@@ -16,6 +16,7 @@ export default {
         defaultValue: {
           summary: '',
         },
+        type: { summary: 'String' },
       },
     },
     placeholder: {
@@ -25,6 +26,7 @@ export default {
         defaultValue: {
           summary: '请选择',
         },
+        type: { summary: 'String' },
       },
     },
     disabled: {
@@ -34,6 +36,7 @@ export default {
         defaultValue: {
           summary: false,
         },
+        type: { summary: 'Boolean' },
       },
     },
     filterable: {
@@ -43,6 +46,7 @@ export default {
         defaultValue: {
           summary: false,
         },
+        type: { summary: 'Boolean' },
       },
     },
   },

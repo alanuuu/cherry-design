@@ -17,8 +17,9 @@ export default {
       description: '列表头部内容',
       table: {
         defaultValue: {
-          summary: null,
+          summary: '-',
         },
+        type: { summary: 'String|slot' },
       },
     },
     footer: {
@@ -26,8 +27,9 @@ export default {
       description: '列表底部内容',
       table: {
         defaultValue: {
-          summary: null,
+          summary: '-',
         },
+        type: { summary: 'String|slot' },
       },
     },
     border: {
@@ -37,6 +39,7 @@ export default {
         defaultValue: {
           summary: true,
         },
+        type: { summary: 'Boolean' },
       },
     },
     itemLayout: {
@@ -47,6 +50,7 @@ export default {
         defaultValue: {
           summary: 'horizontal',
         },
+        type: { summary: 'String' },
       },
     },
     split: {
@@ -56,6 +60,7 @@ export default {
         defaultValue: {
           summary: true,
         },
+        type: { summary: 'Boolean' },
       },
     },
   },

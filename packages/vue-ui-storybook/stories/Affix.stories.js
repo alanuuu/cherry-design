@@ -15,15 +15,18 @@ export default {
         defaultValue: {
           summary: 0,
         },
+        type: { summary: 'Number' },
       },
     },
     offsetBottom: {
       control: { type: 'number' },
-      description: '距离窗口底部达到指定偏移量后触发',
+      description:
+        '距离窗口底部达到指定偏移量后触发（两个都设置时默认offsetBottom生效）',
       table: {
         defaultValue: {
-          summary: null,
+          summary: '-',
         },
+        type: { summary: 'Number' },
       },
     },
   },
@@ -32,9 +35,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template:
-    `<div>
-      <div style="height: 200px"></div>
+  template: `<div>
+      <div style="height: 500px"></div>
       top定位
       <c-affix v-bind="$props" @onChange="change" :offsetTop="50">
         <c-button>top</c-button>

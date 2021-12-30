@@ -14,8 +14,9 @@ export default {
       description: '图片地址',
       table: {
         defaultValue: {
-          summary: null,
+          summary: '-',
         },
+        type: { summary: 'String' },
       },
     },
     size: {
@@ -26,6 +27,7 @@ export default {
         defaultValue: {
           summary: 'medium',
         },
+        type: { summary: 'String' },
       },
     },
     shape: {
@@ -36,6 +38,7 @@ export default {
         defaultValue: {
           summary: 'circle',
         },
+        type: { summary: 'String' },
       },
     },
   },

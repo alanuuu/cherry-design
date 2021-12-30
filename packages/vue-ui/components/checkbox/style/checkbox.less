@@ -97,8 +97,13 @@
     &-disabled {
       cursor: not-allowed;
       .c-checkbox-inner {
-        border-color: @disabled-color;
-        background-color: @disabled-color;
+        border-color: #dcdee2;
+        background-color: #f3f3f3;
+      }
+      .c-checkbox-checked {
+        &:after {
+          border-color: #ccc;
+        }
       }
     }
   }

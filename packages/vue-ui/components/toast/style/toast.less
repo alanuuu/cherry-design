@@ -1,7 +1,7 @@
 .c-toast {
   font-size: 14px;
   position: fixed;
-  z-index: 1010;
+  z-index: @zindex-toast;
   width: 100%;
   top: 16px;
   left: 0;
@@ -9,7 +9,7 @@
   pointer-events: none;
   text-align: center;
   &-content {
-    display: inline-block;
+    display: inline-flex;
     pointer-events: all;
     padding: 8px 13px;
     border-radius: 4px;
@@ -17,17 +17,29 @@
     background: #fff;
     position: relative;
     min-width: 100px;
+    text-align: center;
     &-text {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      text-align: center;
       &-close {
         padding-right: 30px;
       }
     }
     &-icon {
-      margin-right: 4px;
+      margin-right: 5px;
       font-size: 16px;
       vertical-align: middle;
-      color: @primary-color;
+      color: #0076ff;
+      &-info {
+        color: @success-color;
+      }
+      &-error {
+        color: @danger-color;
+      }
+      &-success {
+        color: #19be6b;
+      }
     }
     &-close {
       font-size: 16px;
