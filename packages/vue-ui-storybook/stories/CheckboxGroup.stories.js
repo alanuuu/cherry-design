@@ -18,6 +18,7 @@ export default {
         defaultValue: {
           summary: 'medium',
         },
+        type: { summary: 'String' },
       },
     },
     checked: {
@@ -27,6 +28,7 @@ export default {
         defaultValue: {
           summary: '[]',
         },
+        type: { summary: 'Array' },
       },
     },
     disabled: {
@@ -36,6 +38,7 @@ export default {
         defaultValue: {
           summary: false,
         },
+        type: { summary: 'Boolean' },
       },
     },
   },

@@ -5,6 +5,11 @@ let ToastConstructor = Vue.extend(Toast);
 let instance;
 let instances = [];
 let seed = 1;
+let iconList = {
+  success: 'icon-check-circle',
+  error: 'icon-close-circle',
+  info: 'icon-warning-circle',
+};
 
 const ToastDialog = (options = {}) => {
   if (typeof options === 'string') {
@@ -16,7 +21,9 @@ const ToastDialog = (options = {}) => {
       message: options.content || '',
       duration: options.duration || 3000,
       showClose: options.closable || false,
-      top: options.top,
+      top: options.top || 20,
+      toastIcon: iconList[options.toastType] || 'icon-warning-circle',
+      toastType: options.toastType || 'info',
     };
   }
   let id = `toast_${seed++}`;

@@ -17,8 +17,9 @@ export default {
       description: '图片地址',
       table: {
         defaultValue: {
-          summary: null,
+          summary: '-',
         },
+        type: { summary: 'String' },
       },
     },
     previewSrc: {
@@ -28,6 +29,7 @@ export default {
         defaultValue: {
           summary: null,
         },
+        type: { summary: 'String' },
       },
     },
     fit: {
@@ -38,6 +40,7 @@ export default {
         defaultValue: {
           summary: 'contain',
         },
+        type: { summary: 'String' },
       },
     },
     preview: {
@@ -47,6 +50,7 @@ export default {
         defaultValue: {
           summary: true,
         },
+        type: { summary: 'Boolean' },
       },
     },
     alt: {
@@ -56,6 +60,7 @@ export default {
         defaultValue: {
           summary: null,
         },
+        type: { summary: 'String' },
       },
     },
   },

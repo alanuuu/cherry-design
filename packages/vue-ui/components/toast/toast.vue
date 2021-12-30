@@ -3,10 +3,8 @@
     <div class="c-toast" v-show="visible" :style="styles">
       <div class="c-toast-content">
         <div class="c-toast-content-text" :class="cls">
-          <icon-question-circle
-            class="c-toast-content-icon"
-          ></icon-question-circle>
-          {{ message }}
+          <component :is="toastIcon" :class="clsIcon"></component>
+          <span>{{ message }}</span>
         </div>
         <icon-close
           v-if="showClose"
@@ -19,11 +17,10 @@
 </template>
 
 <script>
-import { IconQuestionCircle, IconClose } from '../icon';
+import { IconClose } from '../icon';
 export default {
   name: 'Toast',
   components: {
-    IconQuestionCircle,
     IconClose,
   },
   data() {
@@ -35,6 +32,8 @@ export default {
       visible: false, // 是否显示
       top: 20,
       showClose: false,
+      toastIcon: 'icon-warning-circle',
+      toastType: 'info',
     };
   },
   mounted() {
@@ -49,6 +48,12 @@ export default {
     cls() {
       return {
         [`c-toast-content-text-close`]: this.showClose,
+      };
+    },
+    clsIcon() {
+      return {
+        [`c-toast-content-icon`]: true,
+        [`c-toast-content-icon-${this.toastType}`]: true,
       };
     },
   },

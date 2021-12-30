@@ -6,6 +6,8 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   args: {
     height: 300,
+    bottom: 50,
+    right: 50,
   },
   argTypes: {
     height: {
@@ -15,6 +17,27 @@ export default {
         defaultValue: {
           summary: 300,
         },
+        type: { summary: 'Number' },
+      },
+    },
+    bottom: {
+      control: { type: 'number' },
+      description: '组件距离底部的距离',
+      table: {
+        defaultValue: {
+          summary: 50,
+        },
+        type: { summary: 'Number' },
+      },
+    },
+    right: {
+      control: { type: 'number' },
+      description: '组件距离右边的距离',
+      table: {
+        defaultValue: {
+          summary: 50,
+        },
+        type: { summary: 'Number' },
       },
     },
   },
@@ -23,12 +46,11 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template:
-    `<div>
+  template: `<div>
       <div style="height: 1000px">
       顶部
       <p>开始滚动</p>
-      <c-back-top v-bind="$props" @back="back" style="bottom: 100px;right: 100px;">
+      <c-back-top v-bind="$props" @back="back">
         <c-button>回到顶部</c-button>
       </c-back-top>
       </div>
