@@ -43,7 +43,7 @@ export default {
       return {
         [name]: true,
         [`is-justify-${this.justify}`]: true,
-        [`is-align-${this.align}`]: this.align === 'top',
+        [`is-align-${this.align}`]: this.align,
       };
     },
   },

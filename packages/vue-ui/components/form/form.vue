@@ -170,9 +170,9 @@ export default {
           }
         });
         if (hasError) {
-          this.$emit('success', { values: this.model });
+          this.$emit('fail', { values: this.model, errors });
         } else {
-          this.$emit('fail', this.model);
+          this.$emit('success', { values: this.model });
         }
 
         this.$emit('submit', { values: this.model, errors: hasError ? errors : undefined });

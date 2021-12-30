@@ -1,5 +1,5 @@
 <template>
-  <c-row class="c-form-item" :class="cls">
+   <c-row class="c-form-item" :class="cls">
     <c-col :span="labelCol">
       <form-item-label v-if="label" :required="isRequired">{{
         label
@@ -7,7 +7,7 @@
     </c-col>
     <c-col :span="wrapperCol">
       <div class="c-form-item--content">
-        <slot :disabled="isDisabled"></slot>
+        <slot></slot>
       </div>
       <form-item-message :status="status">
         {{ message }}
@@ -40,6 +40,8 @@ export default {
     return {
       [formItemKey]: {
         updateValidateState: this.updateValidateState,
+        disabled: this.isDisabled,
+        onField: this.onField,
       },
     };
   },
@@ -60,7 +62,6 @@ export default {
     },
     field: {
       type: [Array, String],
-      required: true,
     },
     rules: {
       type: Array,
@@ -116,7 +117,7 @@ export default {
       return this.status === 'error';
     },
   },
-  mounted() {
+  created() {
     this.init();
   },
   beforeDestroy() {
@@ -130,7 +131,7 @@ export default {
         field: this.field,
         disabled: this.isDisabled,
         error: this.isError,
-        validate: this.validator,
+        validate: this.validate,
         clearValidate: this.clearValidate,
         resetField: this.resetField,
         setField: this.setField,
@@ -146,7 +147,50 @@ export default {
     },
     getRules() {
       const required = this.isRequired ? { required: true } : [];
-      return [].concat(required).concat(this.rules);
+      const has = this.rules.find((v) => v.required);
+      return has ? [].concat(this.rules) : [].concat(required).concat(this.rules);
+    },
+    getTriggerRule(trigger) {
+      const rules = this.getRules();
+      return rules.filter(
+        (rule) => !rule.trigger || rule.trigger.indexOf(trigger) !== -1,
+      );
+    },
+    validate(trigger) {
+      const rules = this.getTriggerRule(trigger);
+      if (!rules || rules.length === 0) {
+        return Promise.resolve();
+      }
+      const field = this.field ? this.field : false;
+      if (!field) {
+        // eslint-disable-next-line no-console
+        console.warn('filed 为必填项！');
+        return Promise.resolve();
+      }
+      this.updateValidateState(this.field, {
+        status: Status.validating,
+        message: '',
+      });
+      const val = this.getVal();
+      const schema = new Schema({
+        [field]: rules.map((rule) => {
+          if (!rule.type && !rule.validator) {
+            rule.type = Array.isArray(val) ? 'array' : typeof val;
+          }
+          return rule;
+        }),
+      });
+      return new Promise((resolve) => {
+        schema.validate({ [field]: val }, (error, fields) => {
+          const isError = Boolean(error);
+          this.updateValidateState(field, {
+            status: isError ? 'error' : 'success',
+            message: error?.[0].message ?? '',
+          });
+          const err = isError ? error[0] : undefined;
+          resolve(err);
+        });
+      });
     },
     validator() {
       if (this.validateDisabled) {
@@ -156,21 +200,26 @@ export default {
       if (!rules || rules.length === 0) {
         return Promise.resolve();
       }
-      this.updateValidateState(this.field, {
-        status: Status.validating,
-        message: '',
-      });
-
-      const schema = new Schema({
-        [this.field]: rules,
-      });
       const field = this.field ? this.field : false;
       if (!field) {
         // eslint-disable-next-line no-console
         console.warn('filed 为必填项！');
         return Promise.resolve();
       }
+      this.updateValidateState(this.field, {
+        status: Status.validating,
+        message: '',
+      });
       const val = this.getVal();
+      const schema = new Schema({
+        [field]: rules.map((rule) => {
+          if (!rule.type && !rule.validator) {
+            // eslint-disable-next-line no-param-reassign
+            rule.type = typeof val;
+          }
+          return rule;
+        }),
+      });
       return new Promise((resolve) => {
         schema.validate({ [field]: val }, (error, fields) => {
           const isError = Boolean(error);
@@ -225,6 +274,13 @@ export default {
           this.validateDisabled = false;
         });
       }
+    },
+    onField(type) {
+      if (this.validateDisabled) {
+        this.validateDisabled = false;
+        return;
+      }
+      this.validate(type);
     },
   },
 };

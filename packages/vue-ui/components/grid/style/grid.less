@@ -101,32 +101,38 @@
   .span(24, xs);
   .offset(23, xs);
   .order(24, xs);
-
-  @media (min-width: 576px) {
+  
+  @media (max-width: @screen-sm) {
     .span(24, sm);
     .offset(23, sm);
     .order(24, sm);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: @screen-sm) {
+    .span(24, sm);
+    .offset(23, sm);
+    .order(24, sm);
+  }
+
+  @media (min-width: @screen-md) {
     .span(24, md);
     .offset(23, md);
     .order(24, md);
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: @screen-lg) {
     .span(24, lg);
     .offset(23, lg);
     .order(24, lg);
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @screen-xl) {
     .span(24, xl);
     .offset(23, xl);
     .order(24, xl);
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: @screen-xxl) {
     .span(24, xxl);
     .offset(23, xxl);
     .order(24, xxl);

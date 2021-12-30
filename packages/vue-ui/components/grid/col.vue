@@ -6,6 +6,7 @@
 
 <script>
 const spans = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'offset'];
+const name = 'c-col';
 
 export default {
   name: 'Col',
@@ -48,12 +49,15 @@ export default {
   },
   methods: {
     adaptationGrid(layout, type) {
-      const name = 'c-col';
       const cls = {};
       if (typeof layout === 'object') {
         Object.keys(layout).map((key) => {
           if (spans.indexOf(key) > -1) {
-            cls[`${name}-${key}-${layout[key]}`] = true;
+            if (type === 'span') {
+              cls[`${name}-${key}-${layout[key]}`] = true;
+            } else {
+              cls[`${name}-${key}-${type}-${layout[key]}`] = true;
+            }
           } else {
             cls[`${name}-${layout[key]}`] = true;
           }

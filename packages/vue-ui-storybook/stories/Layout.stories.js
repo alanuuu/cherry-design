@@ -1,11 +1,7 @@
-import Layout from './layout/index.vue';
-
+import './style/layout.less';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Layout 布局',
-  conponent: {
-    Layout,
-  },
   args: {
     hasSider: true,
   },
@@ -25,11 +21,15 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: {
-    Layout,
-  },
   template: `
-  <layout v-bind="$props"></layout>
+  <c-layout class="section">
+  <c-layout-header class="header">Header</c-layout-header>
+  <c-layout :hasSider="hasSider">
+    <c-layout-content class="content">Content</c-layout-content>
+    <c-layout-sider class="sider">Sider</c-layout-sider>
+  </c-layout>
+  <c-layout-footer class="footer">Footer</c-layout-footer>
+</c-layout>
   `,
 });
 

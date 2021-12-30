@@ -20,6 +20,8 @@
   </div>
 </template>
 <script>
+import { formItemKey } from '../form/context';
+
 export default {
   name: 'Rate',
   props: {
@@ -67,6 +69,9 @@ export default {
       ishover: false, // 是否悬停
     };
   },
+  inject: {
+    formItem: formItemKey,
+  },
   computed: {
     classes() {
       return {
@@ -89,6 +94,9 @@ export default {
       }
       this.clickIndex = val + 1;
       this.$emit('input', this.clickIndex);
+      this.$nextTick(() => {
+        this.formItem.onField('change');
+      });
     },
     starCls(val) {
       return [
