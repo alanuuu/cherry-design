@@ -9,7 +9,7 @@ export default {
     closable: false,
     duration: 3000,
     top: 20,
-    toastType: 'info',
+    type: 'info',
   },
   argTypes: {
     content: {
@@ -54,9 +54,9 @@ export default {
         type: { summary: 'Number' },
       },
     },
-    toastType: {
+    type: {
       control: { type: 'radio' },
-      options: ['info', 'success', 'error'],
+      options: ['info', 'success', 'error', 'none'],
       description: '按钮类型',
       table: {
         defaultValue: {
@@ -77,11 +77,11 @@ const Template = (args, { argTypes }) => ({
   methods: {
     click() {
       this.$toast({
-        content: args.content,
-        closable: args.closable,
-        duration: args.duration,
-        top: args.top,
-        toastType: args.toastType,
+        content: this.content,
+        closable: this.closable,
+        duration: this.duration,
+        top: this.top,
+        type: this.type,
       });
     },
   },

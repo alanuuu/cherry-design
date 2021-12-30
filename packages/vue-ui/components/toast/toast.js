@@ -9,6 +9,7 @@ let iconList = {
   success: 'icon-check-circle',
   error: 'icon-close-circle',
   info: 'icon-warning-circle',
+  none: 'none',
 };
 
 const ToastDialog = (options = {}) => {
@@ -22,8 +23,8 @@ const ToastDialog = (options = {}) => {
       duration: options.duration || 3000,
       showClose: options.closable || false,
       top: options.top || 20,
-      toastIcon: iconList[options.toastType] || 'icon-warning-circle',
-      toastType: options.toastType || 'info',
+      icon: iconList[options.type] || 'icon-warning-circle',
+      type: options.type || 'info',
     };
   }
   let id = `toast_${seed++}`;
