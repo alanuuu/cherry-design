@@ -2,15 +2,21 @@
   <transition name="c-fade">
     <div class="c-toast" v-show="visible" :style="styles">
       <div class="c-toast-content">
-        <div class="c-toast-content-text" :class="cls">
-          <component :is="toastIcon" :class="clsIcon"></component>
-          <span>{{ message }}</span>
+        <div style="display: inline-flex">
+          <div class="c-toast-content-text" :class="cls">
+            <component
+              v-if="icon !== 'none'"
+              :is="icon"
+              :class="clsIcon"
+            ></component>
+            <span>{{ message }}</span>
+          </div>
+          <icon-close
+            v-if="showClose"
+            class="c-toast-content-close"
+            @click.native="close"
+          ></icon-close>
         </div>
-        <icon-close
-          v-if="showClose"
-          class="c-toast-content-close"
-          @click.native="close"
-        ></icon-close>
       </div>
     </div>
   </transition>
@@ -32,8 +38,8 @@ export default {
       visible: false, // 是否显示
       top: 20,
       showClose: false,
-      toastIcon: 'icon-warning-circle',
-      toastType: 'info',
+      icon: 'icon-warning-circle',
+      type: 'info',
     };
   },
   mounted() {
@@ -52,8 +58,8 @@ export default {
     },
     clsIcon() {
       return {
-        [`c-toast-content-icon`]: true,
-        [`c-toast-content-icon-${this.toastType}`]: true,
+        [`c-toast-content-icon`]: this.icon !== 'none',
+        [`c-toast-content-icon-${this.type}`]: this.icon !== 'none',
       };
     },
   },
