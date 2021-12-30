@@ -1,8 +1,6 @@
-import DemoRate from './rate/index.vue';
 
 export default {
   title: '组件/Rate 评分',
-  component: { DemoRate },
   args: {
     icon: 'icon-star-fill',
     disabled: false,
@@ -72,8 +70,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { DemoRate },
-  template: '<demo-rate :attr="$props"></demo-rate>',
+  template: '<c-rate :attr="$props"></c-rate>',
 });
 
 export const Primary = Template.bind({});
