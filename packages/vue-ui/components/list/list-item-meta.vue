@@ -37,8 +37,8 @@ export default {
     metaStyle() {
       return this.itemLayout === 'vertical'
         ? {
-            marginBottom: '18px',
-          }
+          marginBottom: '18px',
+        }
         : {};
     },
   },

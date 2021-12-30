@@ -24,5 +24,6 @@ module.exports = {
     'no-restricted-syntax': 0,
     'no-prototype-builtins': 0,
     'no-param-reassign': 0,
+    'operator-linebreak': 0,
   },
 };

@@ -39,8 +39,8 @@ export default {
     verticalStyle() {
       return this.itemLayout === 'vertical'
         ? {
-            alignItems: 'flex-start',
-          }
+          alignItems: 'flex-start',
+        }
         : {};
     },
   },
