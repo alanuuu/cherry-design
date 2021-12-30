@@ -2,4 +2,50 @@ import { Meta } from '@storybook/addon-docs';
 
 <Meta title="使用" />
 
-<h1>使用</h1>
+<h3>直接使用</h3>
+
+```javascript
+import Vue from 'vue';
+import App from './App.vue';
+import CSDNUI from '@csdn-design/vue-ui';
+// 额外使用ICON，不是必须
+import CSDNIcon from '@csdn-design/vue-ui/es/icon';
+import '@csdn-design/vue-ui/es/index.css';
+
+Vue.use(CSDNUI);
+Vue.use(CSDNIcon);
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
+```
+
+<h3>按需加载</h3>
+
+<p>如果 tree-shaking 失效且不使用 webpack 插件的情况下，可以通过 babel-plugin-import 进行按需加载。</p>
+
+<code>npm install babel-plugin-import -D</code>
+
+<h3>组件按需加载</h3>
+
+```
+{
+  "plugins": [
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@csdn-design/vue-ui",
+        "libraryDirectory": "es",
+        "camel2DashComponentName": false,
+        "style": true, // 样式按需加载
+      },
+    ],
+  ];
+}
+```
+
+<h3>Icon按需加载</h3>
+
+```
+import { IconArrowDown } from '@csdn-design/vue-ui/es/icon'
+```

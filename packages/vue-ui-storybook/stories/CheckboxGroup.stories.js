@@ -1,9 +1,7 @@
-import { Checkbox, CheckboxGroup } from '@csdn-design/vue-ui';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: '组件/CheckboxGroup 复选框',
-  component: { CheckboxGroup, Checkbox },
   args: {
     size: 'medium',
     checked: [],
@@ -46,12 +44,11 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CheckboxGroup, Checkbox },
   template:
-    `<checkbox-group @change="change" :size="size" v-model="checked">
-      <checkbox :disabled="disabled" label="1">苹果</checkbox>
-      <checkbox :disabled="disabled" label="2">西瓜</checkbox>
-    </checkbox-group>
+    `<c-checkbox-group @change="change" :size="size" v-model="checked">
+      <c-checkbox :disabled="disabled" label="1">苹果</c-checkbox>
+      <c-checkbox :disabled="disabled" label="2">西瓜</c-checkbox>
+    </c-checkbox-group>
   `,
   methods: {
     change: action('change'),
