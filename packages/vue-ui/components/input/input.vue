@@ -17,10 +17,11 @@
 
 <script>
 import { prefix } from '../../constants';
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 export default {
   name: 'Input',
+  mixins: [formMixins],
   props: {
     value: {
       type: String,
@@ -46,9 +47,6 @@ export default {
       default: 'text',
     },
   },
-  inject: {
-    formItem: formItemKey,
-  },
   computed: {
     textNum() {
       return this.value.length;
@@ -70,7 +68,7 @@ export default {
   methods: {
     onInput(e) {
       this.$emit('input', e.target?.value);
-      this.formItem.onField('change');
+      this.formItem?.onField('change');
     },
     onChange(e) {
       this.$emit('change', e.target?.value);

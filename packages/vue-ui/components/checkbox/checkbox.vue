@@ -32,11 +32,12 @@
   </label>
 </template>
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 const name = 'c-checkbox';
 export default {
   name: 'Checkbox',
+  mixins: [formMixins],
   props: {
     disabled: {
       type: Boolean,
@@ -56,9 +57,6 @@ export default {
       type: [String, Number, Boolean],
       default: false,
     },
-  },
-  inject: {
-    formItem: formItemKey,
   },
   computed: {
     clsAll() {
@@ -107,7 +105,7 @@ export default {
       if (this.parent) {
         this.parent.change(this.model);
       } else {
-        this.formItem.onField('change');
+        this.formItem?.onField('change');
       }
     },
   },

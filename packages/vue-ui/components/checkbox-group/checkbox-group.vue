@@ -4,10 +4,11 @@
   </div>
 </template>
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 export default {
   name: 'CheckboxGroup',
+  mixins: [formMixins],
   props: {
     value: {
       type: Array,
@@ -24,9 +25,6 @@ export default {
       children: [],
     };
   },
-  inject: {
-    formItem: formItemKey,
-  },
   computed: {
     classes() {
       const name = 'c-checkbox-group';
@@ -39,7 +37,7 @@ export default {
     change(val) {
       this.$emit('input', val);
       this.$emit('change', val);
-      this.formItem.onField('change');
+      this.formItem?.onField('change');
     },
     // 获取组件名为WCheckbox的子组件信息
     getChildren(name) {

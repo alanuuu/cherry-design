@@ -29,11 +29,12 @@
 </template>
 
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 import { IconRight } from '../icon';
 
 export default {
   name: 'Select',
+  mixins: [formMixins],
   components: {
     IconRight,
   },
@@ -72,9 +73,6 @@ export default {
       };
     },
   },
-  inject: {
-    formItem: formItemKey,
-  },
   mounted() {
     if (this.value) {
       this.children = this.getChildren('Option');
@@ -105,7 +103,7 @@ export default {
       this.label = label;
       this.$emit('input', value);
       this.$emit('change', value);
-      this.formItem.onField('change');
+      this.formItem?.onField('change');
       this.visiable = false;
       this.query = label;
     },
@@ -128,7 +126,7 @@ export default {
             return item;
           });
         }
-        this.formItem.onField('change');
+        this.formItem?.onField('change');
       }
     },
   },

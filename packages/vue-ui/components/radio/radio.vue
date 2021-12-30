@@ -25,10 +25,11 @@
   </label>
 </template>
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 export default {
   name: 'Radio',
+  mixins: [formMixins],
   props: {
     group: String,
     label: [String, Number],
@@ -42,9 +43,6 @@ export default {
     return {
       radioGroup: null,
     };
-  },
-  inject: {
-    formItem: formItemKey,
   },
   methods: {
     setGroup(parent) {
@@ -74,7 +72,7 @@ export default {
         } else {
           this.$emit('input', val);
           if (!this.isGroup) {
-            this.formItem.onField('change');
+            this.formItem?.onField('change');
           }
         }
       },

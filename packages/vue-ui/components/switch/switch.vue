@@ -44,7 +44,7 @@ export default {
       if (this.disabled) return;
       this.$emit('change', !this.value);
       this.$emit('input', !this.value);
-      this.formItem.onField('change');
+      this.formItem?.onField('change');
     },
   },
 };

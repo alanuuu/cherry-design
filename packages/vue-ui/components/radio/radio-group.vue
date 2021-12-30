@@ -4,22 +4,20 @@
   </div>
 </template>
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 export default {
   name: 'RadioGroup',
+  mixins: [formMixins],
   props: {
     value: {
       type: [String, Number],
     },
   },
-  inject: {
-    formItem: formItemKey,
-  },
   methods: {
     triggerInput(val) {
       this.$emit('input', val);
-      this.formItem.onField('change');
+      this.formItem?.onField('change');
     },
   },
 };
