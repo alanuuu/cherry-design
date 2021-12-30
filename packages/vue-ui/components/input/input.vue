@@ -2,7 +2,7 @@
   <div class="c-input">
     <input
       :class="cls"
-      :disabled="disabled"
+      :disabled="itemDisabled"
       :placeholder="placeholder"
       @input="onInput"
       @change="onChange"
@@ -59,7 +59,7 @@ export default {
     cls() {
       const name = prefix + '-input';
       return {
-        [name + '-disabled']: this.disabled,
+        [name + '-disabled']: this.itemDisabled,
         [name + '-content']: true,
         [name + '-limit']: this.isWordLimitVisible,
       };

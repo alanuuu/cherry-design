@@ -9,7 +9,7 @@
         v-model="query"
         class="c-select-input"
         :placeholder="placeholder"
-        :disabled="disabled"
+        :disabled="itemDisabled"
         @input="handleInput"
       />
       <span v-else-if="label" class="c-select-placeholder c-select-value">{{
@@ -69,7 +69,7 @@ export default {
       return {
         [name]: true,
         [name + '-visiable']: this.visiable,
-        [name + '-disabled']: this.disabled,
+        [name + '-disabled']: this.itemDisabled,
       };
     },
   },
@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     clickBox() {
-      if (!this.visiable && !this.disabled) {
+      if (!this.visiable && !this.itemDisabled) {
         this.visiable = true;
       } else {
         this.visiable = false;

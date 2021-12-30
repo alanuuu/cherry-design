@@ -69,7 +69,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-rate :attr="$props"></c-rate>',
+  template: '<c-rate v-bind="$props"></c-rate>',
 });
 
 export const Primary = Template.bind({});

@@ -8,10 +8,11 @@
   </div>
 </template>
 <script>
-import { formItemKey } from '../form/context';
+import formMixins from '../mixins/form';
 
 export default {
   name: 'CSwitch',
+  mixins: [formMixins],
   props: {
     value: {
       type: Boolean,
@@ -26,22 +27,19 @@ export default {
       default: false,
     },
   },
-  inject: {
-    formItem: formItemKey,
-  },
   computed: {
     cls() {
       const name = 'c-switch';
       return {
         [name + '-core']: true,
         [name + '-checked']: this.value,
-        [name + '-disabled']: this.disabled,
+        [name + '-disabled']: this.itemDisabled,
       };
     },
   },
   methods: {
     checkValue() {
-      if (this.disabled) return;
+      if (this.itemDisabled) return;
       this.$emit('change', !this.value);
       this.$emit('input', !this.value);
       this.formItem?.onField('change');
