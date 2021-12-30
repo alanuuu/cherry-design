@@ -1,8 +1,5 @@
-import { Pagination } from '@csdn-design/vue-ui';
-
 export default {
   title: '组件/Pagination 分页',
-  component: Pagination,
   argTypes: {
     maxNum: {
       control: {
@@ -53,9 +50,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Pagination },
-  template: `<pagination v-bind="filterProps" >
-    </pagination>
+  template: `<c-pagination v-bind="filterProps" >
+    </c-pagination>
   `,
   computed: {
     filterProps() {
