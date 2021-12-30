@@ -2,7 +2,9 @@ export default {
   title: '组件/Loading 加载中',
   args: {
     isLoading: true,
-    loadingTip: '正在加载',
+    loadingTip: '',
+    type: 'circle',
+    size: 'largest',
   },
   argTypes: {
     isLoading: {
@@ -29,22 +31,43 @@ export default {
         },
       },
     },
+    type: {
+      control: { type: 'radio' },
+      options: ['circle', 'beat'],
+      description: '加载样式类型',
+      table: {
+        defaultValue: {
+          summary: 'circle',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    size: {
+      control: { type: 'radio' },
+      options: ['small', 'medium', 'large', 'largest'],
+      description: '大小',
+      table: {
+        defaultValue: {
+          summary: 'largest',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
   },
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
-  <div style="width: 300px;border: 1px solid #ebebeb;padding: 12px;">
-    <c-loading v-bind="$props">
-      <div>
-        <h2>this is a pharagraph</h2>
-        <h3>another pharagraph</h3>
-        <input />
-      </div>
-    </c-loading>
-    <!-- <c-loading /> -->
-  </div>
+  <c-loading v-bind="$props">
+    <c-card>
+      <h2>this is a pharagraph</h2>
+    </c-card>
+  </c-loading>
   `,
 });
 

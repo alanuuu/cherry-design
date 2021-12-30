@@ -1,6 +1,6 @@
 <template>
   <button :class="cls" @click="onClick" :type="htmlType">
-    <loading class="c-btn-icon" v-if="loading"></loading>
+    <loading class="c-btn-icon" :size="size" :isLoading="loading"></loading>
     <span><slot></slot></span>
   </button>
 </template>

@@ -65,8 +65,8 @@ const Template = (args, { argTypes }) => ({
   },
 });
 
-export const Large = Template.bind({});
-Large.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   maxNum: 20,
   showPageNum: 7,
   prevText: '上一页',
