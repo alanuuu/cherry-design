@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Toast from './toast.vue';
 
-let ToastConstructor = Vue.extend(Toast);
+const ToastConstructor = Vue.extend(Toast);
 let instance;
-let instances = [];
+const instances = [];
 let seed = 1;
-let iconList = {
+const iconList = {
   success: 'icon-check-circle',
   error: 'icon-close-circle',
   info: 'icon-warning-circle',
@@ -27,7 +27,7 @@ const ToastDialog = (options = {}) => {
       type: options.type || 'info',
     };
   }
-  let id = `toast_${seed++}`;
+  const id = `toast_${seed++}`;
   instance = new ToastConstructor({
     data: options,
   });

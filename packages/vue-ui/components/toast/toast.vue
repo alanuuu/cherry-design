@@ -24,6 +24,7 @@
 
 <script>
 import { IconClose } from '../icon';
+
 export default {
   name: 'Toast',
   components: {
@@ -53,12 +54,12 @@ export default {
     },
     cls() {
       return {
-        [`c-toast-content-text-close`]: this.showClose,
+        'c-toast-content-text-close': this.showClose,
       };
     },
     clsIcon() {
       return {
-        [`c-toast-content-icon`]: this.icon !== 'none',
+        'c-toast-content-icon': this.icon !== 'none',
         [`c-toast-content-icon-${this.type}`]: this.icon !== 'none',
       };
     },
