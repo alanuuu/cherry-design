@@ -55,7 +55,7 @@ export default {
     type: {
       control: { type: 'radio' },
       options: ['info', 'success', 'error', 'none'],
-      description: '按钮类型',
+      description: '提示类型',
       table: {
         defaultValue: {
           summary: 'info',
