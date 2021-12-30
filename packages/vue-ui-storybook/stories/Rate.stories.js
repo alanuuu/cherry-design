@@ -1,4 +1,3 @@
-
 export default {
   title: '组件/Rate 评分',
   args: {
