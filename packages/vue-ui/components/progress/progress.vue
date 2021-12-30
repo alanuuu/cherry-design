@@ -18,7 +18,7 @@ export default {
     styles() {
       return {
         width: parseInt(this.process, 10) + '%',
-        color: this.color ?? null,
+        background: this.color ?? null,
       };
     },
   },
