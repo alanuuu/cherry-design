@@ -78,7 +78,7 @@ export default {
       },
     },
     isDisabled() {
-      return this.disabled;
+      return this.itemDisabled;
     },
   },
 };

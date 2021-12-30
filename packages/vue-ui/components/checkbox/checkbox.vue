@@ -11,7 +11,7 @@
         :name="name"
         v-model="model"
         :value="label"
-        :disabled="disabled"
+        :disabled="itemDisabled"
         @change="change"
       />
       <!-- 单个复选框 -->
@@ -22,7 +22,7 @@
         type="checkbox"
         :name="name"
         :checked="checkValue"
-        :disabled="disabled"
+        :disabled="itemDisabled"
         @change="change"
       />
     </span>
@@ -62,7 +62,7 @@ export default {
     clsAll() {
       return {
         [name + '-' + this.groupSize]: true,
-        [name + '-all-disabled']: this.disabled,
+        [name + '-all-disabled']: this.itemDisabled,
       };
     },
     classes() {
@@ -77,7 +77,7 @@ export default {
     },
     classesinput() {
       return {
-        [name + '-input-disabled']: this.disabled,
+        [name + '-input-disabled']: this.itemDisabled,
       };
     },
   },

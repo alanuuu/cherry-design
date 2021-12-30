@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     click(val) {
-      if (this.disabled) {
+      if (this.itemDisabled) {
         return;
       }
       this.clickIndex = val + 1;
@@ -100,20 +100,20 @@ export default {
       return [
         {
           'c-rate-point': val <= this.clickIndex && !this.ishover,
-          'c-rate-hover': val <= this.hoverIndex && !this.disabled,
-          'c-rate-hover-point': val === this.hoverIndex && !this.disabled,
+          'c-rate-hover': val <= this.hoverIndex && !this.itemDisabled,
+          'c-rate-hover-point': val === this.hoverIndex && !this.itemDisabled,
         },
       ];
     },
     handleMousemove(value) {
-      if (this.disabled) {
+      if (this.itemDisabled) {
         return;
       }
       this.ishover = true;
       this.hoverIndex = value;
     },
     handleMouseleave() {
-      if (this.disabled) {
+      if (this.itemDisabled) {
         return;
       }
       this.hoverIndex = -1;
