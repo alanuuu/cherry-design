@@ -32,6 +32,8 @@
   </label>
 </template>
 <script>
+import { formItemKey } from '../form/context';
+
 const name = 'c-checkbox';
 export default {
   name: 'Checkbox',
@@ -54,6 +56,9 @@ export default {
       type: [String, Number, Boolean],
       default: false,
     },
+  },
+  inject: {
+    formItem: formItemKey,
   },
   computed: {
     clsAll() {
@@ -101,6 +106,8 @@ export default {
       this.$emit('input', this.checkValue);
       if (this.parent) {
         this.parent.change(this.model);
+      } else {
+        this.formItem.onField('change');
       }
     },
   },

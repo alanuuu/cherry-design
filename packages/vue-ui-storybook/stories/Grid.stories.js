@@ -6,7 +6,6 @@ export default {
     gutter: 8,
     justify: 'start',
     align: 'top',
-    offset: 0,
   },
   argTypes: {
     gutter: {
@@ -53,11 +52,21 @@ export default {
     },
     offset: {
       description: '每个col的偏移量',
-      control: { type: 'number' },
+      control: { type: 'object' },
       table: {
         defaultValue: { summary: '0', detail: '默认0' },
         type: {
-          summary: 'number',
+          summary: 'number|object',
+        },
+      },
+    },
+    span: {
+      description: '每个col的宽度',
+      control: { type: 'object' },
+      table: {
+        defaultValue: { summary: '0', detail: '默认0' },
+        type: {
+          summary: 'number｜object',
         },
       },
     },
@@ -68,27 +77,27 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
     <div style="width: 958px;">
-      <c-row :gutter="gutter" :justify="justify" :align="align">
+      <c-row style="height: 60px;" :gutter="gutter" :justify="justify" :align="align">
         <c-col :span="item" v-for="(item, index) in [12, 12]" :key="index">
           <div class="grid-item" >{{ item }}</div>
         </c-col>
       </c-row>
-      <c-row :gutter="gutter" :justify="justify" :align="align" style="margin-top: 10px;">
-      <c-col :span="item" v-for="(item, index) in [8, 8]" :key="index">
-        <div class="grid-item" >{{ item }}</div>
-      </c-col>
-      </c-row>
-      <c-row  :gutter="gutter" :justify="justify" :align="align" style="margin-top: 10px;">
-        <c-col :span="item" v-for="(item, index) in [6, 6]" :key="index">
+      <c-row style="height: 60px;" :gutter="gutter" :justify="justify" :align="align">
+        <c-col :span="item" v-for="(item, index) in [8, 8]" :key="index" >
           <div class="grid-item" >{{ item }}</div>
         </c-col>
       </c-row>
-      <c-row :gutter="gutter" :justify="justify" :align="align" style="margin-top: 10px;">
+      <c-row style="height: 60px;"  :gutter="gutter" :justify="justify" :align="align">
+        <c-col :span="item" v-for="(item, index) in [6, 6]" :key="index" >
+          <div class="grid-item" >{{ item }}</div>
+        </c-col>
+      </c-row>
+      <c-row style="height: 60px;" :gutter="gutter" :justify="justify" :align="align">
         <c-col :span="item" v-for="(item, index) in [4, 4]" :key="index">
           <div class="grid-item" >{{ item }}</div>
         </c-col>
       </c-row>
-      <c-row :gutter="gutter" :justify="justify" :align="align" style="margin-top: 10px;">
+      <c-row style="height: 60px;" :gutter="gutter" :justify="justify" :align="align">
         <c-col :offset="offset" :span="2">
           <div class="grid-item" >2</div>
         </c-col>
@@ -97,6 +106,38 @@ const Template = (args, { argTypes }) => ({
   `,
 });
 
+const Template2 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: `
+      <c-row>
+        <c-col :span="span" :offset="offset">
+          <div class="grid-item" >响应式</div>
+        </c-col>
+      </c-row>
+  `,
+});
+
 export const Primary = Template.bind({});
 
-Primary.args = {};
+Primary.args = {
+  offset: 0,
+};
+
+export const Reactive = Template2.bind({});
+
+Reactive.args = {
+  span: {
+    xxl: 12,
+    xl: 8,
+    lg: 6,
+    md: 12,
+    sm: 22,
+  },
+  offset: {
+    xxl: 1,
+    xl: 2,
+    lg: 6,
+    md: 4,
+    sm: 2,
+  },
+};

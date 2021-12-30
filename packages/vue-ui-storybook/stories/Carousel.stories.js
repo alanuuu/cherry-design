@@ -71,17 +71,19 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   // components: { Carousel, CarouselItem },
   template: `
-  <div style="width: 33%">
-  <c-carousel v-bind="$props" @prev="onPrev" @next="onNext">
-    <c-carousel-item
-      v-for="(item, index) in pictList"
-      :key="index"
-      class="carousel-item-demo"
-    >
-      <img :src="item" height="100%" width="100%" />
-    </c-carousel-item>
-  </c-carousel>
-  </div>
+  <c-row>
+    <c-col :span="{md: 8, sm: 24}">
+      <c-carousel v-bind="$props" @prev="onPrev" @next="onNext">
+        <c-carousel-item
+          v-for="(item, index) in pictList"
+          :key="index"
+          class="carousel-item-demo"
+        >
+          <img :src="item" height="100%" width="100%" />
+        </c-carousel-item>
+      </c-carousel>
+    </c-col>
+  </c-row>
   `,
   methods: {
     onPrev: action('prev'),

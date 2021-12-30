@@ -23,5 +23,6 @@ module.exports = {
     'no-plusplus': 0,
     'no-restricted-syntax': 0,
     'no-prototype-builtins': 0,
+    'no-param-reassign': 0,
   },
 };
