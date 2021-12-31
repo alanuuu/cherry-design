@@ -4,7 +4,9 @@ export default {
   inject: {
     formItem: {
       from: formItemKey,
-      default: '',
+      default: {
+        onField: () => {},
+      },
     },
   },
   computed: {
