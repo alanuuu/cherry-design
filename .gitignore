@@ -1,7 +1,6 @@
 .idea/
 node_modules/
 **/.DS_Store
-packages/vue-ui/components/icon/
 packages/vue-ui-storybook/storybook-static/
 lerna-debug.log
 

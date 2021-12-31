@@ -6,15 +6,17 @@ module.exports = defineConfig({
   build: {
     target: 'modules',
     outDir: 'es',
-    emptyOutDir: false,
+    emptyOutDir: true,
     minify: false,
     brotliSize: false,
     rollupOptions: {
+      input: ['components/index.js', 'components/icon/index.js'],
       output: [
         {
           entryFileNames: '[name].js',
           preserveModules: true,
           preserveModulesRoot: 'components',
+          format: "es",
           globals: {
             vue: 'Vue'
           }

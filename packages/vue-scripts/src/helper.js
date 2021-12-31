@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 
 const root = process.cwd();
 const iconPath = path.resolve(root, 'components/icon');
+const esPath = path.resolve(root, 'es/icon');
 
 function createIconTemp(name, content) {
   const c = content.replace(/\<svg/, '<svg :class="cls"');
@@ -62,6 +63,10 @@ function createIndexTemp(data) {
       }
     }
   );
+  fs.outputFile(
+    path.resolve(esPath, 'csdn-vue-icon.js'),
+    iconContent,
+  );
 
   fs.outputFile(path.resolve(iconPath, 'index.js'), indexContent, (err) => {
     if (err) {
@@ -70,6 +75,7 @@ function createIndexTemp(data) {
       console.log('Build Index Success!');
     }
   });
+  fs.outputFile(path.resolve(esPath, 'index.js'), indexContent);
 
   fs.outputFile(
     path.resolve(path.resolve(iconPath), 'icons.json'),

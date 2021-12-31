@@ -1,0 +1,282 @@
+[
+  {
+    "name": "arrow-down",
+    "componentName": "IconArrowDown"
+  },
+  {
+    "name": "arrow-left",
+    "componentName": "IconArrowLeft"
+  },
+  {
+    "name": "arrow-right",
+    "componentName": "IconArrowRight"
+  },
+  {
+    "name": "arrow-up",
+    "componentName": "IconArrowUp"
+  },
+  {
+    "name": "at",
+    "componentName": "IconAt"
+  },
+  {
+    "name": "blow-up",
+    "componentName": "IconBlowUp"
+  },
+  {
+    "name": "check-circle",
+    "componentName": "IconCheckCircle"
+  },
+  {
+    "name": "check-square",
+    "componentName": "IconCheckSquare"
+  },
+  {
+    "name": "close-circle",
+    "componentName": "IconCloseCircle"
+  },
+  {
+    "name": "close",
+    "componentName": "IconClose"
+  },
+  {
+    "name": "code-block",
+    "componentName": "IconCodeBlock"
+  },
+  {
+    "name": "code-square",
+    "componentName": "IconCodeSquare"
+  },
+  {
+    "name": "code",
+    "componentName": "IconCode"
+  },
+  {
+    "name": "download",
+    "componentName": "IconDownload"
+  },
+  {
+    "name": "export",
+    "componentName": "IconExport"
+  },
+  {
+    "name": "eye-invisible",
+    "componentName": "IconEyeInvisible"
+  },
+  {
+    "name": "eye",
+    "componentName": "IconEye"
+  },
+  {
+    "name": "faceBook-circle-fill",
+    "componentName": "IconFaceBookCircleFill"
+  },
+  {
+    "name": "facebook-square-fill",
+    "componentName": "IconFacebookSquareFill"
+  },
+  {
+    "name": "google-circle-fill",
+    "componentName": "IconGoogleCircleFill"
+  },
+  {
+    "name": "heart-fill",
+    "componentName": "IconHeartFill"
+  },
+  {
+    "name": "heart",
+    "componentName": "IconHeart"
+  },
+  {
+    "name": "history",
+    "componentName": "IconHistory"
+  },
+  {
+    "name": "home",
+    "componentName": "IconHome"
+  },
+  {
+    "name": "import",
+    "componentName": "IconImport"
+  },
+  {
+    "name": "left-circle",
+    "componentName": "IconLeftCircle"
+  },
+  {
+    "name": "left",
+    "componentName": "IconLeft"
+  },
+  {
+    "name": "list",
+    "componentName": "IconList"
+  },
+  {
+    "name": "menu-fold",
+    "componentName": "IconMenuFold"
+  },
+  {
+    "name": "menu-unfold",
+    "componentName": "IconMenuUnfold"
+  },
+  {
+    "name": "message-banned",
+    "componentName": "IconMessageBanned"
+  },
+  {
+    "name": "message",
+    "componentName": "IconMessage"
+  },
+  {
+    "name": "more-vertical",
+    "componentName": "IconMoreVertical"
+  },
+  {
+    "name": "more",
+    "componentName": "IconMore"
+  },
+  {
+    "name": "narrow",
+    "componentName": "IconNarrow"
+  },
+  {
+    "name": "plus-circle",
+    "componentName": "IconPlusCircle"
+  },
+  {
+    "name": "plus",
+    "componentName": "IconPlus"
+  },
+  {
+    "name": "poweroff",
+    "componentName": "IconPoweroff"
+  },
+  {
+    "name": "qq-circle-fill",
+    "componentName": "IconQqCircleFill"
+  },
+  {
+    "name": "question-circle",
+    "componentName": "IconQuestionCircle"
+  },
+  {
+    "name": "refresh",
+    "componentName": "IconRefresh"
+  },
+  {
+    "name": "reply",
+    "componentName": "IconReply"
+  },
+  {
+    "name": "right-circle",
+    "componentName": "IconRightCircle"
+  },
+  {
+    "name": "right",
+    "componentName": "IconRight"
+  },
+  {
+    "name": "save",
+    "componentName": "IconSave"
+  },
+  {
+    "name": "scan",
+    "componentName": "IconScan"
+  },
+  {
+    "name": "search",
+    "componentName": "IconSearch"
+  },
+  {
+    "name": "select-all",
+    "componentName": "IconSelectAll"
+  },
+  {
+    "name": "send",
+    "componentName": "IconSend"
+  },
+  {
+    "name": "settings",
+    "componentName": "IconSettings"
+  },
+  {
+    "name": "share-alt",
+    "componentName": "IconShareAlt"
+  },
+  {
+    "name": "share-external",
+    "componentName": "IconShareExternal"
+  },
+  {
+    "name": "share-internal",
+    "componentName": "IconShareInternal"
+  },
+  {
+    "name": "star-fill",
+    "componentName": "IconStarFill"
+  },
+  {
+    "name": "star",
+    "componentName": "IconStar"
+  },
+  {
+    "name": "sync",
+    "componentName": "IconSync"
+  },
+  {
+    "name": "thumb-down-fill",
+    "componentName": "IconThumbDownFill"
+  },
+  {
+    "name": "thumb-down",
+    "componentName": "IconThumbDown"
+  },
+  {
+    "name": "thumb-up-fill",
+    "componentName": "IconThumbUpFill"
+  },
+  {
+    "name": "thumb-up",
+    "componentName": "IconThumbUp"
+  },
+  {
+    "name": "to-bottom",
+    "componentName": "IconToBottom"
+  },
+  {
+    "name": "to-left",
+    "componentName": "IconToLeft"
+  },
+  {
+    "name": "to-right",
+    "componentName": "IconToRight"
+  },
+  {
+    "name": "to-top",
+    "componentName": "IconToTop"
+  },
+  {
+    "name": "translate",
+    "componentName": "IconTranslate"
+  },
+  {
+    "name": "twitter-circle-fill",
+    "componentName": "IconTwitterCircleFill"
+  },
+  {
+    "name": "upload",
+    "componentName": "IconUpload"
+  },
+  {
+    "name": "voice",
+    "componentName": "IconVoice"
+  },
+  {
+    "name": "warning-circle",
+    "componentName": "IconWarningCircle"
+  },
+  {
+    "name": "weibo-circle-fill",
+    "componentName": "IconWeiboCircleFill"
+  }
+]
