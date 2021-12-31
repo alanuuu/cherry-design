@@ -6,6 +6,7 @@
   line-height: 1;
   position: relative;
   margin-right: 4px;
+  box-sizing: border-box;
   &-inner {
     display: inline-block;
     position: relative;
@@ -16,6 +17,7 @@
     border: 1px solid #dcdee2;
     border-radius: 2px;
     background-color: #fff;
+    box-sizing: border-box;
   }
   &-input {
     width: 100%;
@@ -40,8 +42,10 @@
     }
     .c-checkbox-checked {
       &:after {
-        top: 3px;
-        left: 7px;
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
       }
     }
   }
@@ -66,12 +70,15 @@
     }
     .c-checkbox-checked {
       &:after {
-        top: 1px;
+        top: 2px;
         left: 5px;
+        width: 4px;
+        height: 8px;
       }
     }
   }
   &-checked {
+    box-sizing: border-box;
     .c-checkbox-inner {
       border-color: @primary-color;
       background-color: @primary-color;
@@ -79,21 +86,23 @@
     &:after {
       content: '';
       display: table;
-      width: 4px;
-      height: 8px;
+      width: 5px;
+      height: 9px;
       position: absolute;
-      top: 2px;
-      left: 6px;
+      top: 1px;
+      left: 5px;
       border: 2px solid #fff;
       border-top: 0;
       border-left: 0;
       transform: rotate(45deg) scale(1);
+      box-sizing: border-box;
     }
   }
   &-all {
     cursor: pointer;
     display: inline-block;
     margin-right: 12px;
+    box-sizing: border-box;
     &-disabled {
       cursor: not-allowed;
       color: @disabled-color;
