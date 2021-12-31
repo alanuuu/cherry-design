@@ -6,7 +6,7 @@ module.exports = defineConfig({
   build: {
     target: 'modules',
     outDir: 'es',
-    emptyOutDir: true,
+    emptyOutDir: false,
     minify: false,
     brotliSize: false,
     rollupOptions: {
