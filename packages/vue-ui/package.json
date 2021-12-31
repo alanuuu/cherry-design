@@ -12,7 +12,7 @@
     "build:release": "vue-scripts build:component -r",
     "build:style": "vue-scripts build:style",
     "build:icon": "vue-scripts build:icon",
-    "build": "yarn build:icon && yarn build:style && yarn build:release"
+    "build": "yarn build:icon && yarn build:release && yarn build:style"
   },
   "files": [
     "lib",
