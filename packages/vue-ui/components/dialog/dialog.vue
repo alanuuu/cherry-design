@@ -1,6 +1,6 @@
 <template>
   <transition name="c-fade">
-    <div class="c-dialog" v-show="visible">
+    <div class="c-dialog" v-show="value">
       <div class="c-dialog-body"
            :class="{'c-dialog-border-shadow': !modal}"
            :style="{width: width,marginTop: top}"
@@ -37,7 +37,7 @@ export default {
   components: { CButton, IconClose },
   name: 'Dialog',
   props: {
-    visible: {
+    value: {
       type: Boolean,
       default: false,
     },
@@ -68,6 +68,7 @@ export default {
   methods: {
     close() {
       this.$emit('close', false);
+      this.$emit('input', false)
     },
   },
 };
