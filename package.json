@@ -1,8 +1,16 @@
 {
   "name": "csdn-design",
   "description": "CSDN Design Vue 2.0 Monorepo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "yarn workspace @csdn-design/vue-ui run start",
+    "build": "yarn workspace @csdn-design/vue-ui run build",
+    "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
+    "site": "yarn workspace @csdn-design/vue-ui-storybook run build-storybook",
+    "release": "yarn build && lerna publish"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   },

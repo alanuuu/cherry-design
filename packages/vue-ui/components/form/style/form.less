@@ -1,0 +1,68 @@
+.c-form {
+  font-size: 14px;
+  &-size-large {
+    .c-item--content {
+      min-height: 40px;
+    }
+  }
+  &-size-small {
+    .c-item--content {
+      min-height: 32px;
+    }
+  }
+  &-item {
+    position: relative;
+    &--label {
+      display: block;
+      text-align: right;
+      height: 36px;
+      line-height: 36px;
+      &::after {
+        content: ":";
+        position: relative;
+        top: -0.5px;
+        margin: 0 8px 0 2px;
+      }
+    }
+    &--content {
+      display: flex;
+      width: 100%;
+      position: relative;
+      min-height: 36px;
+    }
+    &--message {
+      height: 24px;
+      line-height: 24px;
+      font-size: @font-sm-size;
+      opacity: 1;
+      &_error {
+        color: @danger-color;
+      }
+    }
+  }
+  &-item--error {
+    .c-input-content {
+        border-color: @danger-color;
+    }
+  }
+  &-item--required {
+    .c-form-item--label {
+      &::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: #ff4d4f;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
+  &-item {
+    &&--validating {
+      input {
+        border-color: @danger-color;
+      }
+    }
+  }
+}

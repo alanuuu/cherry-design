@@ -1,12 +1,42 @@
 {
   "name": "@csdn-design/vue-ui",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/csdn-ui.min.js",
+  "style": "lib/index.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vue-scripts dev:component",
+    "build:component": "vue-scripts build:component",
+    "build:release": "vue-scripts build:component -r",
+    "build:style": "vue-scripts build:style",
+    "build:icon": "vue-scripts build:icon",
+    "build": "yarn build:icon && yarn build:style && yarn build:release"
   },
-  "keywords": [],
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "keywords": [
+    "csdn",
+    "vue",
+    "component"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@csdn-design/vue-scripts": "^0.1.2",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^8.1.1"
+  },
+  "dependencies": {
+    "async-validator": "^4.0.7",
+    "less-loader": "^7.3.0",
+    "lodash": "^4.17.21",
+    "vue": "^2.6.14"
+  }
 }

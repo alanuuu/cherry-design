@@ -1,52 +1,61 @@
 <template>
-  <div class="c-btn">
-    <button>{{slot}}</button>
-  </div>
+  <button :class="cls" @click="onClick" :type="htmlType">
+    <loading class="c-btn-icon" :size="size" :isLoading="loading"></loading>
+    <span><slot></slot></span>
+  </button>
 </template>
 
 <script>
-/**
- * 按钮类型
- */
-export const btnTypes = [
-  'primary',
-  'ghost',
-  'light'
-];
-/**
- * 按钮状态
- */
-export const btnStatus = [
-  'normal',
-  'warning',
-  'danger'
-];
+import Loading from '../loading/loading.vue';
 
 export default {
-  name: "Button",
+  name: 'Button',
+  components: {
+    Loading,
+  },
   props: {
+    // 按钮类型
     type: {
       type: String,
       default: 'primary',
       validator: (val) => {
-        return btnTypes.includes(val)
-      }
+        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
+      },
     },
-    status: {
+    // 按钮大小
+    size: {
       type: String,
-      default: 'normal',
+      default: 'small',
       validator: (val) => {
-        return btnStatus.includes(val)
-      }
-    }
+        return ['large', 'medium', 'small'].indexOf(val) !== -1;
+      },
+    },
+    htmlType: {
+      type: String,
+      default: 'button',
+    },
+    disabled: Boolean,
+    ghost: Boolean,
+    loading: Boolean,
   },
   computed: {
     cls() {
-    
-    }
-  }
-}
+      const name = 'c-btn';
+      return {
+        [name]: true,
+        [`${name}-${this.size}`]: true,
+        [`${name}-${this.type}`]: true,
+        [`${name}-disabled`]: this.disabled,
+        [`${name}-loading`]: this.loading,
+        [`${name}-ghost`]: this.ghost,
+      };
+    },
+  },
+  methods: {
+    onClick(event) {
+      if (this.loading || this.disabled) return;
+      this.$emit('click', event);
+    },
+  },
+};
 </script>
-
-<style>
-</style>
