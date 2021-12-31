@@ -21,9 +21,9 @@ const Template = (args, { argTypes }) => ({
   `,
 });
 
-export const 使用自定义导航单元 = Template.bind({});
+export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 
-使用自定义导航单元.args = {
+Primary.args = {
   separator: '/',
 };

@@ -47,4 +47,4 @@ const Template = (args, { argTypes }) => ({
   },
 });
 
-export const Radio = Template.bind({});
+export const Primary = Template.bind({});
