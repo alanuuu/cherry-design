@@ -1,7 +1,7 @@
 {
   "name": "csdn-design",
   "description": "CSDN Design Vue 2.0 Monorepo",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
