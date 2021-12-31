@@ -2,7 +2,7 @@
   <transition name="c-fade">
     <div class="c-toast" v-show="visible" :style="styles">
       <div class="c-toast-content">
-        <div style="display: inline-flex">
+        <div style="display: inline-flex; align-items: center;">
           <div class="c-toast-content-text" :class="cls">
             <component
               v-if="icon !== 'none'"
