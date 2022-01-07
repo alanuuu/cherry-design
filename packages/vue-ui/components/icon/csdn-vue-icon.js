@@ -4,6 +4,10 @@ import IconArrowRight from './arrow-right.vue';
 import IconArrowUp from './arrow-up.vue';
 import IconAt from './at.vue';
 import IconBlowUp from './blow-up.vue';
+import IconCaretDown from './caret-down.vue';
+import IconCaretLeft from './caret-left.vue';
+import IconCaretRight from './caret-right.vue';
+import IconCaretUp from './caret-up.vue';
 import IconCheckCircle from './check-circle.vue';
 import IconCheckSquare from './check-square.vue';
 import IconCloseCircle from './close-circle.vue';
@@ -76,6 +80,10 @@ const icons = {
   IconArrowUp,
   IconAt,
   IconBlowUp,
+  IconCaretDown,
+  IconCaretLeft,
+  IconCaretRight,
+  IconCaretUp,
   IconCheckCircle,
   IconCheckSquare,
   IconCloseCircle,

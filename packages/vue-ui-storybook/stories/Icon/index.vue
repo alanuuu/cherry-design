@@ -23,6 +23,10 @@ export default {
   methods: {
     copy(name) {
       copy(`<${name} />`)
+      this.$toast({
+         content: `复制成功 <${name} />`,
+         type: 'none'
+      })
     }
   }
 };

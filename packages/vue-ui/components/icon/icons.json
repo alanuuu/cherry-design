@@ -24,6 +24,22 @@
     "componentName": "IconBlowUp"
   },
   {
+    "name": "caret-down",
+    "componentName": "IconCaretDown"
+  },
+  {
+    "name": "caret-left",
+    "componentName": "IconCaretLeft"
+  },
+  {
+    "name": "caret-right",
+    "componentName": "IconCaretRight"
+  },
+  {
+    "name": "caret-up",
+    "componentName": "IconCaretUp"
+  },
+  {
     "name": "check-circle",
     "componentName": "IconCheckCircle"
   },
