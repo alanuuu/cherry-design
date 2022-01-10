@@ -1,6 +1,6 @@
 <template>
   <button :class="cls" @click="onClick" :type="htmlType">
-    <loading class="c-btn-icon" :size="size" :isLoading="loading"></loading>
+    <loading v-if="loading" class="c-btn-icon" :size="size" :isLoading="loading"></loading>
     <span><slot></slot></span>
   </button>
 </template>
@@ -19,7 +19,7 @@ export default {
       type: String,
       default: 'primary',
       validator: (val) => {
-        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
+        return ['primary', 'success', 'black'].indexOf(val) !== -1;
       },
     },
     // 按钮大小

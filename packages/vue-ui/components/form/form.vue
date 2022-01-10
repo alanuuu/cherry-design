@@ -15,6 +15,13 @@ import { isArray, isFunction } from '../../util/is';
 export default {
   name: 'Form',
   props: {
+    layout: {
+      type: String,
+      default: 'vertical',
+      validator: (val) => {
+        return ['vertical', 'horizontal'].indexOf(val) > -1;
+      },
+    },
     model: {
       type: Object,
       required: true,
@@ -29,13 +36,11 @@ export default {
     labelCol: {
       type: Object,
       default: () => ({
-        span: 5,
       }),
     },
     wrapperCol: {
       type: Object,
       default: () => ({
-        span: 19,
       }),
     },
     name: {
@@ -69,7 +74,7 @@ export default {
       const name = 'c-form';
       return {
         [`${name}-size-${this.size}`]: this.size,
-        [`${name}-layout-${this.layout}`]: this.layout,
+        [`${name}-${this.layout}`]: this.layout,
       };
     },
   },

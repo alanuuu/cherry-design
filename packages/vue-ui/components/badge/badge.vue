@@ -23,13 +23,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    type: {
-      type: String,
-      default: 'primary',
-      validator(value) {
-        return ['primary', 'light'].indexOf(value) !== -1;
-      },
-    },
     value: {
       type: [String, Number],
       default: null,
@@ -45,13 +38,11 @@ export default {
     cls() {
       return {
         [preName + '-tip']: true,
-        [preName + '-' + this.type]: true,
       };
     },
     dotCls() {
       return {
         [preName + '-dot']: true,
-        [preName + '-' + this.type]: true,
       };
     },
     badgeValue() {

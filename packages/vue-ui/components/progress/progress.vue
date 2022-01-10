@@ -1,6 +1,8 @@
 <template>
   <div class="c-progress">
-    <div class="c-progress-inner" :style="styles"></div>
+    <div class="c-progress-inner" :style="styles">
+      <span class="percent" v-if="showPercent">{{percent}}</span>
+    </div>
   </div>
 </template>
 
@@ -13,13 +15,17 @@ export default {
       default: 0,
     },
     color: String,
+    showPercent: Boolean,
   },
   computed: {
     styles() {
       return {
-        width: parseInt(this.process, 10) + '%',
+        width: this.perent,
         background: this.color ?? null,
       };
+    },
+    percent() {
+      return parseInt(this.process, 10) + '%';
     },
   },
 };

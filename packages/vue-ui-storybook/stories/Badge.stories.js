@@ -2,22 +2,12 @@
 export default {
   title: '组件/Badge 标记',
   args: {
-    type: 'primary',
     value: '10',
     max: 99,
     hidden: false,
     dot: false,
   },
   argTypes: {
-    type: {
-      control: { type: 'radio' },
-      options: ['primary', 'light'],
-      description: '类型',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'primary' },
-      },
-    },
     value: {
       control: { type: 'text' },
       description: '显示的值',

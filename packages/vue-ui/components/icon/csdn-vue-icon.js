@@ -4,6 +4,10 @@ import IconArrowRight from './arrow-right.vue';
 import IconArrowUp from './arrow-up.vue';
 import IconAt from './at.vue';
 import IconBlowUp from './blow-up.vue';
+import IconCaretDown from './caret-down.vue';
+import IconCaretLeft from './caret-left.vue';
+import IconCaretRight from './caret-right.vue';
+import IconCaretUp from './caret-up.vue';
 import IconCheckCircle from './check-circle.vue';
 import IconCheckSquare from './check-square.vue';
 import IconCloseCircle from './close-circle.vue';
@@ -26,6 +30,7 @@ import IconImport from './import.vue';
 import IconLeftCircle from './left-circle.vue';
 import IconLeft from './left.vue';
 import IconList from './list.vue';
+import IconLoading from './loading.vue';
 import IconMenuFold from './menu-fold.vue';
 import IconMenuUnfold from './menu-unfold.vue';
 import IconMessageBanned from './message-banned.vue';
@@ -76,6 +81,10 @@ const icons = {
   IconArrowUp,
   IconAt,
   IconBlowUp,
+  IconCaretDown,
+  IconCaretLeft,
+  IconCaretRight,
+  IconCaretUp,
   IconCheckCircle,
   IconCheckSquare,
   IconCloseCircle,
@@ -98,6 +107,7 @@ const icons = {
   IconLeftCircle,
   IconLeft,
   IconList,
+  IconLoading,
   IconMenuFold,
   IconMenuUnfold,
   IconMessageBanned,

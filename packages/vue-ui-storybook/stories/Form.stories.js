@@ -3,12 +3,6 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: '组件/Form 表单',
   args: {
-    labelCol: {
-      span: 5,
-    },
-    wrapperCol: {
-      span: 19,
-    },
     disabled: false,
   },
   argTypes: {},
@@ -105,6 +99,12 @@ const Template = (args, { argTypes }) => ({
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
+  labelCol: {
+    span: 5,
+  },
+  wrapperCol: {
+    span: 19,
+  },
   model: {
     input: '',
     password: '',
@@ -113,5 +113,68 @@ Primary.args = {
     switch: false,
     select: '',
     rate: 0,
+  },
+};
+
+const Template1 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  data() {
+    return {
+      rule: {
+        input: [{ required: true, message: '请输入' }],
+        password: [
+          { required: true, message: '请输入' },
+          {
+            type: 'string',
+            min: 8,
+            message: '请输入长度大于8的密码',
+          },
+        ],
+        checkbox: [{ required: true, message: '请选择' }],
+        radio: [{ required: true, message: '请选择' }],
+        select: [{ required: true, message: '请选择' }],
+        rate: [{ required: true, message: '请选择', type: 'number' }],
+      },
+    };
+  },
+  template: `<div>
+    <c-form 
+      v-bind="$props" 
+      @submit="onSubmit" 
+      @success="onSuccess" 
+      @fail="onFail" 
+      name="form" 
+      ref="formRef">
+        <c-form-item label="Input" field="input" :rules="rule.input">
+            <c-input v-model="model.input" />
+        </c-form-item>
+        <c-form-item label="Password" field="password" :rules="rule.password">
+          <c-input type="password"  v-model="model.password"/>
+        </c-form-item>
+        <c-form-item>
+          <c-space :size="20">
+            <c-button htmlType="submit">登 录</c-button>
+            <c-button @click="onReset" ghost>重 置</c-button>
+          </c-space>
+        </c-form-item>
+    </c-form>
+  </div>`,
+  methods: {
+    onSubmit: action('submit'),
+    onSuccess: action('success'),
+    onFail: action('fail'),
+    onReset() {
+      this.$refs.formRef.resetFields();
+    },
+  },
+  mounted() {
+  },
+});
+export const Horizontal = Template1.bind({});
+Horizontal.args = {
+  layout: 'horizontal',
+  model: {
+    input: '',
+    password: '',
   },
 };

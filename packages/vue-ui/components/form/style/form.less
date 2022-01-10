@@ -1,5 +1,5 @@
 .c-form {
-  font-size: 14px;
+  display: block;
   &-size-large {
     .c-item--content {
       min-height: 40px;
@@ -17,17 +17,24 @@
       text-align: right;
       height: 36px;
       line-height: 36px;
-      &::after {
-        content: ":";
+      > label {
+        display: inline-flex;
+        max-width: 100%;
         position: relative;
-        top: -0.5px;
-        margin: 0 8px 0 2px;
+        &::after {
+          content: ":";
+          position: relative;
+          top: -0.5px;
+          margin: 0 8px 0 2px;
+        }
       }
+    }
+    &--control {
+      position: relative;
     }
     &--content {
       display: flex;
       width: 100%;
-      position: relative;
       min-height: 36px;
     }
     &--message {
@@ -46,14 +53,12 @@
     }
   }
   &-item--required {
-    .c-form-item--label {
+    .c-form-item--label > label {
       &::before {
-        display: inline-block;
         margin-right: 4px;
         color: #ff4d4f;
         font-size: 14px;
         font-family: SimSun,sans-serif;
-        line-height: 1;
         content: "*";
       }
     }
@@ -62,6 +67,24 @@
     &&--validating {
       input {
         border-color: @danger-color;
+      }
+    }
+  }
+}
+
+.c-form-horizontal {
+  @prefix: c-form;
+  display: flex;
+  flex-wrap: wrap;
+  .@{prefix}-item {
+    flex: none;
+    flex-wrap: nowrap;
+    margin-right: 16px;
+    margin-bottom: 0;
+    &--label {
+      display: inline-block;
+      > label {
+        flex: none;
       }
     }
   }

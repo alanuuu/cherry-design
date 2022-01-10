@@ -25,7 +25,7 @@ export default {
     },
     type: {
       control: { type: 'radio' },
-      options: ['primary', 'black', 'light', 'danger'],
+      options: ['primary', 'success', 'black'],
       description: '按钮类型',
       table: {
         defaultValue: {

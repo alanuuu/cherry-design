@@ -1,11 +1,13 @@
 <template>
-   <c-row class="c-form-item" :class="cls">
-    <c-col :span="labelCol">
-      <form-item-label v-if="label" :required="isRequired">{{
-        label
-      }}</form-item-label>
+  <c-row class="c-form-item" :class="cls">
+    <c-col :span="labelCol"   class="c-form-item--label">
+      <form-item-label
+        v-if="label"
+        :required="isRequired"
+        >{{ label }}</form-item-label
+      >
     </c-col>
-    <c-col :span="wrapperCol">
+    <c-col :span="wrapperCol" class="c-form-item--control">
       <div class="c-form-item--content">
         <slot></slot>
       </div>
@@ -148,7 +150,9 @@ export default {
     getRules() {
       const required = this.isRequired ? { required: true } : [];
       const has = this.rules.find((v) => v.required);
-      return has ? [].concat(this.rules) : [].concat(required).concat(this.rules);
+      return has
+        ? [].concat(this.rules)
+        : [].concat(required).concat(this.rules);
     },
     getTriggerRule(trigger) {
       const rules = this.getRules();

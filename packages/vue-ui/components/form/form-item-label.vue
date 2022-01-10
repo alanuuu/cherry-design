@@ -1,9 +1,7 @@
 <template>
-  <div class="c-form-item--label">
-    <label :for="labelFor">
-      <slot></slot>
-    </label>
-  </div>
+  <label :for="labelFor">
+    <slot></slot>
+  </label>
 </template>
 
 <script>

@@ -5,6 +5,7 @@ export default {
   args: {
     process: 20,
     color: 'red',
+    showPercent: true,
   },
   argTypes: {
     process: {
@@ -15,6 +16,9 @@ export default {
     },
     color: {
       control: { type: 'color' },
+    },
+    showPercent: {
+      control: { type: 'boolean' },
     },
   },
 };
