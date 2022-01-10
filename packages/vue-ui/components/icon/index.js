@@ -31,6 +31,7 @@ export { default as IconImport } from './import.vue';
 export { default as IconLeftCircle } from './left-circle.vue'; 
 export { default as IconLeft } from './left.vue'; 
 export { default as IconList } from './list.vue'; 
+export { default as IconLoading } from './loading.vue'; 
 export { default as IconMenuFold } from './menu-fold.vue'; 
 export { default as IconMenuUnfold } from './menu-unfold.vue'; 
 export { default as IconMessageBanned } from './message-banned.vue'; 

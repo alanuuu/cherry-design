@@ -30,6 +30,7 @@ import IconImport from './import.vue';
 import IconLeftCircle from './left-circle.vue';
 import IconLeft from './left.vue';
 import IconList from './list.vue';
+import IconLoading from './loading.vue';
 import IconMenuFold from './menu-fold.vue';
 import IconMenuUnfold from './menu-unfold.vue';
 import IconMessageBanned from './message-banned.vue';
@@ -106,6 +107,7 @@ const icons = {
   IconLeftCircle,
   IconLeft,
   IconList,
+  IconLoading,
   IconMenuFold,
   IconMenuUnfold,
   IconMessageBanned,

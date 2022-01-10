@@ -18,7 +18,7 @@ export default {
     // 阴影显示时机，always：一直显示；hover：hover时显示；never：不显示
     shadow: {
       type: String,
-      default: 'always',
+      default: 'hover',
       validator: (val) => {
         return ['always', 'hover', 'never'].indexOf(val) !== -1;
       },
