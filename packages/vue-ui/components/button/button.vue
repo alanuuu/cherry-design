@@ -19,7 +19,7 @@ export default {
       type: String,
       default: 'primary',
       validator: (val) => {
-        return ['primary', 'danger', 'light', 'black'].indexOf(val) !== -1;
+        return ['primary', 'success', 'black'].indexOf(val) !== -1;
       },
     },
     // 按钮大小

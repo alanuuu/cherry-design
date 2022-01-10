@@ -128,6 +128,10 @@
     "componentName": "IconList"
   },
   {
+    "name": "loading",
+    "componentName": "IconLoading"
+  },
+  {
     "name": "menu-fold",
     "componentName": "IconMenuFold"
   },
