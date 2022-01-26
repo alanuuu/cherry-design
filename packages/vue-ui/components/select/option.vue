@@ -35,9 +35,7 @@ export default {
       };
     },
     visiable() {
-      return this.label.indexOf(this.inputText) > -1 || this.inputText === ''
-        ? true
-        : false;
+      return !!(!this.label || this.label.indexOf(this.inputText) > -1 || this.inputText === '');
     },
   },
   methods: {

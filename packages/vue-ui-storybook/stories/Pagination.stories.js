@@ -1,25 +1,37 @@
 export default {
   title: '组件/Pagination 分页',
+  args: {
+    total: 20,
+    pageSizeOptions: [10, 20, 50, 100],
+    showPageSize: false,
+  },
   argTypes: {
-    maxNum: {
+    total: {
       control: {
         type: 'number',
         min: 1,
         max: 1200,
-        step: 1,
       },
       description: '最大页码数',
       table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: '10' },
+        type: { summary: 'number|slot' },
+        defaultValue: { summary: '-' },
       },
     },
-    showPageNum: {
-      control: { type: 'number', min: 1, step: 2 },
-      description: '展示（不省略）的页码个数',
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: '7' },
+    pageSizeOptions: {
+      control: { type: 'array' },
+      description: '指定每页可以显示多少条',
+      tabel: {
+        type: { summary: 'array' },
+        defaultValue: { summary: '[10, 20, 50, 100]' },
+      },
+    },
+    showPageSize: {
+      control: { type: 'boolean' },
+      description: '是否显示分页器',
+      tabel: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
       },
     },
     prevText: {
@@ -50,7 +62,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: `<c-pagination v-bind="filterProps" >
+  template: `<c-pagination v-bind="$props" >
+    <template v-slot:total>共 {{total}} 件</template>
     </c-pagination>
   `,
   computed: {
@@ -63,8 +76,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  maxNum: 20,
-  showPageNum: 7,
   prevText: '上一页',
   nextText: '下一页',
   li: '',
