@@ -8,6 +8,7 @@
     "start": "yarn workspace @csdn-design/vue-ui run start",
     "build": "yarn workspace @csdn-design/vue-ui run build",
     "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
+    "dev": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
     "site": "yarn workspace @csdn-design/vue-ui-storybook run build-storybook",
     "pub": "yarn build && lerna publish"
   },
