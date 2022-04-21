@@ -23,6 +23,7 @@ export default {
   methods: {
     copy(name) {
       copy(`<${name} />`)
+      console.log(name);
       this.$toast({
          content: `复制成功 <${name} />`,
          type: 'none'
