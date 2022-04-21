@@ -66,7 +66,7 @@ const Template = (args, { argTypes }) => ({
           <c-switch v-model="model.switch" ></c-switch>
         </c-form-item>
         <c-form-item label="Select"  field="select" :rules="rule.select" >
-          <c-select v-model="model.select">
+          <c-select v-model="model.select" style="width: 120px">
             <c-option label="csdn2" value="2"></c-option>
             <c-option label="csdn3" value="3"></c-option>
             <c-option label="csdn4" value="4"></c-option>
@@ -111,7 +111,7 @@ Primary.args = {
     checkbox: [],
     radio: '',
     switch: false,
-    select: '',
+    select: '1',
     rate: 0,
   },
 };
