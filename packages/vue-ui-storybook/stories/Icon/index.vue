@@ -12,6 +12,7 @@
 <script>
 import copy from 'copy-to-clipboard';
 import Icons from '@csdn-design/vue-ui/components/icon/icons.json';
+import { IconArrowDown } from '@csdn-design/vue-ui/es/icon'
 
 export default {
   name: 'icon',
@@ -19,6 +20,9 @@ export default {
     icons() {
       return Icons;
     },
+  },
+  components: {
+    IconArrowDown
   },
   methods: {
     copy(name) {

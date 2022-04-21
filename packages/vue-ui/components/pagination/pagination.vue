@@ -11,7 +11,7 @@
     >
       {{ prevText }}
     </button>
-    <ul class="c-page" @click="clickPage">
+    <ul class="c-page" >
       <!-- 第一个页码 -->
       <li
         class="num"
@@ -49,15 +49,29 @@
     >
       {{ nextText }}
     </button>
-    <div class="c-pagination-size">
-      <c-select v-model="size">
-        <c-option v-for="v in pageSizeOptions" :key="v" :value="v">
-          {{ v }} 条/页
-        </c-option>
-      </c-select>
-    </div>
-    <div v-if="showJumpPage" class="c-pagination-jumper">
-      跳至 <c-input /> 页
+    <div class="c-pagination-operation" v-if="showPageSize || showJumpPage">
+      <div class="c-pagination-size" v-if="showPageSize">
+        <c-select v-model="size" size="small" @change="onChangePageSize">
+          <c-option
+            v-for="v in pageSizeOptions"
+            :key="v"
+            :value="v"
+            :label="v + '条/页'"
+          >
+            {{ v }} 条/页
+          </c-option>
+        </c-select>
+      </div>
+      <div v-if="showJumpPage" class="c-pagination-jumper">
+        <span>前往</span>
+        <c-input
+          class="jumper"
+          size="small"
+          placeholder=""
+          @enter="onJumpPage"
+        />
+        <span>页</span>
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +82,7 @@ import { Select, Option } from '../select';
 
 const defaultShowPageNum = 7; // 默认展示页码按钮数
 const halfPageSize = (defaultShowPageNum - 1) / 2;
+
 export default {
   name: 'Pagination',
   components: {
@@ -85,10 +100,11 @@ export default {
     },
     showPageSize: {
       type: Boolean,
+      default: false,
     },
     showJumpPage: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     prevText: {
       type: String,
@@ -101,7 +117,7 @@ export default {
   },
   data() {
     return {
-      size: '',
+      size: 10,
       curPageNum: 1,
     };
   },
@@ -152,16 +168,26 @@ export default {
     },
   },
   methods: {
-    clickPage(event) {},
+    onJumpPage(val) {
+      if (typeof val === 'string' && val) {
+        this.$emit('jumpPage', Number(val));
+      }
+    },
+    onChangePageSize() {
+      this.$emit('changePageSize', this.size);
+    },
     changePage(pageNum) {
       this.curPageNum = pageNum;
+      this.$emit('change', pageNum);
     },
     prevPage() {
       this.curPageNum = this.curPageNum - 1 < 1 ? 1 : this.curPageNum - 1;
+      this.$emit('change', this.curPageNum);
     },
     nextPage() {
       this.curPageNum =
         this.curPageNum + 1 > this.total ? this.total : this.curPageNum + 1;
+      this.$emit('change', this.curPageNum);
     },
   },
 };

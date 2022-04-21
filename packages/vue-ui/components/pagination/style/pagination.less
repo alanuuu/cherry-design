@@ -6,9 +6,10 @@
     margin-right: 12px;
   }
   &-btn {
-    height: 28px;
+    height: 32px;
     background: #F5F5F7;
     border: none;
+    cursor: pointer;
     &-disable {
       cursor: not-allowed;
     }
@@ -24,8 +25,8 @@
       box-sizing: border-box;
       display: inline-block;
       min-width: 32px;
-      line-height: 28px;
-      height: 28px;
+      line-height: 32px;
+      height: 32px;
       padding: 0 4px;
       background: #F5F5F7;
       border-radius: 2px;
@@ -42,5 +43,21 @@
       color: #fff;
     }
     
+  }
+  .c-pagination-operation {
+    display: flex;
+    margin-left: 10px;
+  }
+  .c-pagination-size {
+    margin: 0 6px;
+  }
+  .c-pagination-jumper {
+    display: flex;
+    width: 120px;
+    line-height: 35px;
+    .jumper {
+      margin: 0 8px;
+      flex: 1;
+    }
   }
 }

@@ -1,9 +1,12 @@
+import { action } from '@storybook/addon-actions';
+
 export default {
   title: '组件/Pagination 分页',
   args: {
     total: 20,
     pageSizeOptions: [10, 20, 50, 100],
     showPageSize: false,
+    showJumpPage: false,
   },
   argTypes: {
     total: {
@@ -29,6 +32,14 @@ export default {
     showPageSize: {
       control: { type: 'boolean' },
       description: '是否显示分页器',
+      tabel: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    showJumpPage: {
+      control: { type: 'boolean' },
+      description: '是否显示跳页器',
       tabel: {
         type: { summary: 'boolean' },
         defaultValue: { summary: false },
@@ -62,7 +73,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: `<c-pagination v-bind="$props" >
+  template: `<c-pagination v-bind="$props" @change="onChange" @jumpPage="jumpPage" @changePageSize="changePageSize"> 
     <template v-slot:total>共 {{total}} 件</template>
     </c-pagination>
   `,
@@ -72,11 +83,16 @@ const Template = (args, { argTypes }) => ({
       return props;
     },
   },
+  methods: {
+    onChange: action('change'),
+    jumpPage: action('jumpPage'),
+    changePageSize: action('changePageSize'),
+  },
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
   prevText: '上一页',
   nextText: '下一页',
-  li: '',
+  li: 'li',
 };

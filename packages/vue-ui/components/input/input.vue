@@ -1,6 +1,7 @@
 <template>
   <div class="c-input">
     <input
+      v-bind="$attrs"
       :class="cls"
       :disabled="itemDisabled"
       :placeholder="placeholder"
@@ -10,6 +11,7 @@
       :maxlength="maxlength"
       :type="type"
       :value="value"
+      @keyup.enter="onEnter"
     >
     <span v-if="isWordLimitVisible" class="c-input-tip">{{textNum}}/{{maxlength}}</span>
   </div>
@@ -47,6 +49,11 @@ export default {
       default: 'text',
     },
   },
+  data() {
+    return {
+      text: '',
+    };
+  },
   computed: {
     textNum() {
       return this.value.length;
@@ -75,6 +82,11 @@ export default {
     },
     onBlur(e) {
       this.$emit('blur');
+    },
+    onEnter(e) {
+      if (e.target) {
+        this.$emit('enter', e.target.value);
+      }
     },
     onFocus(e) {
       this.$emit('focus');

@@ -64,7 +64,7 @@ const Template = (args, { argTypes }) => ({
     </c-select></div>`,
   data() {
     return {
-      selectData: '',
+      selectData: '2',
     };
   },
   methods: {
