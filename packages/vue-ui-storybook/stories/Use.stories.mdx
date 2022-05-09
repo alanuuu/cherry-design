@@ -7,15 +7,15 @@ import { Meta } from '@storybook/addon-docs';
 ```javascript
 import Vue from 'vue';
 import App from './App.vue';
-import CSDNUI from '@csdn-design/vue-ui';
+import cherryUI from '@cherry-design/vue-ui';
 // 额外使用ICON，不是必须
-import CSDNIcon from '@csdn-design/vue-ui/es/icon';
-import '@csdn-design/vue-ui/es/index.css';
+import cherryIcon from '@cherry-design/vue-ui/es/icon';
+import '@cherry-design/vue-ui/es/index.css';
 // 或者使用
-// import '@csdn-design/vue-ui/es/index.less';
+// import '@cherry-design/vue-ui/es/index.less';
 
-Vue.use(CSDNUI);
-Vue.use(CSDNIcon);
+Vue.use(cherryUI);
+Vue.use(cherryIcon);
 
 new Vue({
   render: (h) => h(App),
@@ -36,7 +36,7 @@ new Vue({
     [
       "babel-plugin-import",
       {
-        "libraryName": "@csdn-design/vue-ui",
+        "libraryName": "@cherry-design/vue-ui",
         "libraryDirectory": "es",
         "camel2DashComponentName": false,
         "style": true, // 样式按需加载
@@ -49,5 +49,5 @@ new Vue({
 <h3>Icon按需加载</h3>
 
 ```
-import { IconArrowDown } from '@csdn-design/vue-ui/es/icon'
+import { IconArrowDown } from '@cherry-design/vue-ui/es/icon'
 ```

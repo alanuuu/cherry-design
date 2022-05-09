@@ -56,11 +56,11 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<div><c-select v-model="selectData" v-bind="$props" @on-change="change" @on-query-change="query" style="width:200px">
-        <c-option value="1" label="csdn1"></c-option>
-        <c-option label="csdn2" value="2"></c-option>
-        <c-option label="csdn3" value="3"></c-option>
-        <c-option label="csdn4" value="4"></c-option>
-        <c-option label="csdn5" value="5"></c-option>
+        <c-option value="1" label="cherry1"></c-option>
+        <c-option label="cherry2" value="2"></c-option>
+        <c-option label="cherry3" value="3"></c-option>
+        <c-option label="cherry4" value="4"></c-option>
+        <c-option label="cherry5" value="5"></c-option>
     </c-select></div>`,
   data() {
     return {

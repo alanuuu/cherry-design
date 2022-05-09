@@ -1,10 +1,10 @@
 {
-  "name": "@csdn-design/vue-ui",
+  "name": "@cherry-design/vue-ui",
   "version": "0.5.0",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "unpkg": "dist/csdn-ui.min.js",
+  "unpkg": "dist/cherry-ui.min.js",
   "style": "lib/index.css",
   "scripts": {
     "start": "vue-scripts dev:component",
@@ -20,14 +20,14 @@
     "dist"
   ],
   "keywords": [
-    "csdn",
+    "cherry",
     "vue",
     "component"
   ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@csdn-design/vue-scripts": "^0.3.0",
+    "@cherry-design/vue-scripts": "^0.3.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",

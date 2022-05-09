@@ -75,7 +75,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
     <div>
-      <c-dialog v-bind="$props" v-model="visible" @close="handleChange">CSDN</c-dialog>
+      <c-dialog v-bind="$props" v-model="visible" @close="handleChange">cherry</c-dialog>
       <c-button @click="handleChange">点击弹窗</c-button>
     </div>
   `,

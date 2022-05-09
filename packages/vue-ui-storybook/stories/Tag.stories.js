@@ -72,5 +72,5 @@ Primary.args = {
 
 export const Link = Template.bind({});
 Link.args = {
-  link: 'www.csdn.net',
+  link: 'www.cherry.net',
 };

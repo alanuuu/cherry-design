@@ -81,11 +81,11 @@ const install = (app, options) => {
   }
 };
 
-const CSDNUI = {
+const cherryUI = {
   ...components,
   install,
 };
 
 Vue.prototype.$toast = Toast;
 
-export default CSDNUI;
+export default cherryUI;

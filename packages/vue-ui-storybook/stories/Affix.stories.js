@@ -35,7 +35,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: `<div>
+  template: `<div style="height: 400px; overflow-y: auto;">
       <div style="height: 500px"></div>
       top定位
       <c-affix v-bind="$props" @onChange="change" :offsetTop="50">

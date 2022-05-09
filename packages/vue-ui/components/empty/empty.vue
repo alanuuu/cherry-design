@@ -21,7 +21,7 @@
 export default {
   name: 'Empty',
   props: {
-    // 图片地址,不传为csdn默认图片
+    // 图片地址,不传为cherry默认图片
     image: String,
     // 图片大小
     width: {

@@ -48,7 +48,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<div>
-    <c-avatar v-bind="$props" @error="error"></c-avatar>
+    <c-avatar v-bind="$props" @error="error" style="height: 300px;width: auto"></c-avatar>
   </div>`,
   methods: {
     error: action('error'),
@@ -58,7 +58,7 @@ const Template = (args, { argTypes }) => ({
 const TemplateICon = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<div>
-    <c-avatar v-bind="$props" @error="error">
+    <c-avatar v-bind="$props" @error="error" >
       <icon-google-circle-fill />
     </c-avatar>
   </div>`,
@@ -70,7 +70,7 @@ const TemplateICon = (args, { argTypes }) => ({
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = Template.bind({});
 Primary.args = {
-  src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg',
+  src: 'https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png',
 };
 
 export const Icon = TemplateICon.bind({});

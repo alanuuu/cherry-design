@@ -1,7 +1,7 @@
 const { createVuePlugin } = require('vite-plugin-vue2');
 
 module.exports = (type) => {
-  const name = type === 'component' ? 'csdn-ui' : 'csdn-vue-icon';
+  const name = type === 'component' ? 'cherry-ui' : 'cherry-vue-icon';
   const entry =
     type === 'component'
       ? `components/${name}.js`

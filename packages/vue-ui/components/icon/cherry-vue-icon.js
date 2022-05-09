@@ -158,9 +158,9 @@ const install = (Vue, options) => {
   }
 };
 
-const CSDNVueIcon = {
+const cherryVueIcon = {
   ...icons,
   install
 };
 
-export default CSDNVueIcon;
+export default cherryVueIcon;

@@ -2,7 +2,7 @@
 export default {
   title: '组件/Card 卡片',
   args: {
-    header: 'CSDN',
+    header: '标题',
     shadow: 'always',
   },
   argTypes: {
@@ -28,7 +28,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-card v-bind="$props" ><span>长沙研发</span></c-card>',
+  template: '<c-card v-bind="$props" ><span>内容</span></c-card>',
 });
 
 export const Primary = Template.bind({});

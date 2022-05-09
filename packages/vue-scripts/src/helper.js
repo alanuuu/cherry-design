@@ -53,7 +53,7 @@ function createIndexTemp(data) {
   const indexContent = getIndex({ exports });
 
   fs.outputFile(
-    path.resolve(iconPath, 'csdn-vue-icon.js'),
+    path.resolve(iconPath, 'cherry-vue-icon.js'),
     iconContent,
     (err) => {
       if (err) {
@@ -64,7 +64,7 @@ function createIndexTemp(data) {
     }
   );
   fs.outputFile(
-    path.resolve(esPath, 'csdn-vue-icon.js'),
+    path.resolve(esPath, 'cherry-vue-icon.js'),
     iconContent,
   );
 
@@ -104,17 +104,17 @@ const install = (Vue, options) => {
   }
 };
 
-const CSDNVueIcon = {
+const cherryVueIcon = {
   ...icons,
   install
 };
 
-export default CSDNVueIcon;
+export default cherryVueIcon;
 `;
 
 const getIndex = ({ exports }) =>
   // prettier-ignore
-  `export { default } from './csdn-vue-icon';
+  `export { default } from './cherry-vue-icon';
 ${exports.join('\n')}
 `;
 

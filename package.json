@@ -1,15 +1,15 @@
 {
-  "name": "csdn-design",
-  "description": "CSDN Design Vue 2.0 Monorepo",
+  "name": "cherry-design",
+  "description": "cherry Design Vue 2.0 Monorepo",
   "version": "0.2.1",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "start": "yarn workspace @csdn-design/vue-ui run start",
-    "build": "yarn workspace @csdn-design/vue-ui run build",
-    "storybook": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
-    "dev": "yarn workspace @csdn-design/vue-ui-storybook run storybook",
-    "site": "yarn workspace @csdn-design/vue-ui-storybook run build-storybook",
+    "start": "yarn workspace @cherry-design/vue-ui run start",
+    "build": "yarn workspace @cherry-design/vue-ui run build",
+    "storybook": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
+    "dev": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
+    "site": "yarn workspace @cherry-design/vue-ui-storybook run build-storybook",
     "pub": "yarn build && lerna publish"
   },
   "devDependencies": {
@@ -18,5 +18,8 @@
   "workspaces": [
     "packages/*"
   ],
-  "author": "zouxin1"
+  "engines": {
+    "node": ">=14.13.1"
+  },
+  "author": "alanuuuu"
 }

@@ -1,4 +1,4 @@
-export { default } from './csdn-vue-icon';
+export { default } from './cherry-vue-icon';
 export { default as IconArrowDown } from './arrow-down.vue'; 
 export { default as IconArrowLeft } from './arrow-left.vue'; 
 export { default as IconArrowRight } from './arrow-right.vue'; 

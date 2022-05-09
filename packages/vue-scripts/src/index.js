@@ -16,7 +16,7 @@ program.option('-d, --debug', 'output extra debugging');
 
 program
   .version(version)
-  .name('@csdn-design/vue-scripts')
+  .name('@cherry-design/vue-scripts')
   .usage('command [options]');
 
 program

@@ -71,9 +71,9 @@ const TemplatePrimary = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<div>
     <c-list v-bind="$props">
-        <c-list-item>csdn</c-list-item>
-        <c-list-item>csdn</c-list-item>
-        <c-list-item>csdn</c-list-item>
+        <c-list-item>cherry</c-list-item>
+        <c-list-item>cherry</c-list-item>
+        <c-list-item>cherry</c-list-item>
     </c-list>
     </div>`,
 });
@@ -82,7 +82,7 @@ const TemplateHorizontal = (args, { argTypes }) => ({
   template: `<div>
       <c-list v-bind="$props">
           <c-list-item>
-              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -94,7 +94,7 @@ const TemplateHorizontal = (args, { argTypes }) => ({
                   </template>
           </c-list-item>
           <c-list-item>
-              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -113,7 +113,7 @@ const TemplateVertical = (args, { argTypes }) => ({
   template: `<div>
       <c-list v-bind="$props">
           <c-list-item>
-              <c-list-item-meta avatar="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg" title="标题" description="描述" />
+              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -124,7 +124,7 @@ const TemplateVertical = (args, { argTypes }) => ({
                       </li>
                   </template>
                   <template slot="extra">
-                      <c-image style="width: 120px; height: 120px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Flpic%2Fs26866793.jpg"></c-image>
+                      <c-image style="width: 120px; height: 120px" src="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png"></c-image>
                   </template>
           </c-list-item>
       </c-list>

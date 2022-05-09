@@ -1,6 +1,6 @@
-# csdn-design
+# cherry-design
 
-访问地址： http://design.csdn.net
+访问地址： http://design.cherry.net
 ## 一、 开发
 ```bash
 # 安装依赖

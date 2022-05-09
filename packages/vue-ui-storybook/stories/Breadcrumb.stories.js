@@ -14,7 +14,7 @@ const Template = (args, { argTypes }) => ({
   // components: { Breadcrumb, BreadcrumbItem },
   template: `
     <c-breadcrumb v-bind="$props">
-      <c-breadcrumb-item href="https://www.csdn.net/c/">CSDN社区</c-breadcrumb-item>
+      <c-breadcrumb-item href="https://www.cherry.net/c/">程序员</c-breadcrumb-item>
       <c-breadcrumb-item :to="{ path: '/' }">前端</c-breadcrumb-item>
       <c-breadcrumb-item>长沙</c-breadcrumb-item>
     </c-breadcrumb>

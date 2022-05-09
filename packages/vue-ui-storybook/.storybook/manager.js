@@ -1,9 +1,9 @@
 import { addons } from '@storybook/addons';
-import csdnTheme from './csdn-design';
+import cherryTheme from './cherry-design';
 
 // When setting a theme, set a complete theme object. The theme is replaced, not combined
 addons.setConfig({
-  theme: csdnTheme,
+  theme: cherryTheme,
   sidebar: {
     showRoots: true,// sidebar是否展示root
   }

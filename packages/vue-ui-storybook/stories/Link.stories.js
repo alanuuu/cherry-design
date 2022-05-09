@@ -23,7 +23,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<c-link v-bind="$props" target="_blank">CSDN</c-link>',
+  template: '<c-link v-bind="$props" target="_blank">cherry</c-link>',
 });
 
 export const Primary = Template.bind({});
@@ -32,6 +32,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   underline: true,
   disabled: false,
-  href: 'https://www.csdn.net',
+  href: 'https://www.cherry.net',
   replace: false,
 };
