@@ -3,13 +3,13 @@
   "description": "cherry Design Vue 2.0 Monorepo",
   "version": "0.2.1",
   "private": true,
+  "homepage": "https://alanuuu.github.io/cherry-design/",
   "scripts": {
+    "dev": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
     "bootstrap": "lerna bootstrap",
     "start": "yarn workspace @cherry-design/vue-ui run start",
     "build": "yarn workspace @cherry-design/vue-ui run build",
-    "storybook": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
-    "dev": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
-    "site": "yarn workspace @cherry-design/vue-ui-storybook run build-storybook",
+    "deploy": "yarn workspace @cherry-design/vue-ui-storybook run build-storybook",
     "pub": "yarn build && lerna publish"
   },
   "devDependencies": {

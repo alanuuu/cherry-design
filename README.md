@@ -1,6 +1,6 @@
 # cherry-design
 
-访问地址： http://design.cherry.net
+访问地址： https://alanuuu.github.io/cherry-design/
 ## 一、 开发
 ```bash
 # 安装依赖
@@ -13,5 +13,5 @@ yarn boostrap
 yarn build
 
 # 文档预览
-yarn storybook
+yarn dev
 ```

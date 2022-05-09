@@ -4,6 +4,6 @@ import { create } from '@storybook/theming';
 export default create({
   base: 'light',
   brandTitle: 'Cherry Design',
-  brandUrl: '//design.cherry.net',
+  brandUrl: 'https://alanuuu.github.io/cherry-design/',
   // brandImage: logo,
 });
