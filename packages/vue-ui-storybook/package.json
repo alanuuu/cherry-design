@@ -1,6 +1,6 @@
 {
   "name": "@cherry-design/vue-ui-storybook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "webpack": "^5.64.2"
   },
   "dependencies": {
-    "@cherry-design/vue-ui": "^1.0.0",
+    "@cherry-design/vue-ui": "^1.0.1",
     "@storybook/addon-actions": "^6.3.12",
     "@vue/compiler-sfc": "^3.2.6",
     "copy-to-clipboard": "^3.3.1",

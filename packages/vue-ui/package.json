@@ -1,6 +1,6 @@
 {
   "name": "@cherry-design/vue-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,7 +30,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@cherry-design/vue-scripts": "^1.0.0",
+    "@cherry-design/vue-scripts": "^1.0.1",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
