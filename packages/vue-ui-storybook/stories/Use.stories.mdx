@@ -7,15 +7,15 @@ import { Meta } from '@storybook/addon-docs';
 ```javascript
 import Vue from 'vue';
 import App from './App.vue';
-import cherryUI from '@cherry-design/vue-ui';
+import CherryUI from '@cherry-design/vue-ui';
 // 额外使用ICON，不是必须
-import cherryIcon from '@cherry-design/vue-ui/es/icon';
+import CherryIcon from '@cherry-design/vue-ui/es/icon';
 import '@cherry-design/vue-ui/es/index.css';
 // 或者使用
 // import '@cherry-design/vue-ui/es/index.less';
 
-Vue.use(cherryUI);
-Vue.use(cherryIcon);
+Vue.use(CherryUI);
+Vue.use(CherryIcon);
 
 new Vue({
   render: (h) => h(App),

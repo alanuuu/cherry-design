@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import cherryUI from '@cherry-design/vue-ui/components'
-import cherryIcon from '@cherry-design/vue-ui/components/icon';
+import CherryUI from '@cherry-design/vue-ui/components'
+import CherryIcon from '@cherry-design/vue-ui/components/icon';
 import '@cherry-design/vue-ui/components/index.less';
 
-Vue.use(cherryUI);
-Vue.use(cherryIcon);
+Vue.use(CherryUI);
+Vue.use(CherryIcon);
 
 export const parameters = {
   controls: {
