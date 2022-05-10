@@ -8,8 +8,11 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "alanuuu",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@storybook/addon-essentials": "^6.3.12",
@@ -28,7 +31,7 @@
     "webpack": "^5.64.2"
   },
   "dependencies": {
-    "@cherry-design/vue-ui": "^0.5.0",
+    "@cherry-design/vue-ui": "^1.0.0",
     "@storybook/addon-actions": "^6.3.12",
     "@vue/compiler-sfc": "^3.2.6",
     "copy-to-clipboard": "^3.3.1",
