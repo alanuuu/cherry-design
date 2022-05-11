@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 
+const img = require('./asset/images/logo.jpg');
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: '组件/Avatar 头像',
@@ -70,7 +71,7 @@ const TemplateICon = (args, { argTypes }) => ({
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = Template.bind({});
 Primary.args = {
-  src: 'https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png',
+  src: img,
 };
 
 export const Icon = TemplateICon.bind({});

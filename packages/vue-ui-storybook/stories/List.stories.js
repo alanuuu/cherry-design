@@ -1,4 +1,6 @@
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
+const img = require('./asset/images/logo.jpg');
+
 export default {
   title: '组件/List 列表',
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
@@ -77,10 +79,15 @@ const TemplatePrimary = (args, { argTypes }) => ({
 });
 const TemplateHorizontal = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
+  data() {
+    return {
+      img,
+    };
+  },
   template: `<div>
       <c-list v-bind="$props">
           <c-list-item>
-              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
+              <c-list-item-meta :avatar="img" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -92,7 +99,7 @@ const TemplateHorizontal = (args, { argTypes }) => ({
                   </template>
           </c-list-item>
           <c-list-item>
-              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
+              <c-list-item-meta :avatar="img" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -108,10 +115,15 @@ const TemplateHorizontal = (args, { argTypes }) => ({
 });
 const TemplateVertical = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
+  data() {
+    return {
+      img,
+    };
+  },
   template: `<div>
       <c-list v-bind="$props">
           <c-list-item>
-              <c-list-item-meta avatar="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png" title="标题" description="描述" />
+              <c-list-item-meta :avatar="img" title="标题" description="描述" />
               <div>内容</div>
                   <template slot="action">
                       <li>
@@ -122,7 +134,7 @@ const TemplateVertical = (args, { argTypes }) => ({
                       </li>
                   </template>
                   <template slot="extra">
-                      <c-image style="width: 120px; height: 120px" src="https://iconfont.alicdn.com/t/1493a0ab-652b-40b1-ba59-cdbe455492cb.png@500h_500w.png"></c-image>
+                      <c-img style="width: 120px; height: 120px" :src="img"></c-img>
                   </template>
           </c-list-item>
       </c-list>
@@ -135,13 +147,13 @@ Primary.args = {};
 
 export const Horizontal = TemplateHorizontal.bind({});
 Horizontal.args = {
-  header: '',
-  footer: '',
+  header: null,
+  footer: null,
 };
 
 export const Vertical = TemplateVertical.bind({});
 Vertical.args = {
-  header: '',
-  footer: '',
+  header: null,
+  footer: null,
   itemLayout: 'vertical',
 };

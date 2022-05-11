@@ -1,3 +1,8 @@
+<p align="center">
+    <img width="150" src="./assets/images/logo.jpg" />
+</p>
+<p align="center">简单，实用的Vue UI 库</p>
+
 # Cherry-Design
 
 访问地址： https://alanuuu.github.io/cherry-design/
