@@ -29,6 +29,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "bugs": {
+    "url": "https://github.com/alanuuu/cherry-design/issues"
+  },
+  "repository": "git@github.com:alanuuu/cherry-design.git",
   "devDependencies": {
     "@cherry-design/vue-scripts": "^1.0.2",
     "eslint": "^8.3.0",
