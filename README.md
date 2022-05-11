@@ -1,4 +1,4 @@
-# cherry-design
+# Cherry-Design
 
 访问地址： https://alanuuu.github.io/cherry-design/
 ## 一、 开发
