@@ -5,6 +5,9 @@
 
 # Cherry-Design
 
+![](https://img.shields.io/github/workflow/status/alanuuu/cherry-design/Build%20and%20Deploy)
+![](https://img.shields.io/github/license/alanuuu/cherry-design)
+
 访问地址： https://alanuuu.github.io/cherry-design/
 ## 一、 开发
 ```bash
