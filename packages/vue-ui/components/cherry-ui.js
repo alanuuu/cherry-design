@@ -1,4 +1,7 @@
 import Vue from 'vue';
+import dayjs from 'dayjs';
+import localeData from 'dayjs/plugin/localeData'
+dayjs.extend(localeData)
 
 import Button from './button';
 import Avatar from './avatar';
@@ -34,6 +37,7 @@ import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
 import Progress from './progress';
+import Calendar from './calendar';
 
 const components = {
   Button,
@@ -72,6 +76,7 @@ const components = {
   Toast,
   Progress,
   Pagination,
+  Calendar,
 };
 
 const install = (app, options) => {

@@ -1,3 +1,7 @@
+import dayjs from 'dayjs';
+import localeData from 'dayjs/plugin/localeData'
+dayjs.extend(localeData)
+
 export { default } from './cherry-ui';
 
 export { default as Button } from './button';
@@ -34,3 +38,4 @@ export { default as Tabs } from './tabs';
 export { default as Tag } from './tag';
 export { default as Toast } from './toast';
 export { default as Progress } from './progress';
+export { default as Calendar } from './calendar';
