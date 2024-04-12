@@ -1,0 +1,91 @@
+.c-form {
+  display: block;
+  &-size-large {
+    .c-item--content {
+      min-height: 40px;
+    }
+  }
+  &-size-small {
+    .c-item--content {
+      min-height: 32px;
+    }
+  }
+  &-item {
+    position: relative;
+    &--label {
+      display: block;
+      text-align: right;
+      height: 36px;
+      line-height: 36px;
+      > label {
+        display: inline-flex;
+        max-width: 100%;
+        position: relative;
+        &::after {
+          content: ":";
+          position: relative;
+          top: -0.5px;
+          margin: 0 8px 0 2px;
+        }
+      }
+    }
+    &--control {
+      position: relative;
+    }
+    &--content {
+      display: flex;
+      width: 100%;
+      min-height: 36px;
+    }
+    &--message {
+      height: 24px;
+      line-height: 24px;
+      font-size: @font-sm-size;
+      opacity: 1;
+      &_error {
+        color: @danger-color;
+      }
+    }
+  }
+  &-item--error {
+    .c-input-content {
+        border-color: @danger-color;
+    }
+  }
+  &-item--required {
+    .c-form-item--label > label {
+      &::before {
+        margin-right: 4px;
+        color: #ff4d4f;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        content: "*";
+      }
+    }
+  }
+  &-item {
+    &&--validating {
+      input {
+        border-color: @danger-color;
+      }
+    }
+  }
+}
+
+.c-form-horizontal {
+  @prefix: c-form;
+  display: flex;
+  flex-wrap: wrap;
+  .@{prefix}-item {
+    flex: none;
+    flex-wrap: nowrap;
+    margin-right: 16px;
+    margin-bottom: 0;
+    &--label {
+      display: inline-block;
+      > label {
+        flex: none;
+      }
+    }
+  }
+}

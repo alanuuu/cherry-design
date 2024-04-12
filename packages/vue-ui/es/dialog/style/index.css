@@ -1,0 +1,67 @@
+.c-dialog {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.c-dialog-shadow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  background-color: #808080;
+  opacity: 0.3;
+}
+.c-dialog-body {
+  padding: 10px;
+  min-width: 250px;
+  background-color: #fff;
+  z-index: 9980;
+  border-radius: 4px;
+  margin: 15vh auto auto;
+}
+.c-dialog-border-shadow {
+  box-shadow: 0px 2px 8px 0px #e3e3e9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.c-dialog-header {
+  padding: 15px 10px;
+  position: relative;
+  display: flex;
+}
+.c-dialog-content {
+  padding: 10px 15px;
+}
+.c-dialog-footer {
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.c-dialog-title {
+  font-size: 18px;
+  color: black;
+}
+.c-dialog-close-botton {
+  height: 18px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: gray;
+}
+.c-dialog-close {
+  height: 16px;
+  width: 16px;
+}
+.c-dialog-center {
+  justify-content: center;
+}

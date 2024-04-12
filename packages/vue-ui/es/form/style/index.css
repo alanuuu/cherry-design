@@ -1,0 +1,75 @@
+.c-form {
+  display: block;
+}
+.c-form-size-large .c-item--content {
+  min-height: 40px;
+}
+.c-form-size-small .c-item--content {
+  min-height: 32px;
+}
+.c-form-item {
+  position: relative;
+}
+.c-form-item--label {
+  display: block;
+  text-align: right;
+  height: 36px;
+  line-height: 36px;
+}
+.c-form-item--label > label {
+  display: inline-flex;
+  max-width: 100%;
+  position: relative;
+}
+.c-form-item--label > label::after {
+  content: ":";
+  position: relative;
+  top: -0.5px;
+  margin: 0 8px 0 2px;
+}
+.c-form-item--control {
+  position: relative;
+}
+.c-form-item--content {
+  display: flex;
+  width: 100%;
+  min-height: 36px;
+}
+.c-form-item--message {
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  opacity: 1;
+}
+.c-form-item--message_error {
+  color: #ff4d4f;
+}
+.c-form-item--error .c-input-content {
+  border-color: #ff4d4f;
+}
+.c-form-item--required .c-form-item--label > label::before {
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  content: "*";
+}
+.c-form-item.c-form-item--validating input {
+  border-color: #ff4d4f;
+}
+.c-form-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c-form-horizontal .c-form-item {
+  flex: none;
+  flex-wrap: nowrap;
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+.c-form-horizontal .c-form-item--label {
+  display: inline-block;
+}
+.c-form-horizontal .c-form-item--label > label {
+  flex: none;
+}

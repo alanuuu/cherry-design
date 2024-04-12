@@ -1,0 +1,45 @@
+.c-tag {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 24px;
+  text-align: center;
+  border-radius: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+.c-tag-large {
+  font-size: 16px;
+  padding: 6px 12px;
+}
+.c-tag-medium {
+  font-size: 14px;
+  padding: 4px 10px;
+}
+.c-tag-small {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+.c-tag-circle {
+  border-radius: 1000px;
+}
+.c-tag-pointer {
+  cursor: pointer;
+}
+.c-tag-normal {
+  color: #000;
+  background: #f0f0f5;
+}
+.c-tag-normal-active {
+  color: #fff;
+  background: #777888;
+}
+.c-tag-light {
+  color: #000;
+  background: #F0F0F5;
+}
+.c-tag-light-active {
+  color: #B87100;
+  background: #F8E3C3;
+}

@@ -1,0 +1,35 @@
+
+.c-avatar {
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: @white;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    &-circle {
+        border-radius: 50%;
+    }
+    &-square {
+        border-radius: 5px;
+    }
+    @sizeMap: {
+        large: 56px;
+        medium: 40px;
+        small: 24px;
+    }
+    each(@sizeMap, {
+        &-@{key} {
+            width: @value;
+            height: @value;
+            line-height: @value;
+        }
+    })
+    &-img, .c-icon {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+}

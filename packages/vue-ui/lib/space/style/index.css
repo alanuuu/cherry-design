@@ -1,0 +1,9 @@
+.c-space {
+  display: inline-flex;
+}
+.c-space-horizontal {
+  flex-direction: row;
+}
+.c-space-vertical {
+  flex-direction: column;
+}

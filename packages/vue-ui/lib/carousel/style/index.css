@@ -1,0 +1,89 @@
+.c-carousel {
+  box-sizing: border-box;
+  position: relative;
+}
+.c-carousel-container {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+}
+.c-carousel .c-btn {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: rgba(31, 45, 61, 0.2);
+}
+.c-carousel .c-btn:hover {
+  background: rgba(31, 45, 61, 0.3);
+}
+.c-carousel .c-btn-left {
+  left: 5px;
+}
+.c-carousel .c-btn-right {
+  right: 5px;
+}
+.c-carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.c-carousel-item-animation {
+  transition: transform 0.6s ease-in-out;
+}
+.c-carousel .c-icon {
+  font-style: normal;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+.c-carousel .arrow-left::before {
+  content: "\00AB";
+}
+.c-carousel .arrow-right::before {
+  content: "\00BB";
+}
+.c-carousel-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+}
+.c-carousel-dot > li {
+  display: inline;
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 3px 0;
+}
+.c-carousel-dot-btn {
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 2px;
+  background: snow;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.c-carousel-dot .btn-active {
+  opacity: 1;
+}

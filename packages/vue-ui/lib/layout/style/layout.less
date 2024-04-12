@@ -1,0 +1,41 @@
+
+.c-layout {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: @bg;
+  min-height: 0;
+  flex: 1;
+  &.c-has-sider {
+    flex-direction: row;
+  }
+  &-header {
+    flex: 1;
+    box-sizing: border-box;
+    min-height: 0;
+    padding: 0 50px;
+    height: 64px;
+    line-height: 64px;
+  }
+  &-main {
+    box-sizing: border-box;
+    flex: auto;
+    min-height: 0;
+  }
+  &-sider {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    min-height: 0;
+    position: relative;
+    transition: all @transition-duration;
+    &-inner {
+      height: 100%;
+    }
+  }
+  &-footer {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 24px 50px;
+  }
+}
