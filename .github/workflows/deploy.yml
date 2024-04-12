@@ -27,6 +27,7 @@ jobs:
           folder: packages/vue-ui-storybook/storybook-static # The folder the action should deploy.
           token: ${{ secrets.ACCESS_TOKEN }}
           git-config-email: alanuuu@163.com
+          git-config-name: alanuuu
 
 
           
