@@ -11,8 +11,7 @@
 
 <script>
 import copy from 'copy-to-clipboard';
-import Icons from '@cherry-design/vue-ui/components/icon/icons.json';
-import { IconArrowDown } from '@cherry-design/vue-ui/es/icon'
+import Icons from '@cherry-design/vue-ui/compoxents/icon/icons.json';
 
 export default {
   name: 'icon',
@@ -20,9 +19,6 @@ export default {
     icons() {
       return Icons;
     },
-  },
-  components: {
-    IconArrowDown
   },
   methods: {
     copy(name) {
