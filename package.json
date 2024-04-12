@@ -6,7 +6,7 @@
   "homepage": "https://alanuuu.github.io/cherry-design/",
   "scripts": {
     "dev": "yarn workspace @cherry-design/vue-ui-storybook run storybook",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && yarn build",
     "start": "yarn workspace @cherry-design/vue-ui run start",
     "build": "yarn workspace @cherry-design/vue-ui run build",
     "deploy": "yarn workspace @cherry-design/vue-ui-storybook run build-storybook",
