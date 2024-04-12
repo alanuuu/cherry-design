@@ -11,7 +11,7 @@
 
 <script>
 import copy from 'copy-to-clipboard';
-import Icons from '@cherry-design/vue-ui/compoxents/icon/icons.json';
+import Icons from '@cherry-design/vue-ui/components/icon/icons.json';
 
 export default {
   name: 'icon',
