@@ -4,6 +4,8 @@ on:
     branches:
       - master
       - test
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -24,4 +26,6 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: packages/vue-ui-storybook/storybook-static # The folder the action should deploy.
           token: ${{ secrets.ACCESS_TOKEN }}
-          ssh-key: csdn
+
+
+          
