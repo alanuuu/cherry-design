@@ -1,4 +1,4 @@
-import Icon from './icon/index.vue';
+import Icon from './icons/index.vue';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
